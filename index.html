@@ -29,6 +29,13 @@
             z-index: 100; transition: 0.2s; text-decoration: none;
             animation: gentleBounce 2.5s infinite;
         }
+        .waterfall-bg {
+    background: linear-gradient(145deg, #1b2550 0%, #111733 60%, #000814 100%);
+    background-size: 200% 200%;
+    animation: waterFlow 8s ease infinite alternate;
+            position: relative;
+            overflow: hidden;
+        }
         @keyframes gentleBounce { 0%,100%{ transform:translateY(0); } 50%{ transform:translateY(-8px); } }
         .wa-float:hover { transform:scale(1.08) translateY(-4px); }
         .wa-float:hover::after {
@@ -158,5 +165,6 @@ function razorpayDemo(){ alert('✅ Razorpay demo: ₹500 payment successful. In
 <!-- In production, split into separate files: index.html, about.html, services.html, engine-service.html, gps-systems.html, mercury-engines.html, spare-parts.html, projects.html, certifications.html, amc.html, contact.html. They share header/footer. -->
 </body>
 </html>
+
 
 
