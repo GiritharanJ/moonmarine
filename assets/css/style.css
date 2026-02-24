@@ -1,0 +1,28 @@
+.wa-float {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    background: #25D366;
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2.4rem;
+    color: white;
+    box-shadow: 0 20px 30px -8px rgba(0,0,0,0.4);
+    z-index: 100;
+    transition: 0.2s;
+    text-decoration: none;
+    animation: gentleBounce 2.5s infinite;
+}
+
+@keyframes gentleBounce {
+    0%,100%{ transform:translateY(0); }
+    50%{ transform:translateY(-8px); }
+}
+
+.hover-lift:hover {
+    transform: translateY(-3px);
+}
