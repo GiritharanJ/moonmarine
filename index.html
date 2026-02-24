@@ -29,12 +29,25 @@
             z-index: 100; transition: 0.2s; text-decoration: none;
             animation: gentleBounce 2.5s infinite;
         }
+           /* waterfall animation for hero background (color #86f7f2) */
+        @keyframes waterFlow {
+            0% { background-position: 0% 0%; }
+            100% { background-position: 0% 100%; }
+        }
         .waterfall-bg {
     background: linear-gradient(145deg, #1b2550 0%, #111733 60%, #000814 100%);
     background-size: 200% 200%;
     animation: waterFlow 8s ease infinite alternate;
             position: relative;
             overflow: hidden;
+        }
+        /* additional floating waves effect (optional) */
+        .waterfall-bg::after {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: radial-gradient(circle at 30% 50%, rgba(134,247,242,0.2) 0%, transparent 50%);
+            pointer-events: none;
         }
         @keyframes gentleBounce { 0%,100%{ transform:translateY(0); } 50%{ transform:translateY(-8px); } }
         .wa-float:hover { transform:scale(1.08) translateY(-4px); }
@@ -56,13 +69,20 @@
 <header class="bg-primary shadow-lg border-b border-accent/50">
     <div class="max-w-7xl mx-auto flex justify-between items-center p-4">
         <!-- Logo + anchor -->
-        <div class="flex items-center gap-4">
-            <div class="text-accent text-3xl"><i class="fas fa-anchor"></i></div>
-            <div class="leading-tight">
-                <h1 class="text-xl md:text-2xl font-bold tracking-wide">MOON MARINE</h1>
-                <p class="text-xs text-accent">Mercury Authorized Dealer</p>
-            </div>
-        </div>
+        <div class="flex items-center gap-3">
+    <img src="assets/images/logo.jpeg"
+         alt="Moon Marine Logo"
+         class="h-10 md:h-12 object-contain">
+    <!-- Company Name -->
+    <div class="leading-tight">
+        <h1 class="text-xl md:text-2xl font-bold tracking-wide">
+            MOON MARINE
+        </h1>
+        <p class="text-xs text-accent">
+            Mercury Authorized Dealer
+        </p>
+    </div>
+</div>
 
         <!-- MEGA NAVIGATION DROPDOWN (Services) + regular links -->
         <nav class="hidden md:flex items-center space-x-6 font-medium relative">
@@ -165,6 +185,7 @@ function razorpayDemo(){ alert('✅ Razorpay demo: ₹500 payment successful. In
 <!-- In production, split into separate files: index.html, about.html, services.html, engine-service.html, gps-systems.html, mercury-engines.html, spare-parts.html, projects.html, certifications.html, amc.html, contact.html. They share header/footer. -->
 </body>
 </html>
+
 
 
 
