@@ -11,8 +11,8 @@
             theme: {
                 extend: {
                     colors: {
-                        primary: '#014770',
-                        accent: '#86f7f2',
+                        primary: '#111733',
+                        accent: '#b3f2f5',
                     }
                 }
             }
@@ -110,7 +110,7 @@
         <!-- logo + name: logo spot (you can replace with your own logo file) -->
         <div class="flex items-center space-x-3">
             <!-- logo container (icon simulation, replace src with your logo) -->
-            <img src="logo.png" alt="Moon Marine Logo" class="h-12 w-auto" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+            <img src="logo.jpeg" alt="Moon Marine Logo" class="h-12 w-auto" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
             <!-- fallback if logo.png missing: icon only (no image) -->
             <div class="h-12 w-12 rounded-full bg-accent text-primary flex items-center justify-center text-2xl font-bold hidden"><i class="fas fa-ship"></i></div>
             <h1 class="text-xl font-bold tracking-tight">MOON MARINE</h1>
@@ -118,13 +118,15 @@
 
         <!-- desktop nav -->
         <nav class="hidden md:flex space-x-8 font-medium">
-            <a href="#about" class="hover:text-accent transition-colors border-b-2 border-transparent hover:border-accent pb-1">About</a>
-            <a href="#services" class="hover:text-accent transition-colors border-b-2 border-transparent hover:border-accent pb-1">Parts & Services</a>
-            <a href="#booking" class="hover:text-accent transition-colors border-b-2 border-transparent hover:border-accent pb-1">Contact</a>
+            <a href="#about" class="hover:text-soft-teal transition-colors border-b-2 border-transparent hover:border-soft-teal pb-1">About</a>
+            <a href="#parts-services" class="hover:text-soft-teal transition-colors border-b-2 border-transparent hover:border-soft-teal pb-1">Parts & Services</a>
+            <a href="#gps-systems" class="hover:text-soft-teal transition-colors border-b-2 border-transparent hover:border-soft-teal pb-1">GPS Systems</a>
+            <a href="#mercury-engines" class="hover:text-soft-teal transition-colors border-b-2 border-transparent hover:border-soft-teal pb-1">Mercury Engines</a>
+            <a href="#contact" class="hover:text-soft-teal transition-colors border-b-2 border-transparent hover:border-soft-teal pb-1">Contact</a>
         </nav>
 
         <!-- WhatsApp button in header (only whatsapp) -->
-        <a href="https://wa.me/917708007222" target="_blank" 
+        <a href="https://wa.me/+917708007222" target="_blank" 
            class="bg-accent text-primary px-5 py-2 rounded-full font-bold hover:scale-105 transition flex items-center gap-2 shadow-md">
            <i class="fab fa-whatsapp text-lg"></i> WhatsApp
         </a>
@@ -132,7 +134,7 @@
 </header>
 
 <!-- ===== FLOATING WHATSAPP (only whatsapp icon) ===== -->
-<a href="https://wa.me/917708007222" class="wa-float" target="_blank"><i class="fab fa-whatsapp"></i></a>
+<a href="https://wa.me/+917708007222" class="wa-float" target="_blank"><i class="fab fa-whatsapp"></i></a>
 
 <!-- ===== HERO SECTION with WATERFALL ANIMATION (color #86f7f2) ===== -->
 <section class="waterfall-bg text-center py-28 px-4 relative">
@@ -176,7 +178,7 @@
 </section>
 
 <!-- ===== SERVICES (Parts, GPS, Engine) with icons only ===== -->
-<section id="services" class="bg-primary py-20">
+<section id="parts-services" class="bg-primary py-20">
     <div class="max-w-7xl mx-auto text-center px-4">
         <h3 class="text-4xl font-bold mb-6 text-white">Our Services</h3>
         <p class="text-white/80 mb-12 max-w-2xl mx-auto">Genuine parts, expert navigation, and Mercury outboard service</p>
@@ -207,6 +209,19 @@
     </div>
 </section>
 
+<!-- ===== GPS SYSTEMS (clickable) ===== -->
+    <section id="gps-systems" class="py-20 px-6 md:px-16 bg-soft-teal text-[#21053b]">
+        <div class="max-w-6xl mx-auto">
+            <h2 class="text-4xl font-bold mb-4 flex items-center gap-3"><i class="fas fa-map-marked-alt"></i> GPS & Fish Finders</h2>
+            <div class="grid md:grid-cols-3 gap-6">
+                <div class="bg-white p-6 rounded-3xl shadow-lg"><i class="fas fa-map text-deep-purple text-3xl"></i><h3 class="font-bold text-xl mt-2">Marine GPS 16ch</h3><p class="text-sm">Furuno / Garmin · <span class="font-bold">in stock</span></p></div>
+                <div class="bg-white p-6 rounded-3xl shadow-lg"><i class="fas fa-fish text-deep-purple text-3xl"></i><h3 class="font-bold text-xl mt-2">Fish Finder combo</h3><p class="text-sm">CHIRP, side scan · ₹24,990</p></div>
+                <div class="bg-white p-6 rounded-3xl shadow-lg"><i class="fas fa-broadcast-tower text-deep-purple text-3xl"></i><h3 class="font-bold text-xl mt-2">AIS transponder</h3><p class="text-sm">Class B + antenna</p></div>
+            </div>
+        </div>
+    </section>
+
+
 <!-- ===== WHATSAPP CHATBOT SIMULATION + AUTO-REPLY PREVIEW ===== -->
 <section class="bg-accent text-primary py-12">
     <div class="max-w-4xl mx-auto text-center px-4">
@@ -225,7 +240,7 @@
 </section>
 
 <!-- ===== BOOKING + ₹500 ADVANCE + PAYMENT GATEWAY (Razorpay) ===== -->
-<section id="booking" class="bg-primary py-20">
+<section id="contact" class="bg-primary py-20">
     <div class="max-w-xl mx-auto px-4">
         <h3 class="text-3xl md:text-4xl font-bold text-center text-white mb-8">📋 Book Service · ₹500 Advance</h3>
 
