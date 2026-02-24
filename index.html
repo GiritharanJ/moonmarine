@@ -27,9 +27,9 @@
             100% { background-position: 0% 100%; }
         }
         .waterfall-bg {
-            background: linear-gradient(145deg, #86f7f2 0%, #4fb3af 40%, #014770 90%);
-            background-size: 200% 200%;
-            animation: waterFlow 8s ease infinite alternate;
+    background: linear-gradient(145deg, #1b2550 0%, #111733 60%, #000814 100%);
+    background-size: 200% 200%;
+    animation: waterFlow 8s ease infinite alternate;
             position: relative;
             overflow: hidden;
         }
@@ -108,11 +108,8 @@
 <header class="bg-primary sticky top-0 shadow-lg z-50 border-b border-accent/30">
     <div class="max-w-7xl mx-auto flex justify-between items-center p-4">
         <!-- logo + name: logo spot (you can replace with your own logo file) -->
-<div class="flex items-center space-x-4">
-    <img src="logo.jpeg" 
-         alt="Moon Marine Services Logo"
-         class="h-14 md:h-16 w-auto object-contain drop-shadow-lg">
-
+<div class="logo-area">
+            <div class="anchor-logo"><i class="fas fa-anchor"></i></div>
     <div class="leading-tight">
         <h1 class="text-xl md:text-2xl font-bold tracking-wide">MOON MARINE</h1>
         <p class="text-xs text-accent">Mercury Authorized Dealer</p>
@@ -140,7 +137,12 @@
 <a href="https://wa.me/+917708007222" class="wa-float" target="_blank"><i class="fab fa-whatsapp"></i></a>
 
 <!-- ===== HERO SECTION with WATERFALL ANIMATION (color #86f7f2) ===== -->
+
 <section class="waterfall-bg text-center py-28 px-4 relative">
+<div class="flex justify-center mt-10">
+    <img src="logo.jpeg"
+         class="h-28 md:h-36 opacity-90 drop-shadow-2xl">
+</div>
     <div class="hero-content max-w-4xl mx-auto">
         <h2 class="text-4xl md:text-6xl font-extrabold mb-6 leading-tight text-white drop-shadow-lg">
             Reliable Marine Engine <br>& GPS Solutions
@@ -225,22 +227,7 @@
     </section>
 
 
-<!-- ===== WHATSAPP CHATBOT SIMULATION + AUTO-REPLY PREVIEW ===== -->
-<section class="bg-accent text-primary py-12">
-    <div class="max-w-4xl mx-auto text-center px-4">
-        <div class="chatbot-preview inline-flex flex-col sm:flex-row items-center gap-4">
-            <i class="fab fa-whatsapp text-4xl"></i>
-            <span class="font-bold text-xl">Marine Assistant (Chatbot)</span>
-            <span class="bg-primary text-white px-4 py-2 rounded-full text-sm">🔁 auto-reply enabled</span>
-        </div>
-        <div class="grid sm:grid-cols-3 gap-3 mt-8 max-w-2xl mx-auto text-left">
-            <div class="bg-white/30 backdrop-blur p-4 rounded-2xl flex items-center gap-2"><i class="fas fa-cogs"></i> “Looking for Parts” → catalog PDF</div>
-            <div class="bg-white/30 backdrop-blur p-4 rounded-2xl flex items-center gap-2"><i class="fas fa-calendar"></i> “Need Engine Service” → booking link</div>
-            <div class="bg-white/30 backdrop-blur p-4 rounded-2xl flex items-center gap-2"><i class="fas fa-map"></i> “GPS Installation” → ask location</div>
-        </div>
-        <p class="text-sm mt-6 opacity-80">👇 Try clicking WhatsApp float — hover shows expert chat. (demo)</p>
-    </div>
-</section>
+
 
 <!-- ===== BOOKING + ₹500 ADVANCE + PAYMENT GATEWAY (Razorpay) ===== -->
 <section id="contact" class="bg-primary py-20">
