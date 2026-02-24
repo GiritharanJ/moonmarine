@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Moon Marine · Mercury Dealer</title>
+    <!-- Tailwind + custom colors (primary #111733, accent #faffff) -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#111733',
+                        accent: '#faffff',
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- Font Awesome 6 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        .wa-float {
+            position: fixed; bottom: 30px; right: 30px;
+            background: #25D366; width: 64px; height: 64px;
+            border-radius: 50%; display: flex; align-items: center; justify-content: center;
+            font-size: 2.4rem; color: white; box-shadow: 0 20px 30px -8px rgba(0,0,0,0.4);
+            z-index: 100; transition: 0.2s; text-decoration: none;
+            animation: gentleBounce 2.5s infinite;
+        }
+        @keyframes gentleBounce { 0%,100%{ transform:translateY(0); } 50%{ transform:translateY(-8px); } }
+        .wa-float:hover { transform:scale(1.08) translateY(-4px); }
+        .wa-float:hover::after {
+            content: "Chat with Marine Expert"; position: absolute; right: 75px;
+            background: #111733; color: white; padding: 8px 18px; border-radius: 40px;
+            font-size: 0.9rem; white-space: nowrap; font-weight: 500;
+            border: 1px solid #faffff; pointer-events: none;
+        }
+        .hover-lift:hover { transform: translateY(-3px); box-shadow: 0 20px 25px -5px rgba(0,0,0,0.2); }
+    </style>
+</head>
+<body class="bg-primary text-white">
+
+<!-- FLOATING WHATSAPP (global) -->
+<a href="https://wa.me/+917708007222" class="wa-float" target="_blank"><i class="fab fa-whatsapp"></i></a>
+
+<!-- ==================== HEADER (shared across all pages) ==================== -->
+<header class="bg-primary shadow-lg border-b border-accent/30 sticky top-0 z-50">
+    <div class="max-w-7xl mx-auto flex justify-between items-center p-4">
+        <!-- Logo + anchor -->
+        <div class="flex items-center gap-4">
+            <div class="text-accent text-3xl"><i class="fas fa-anchor"></i></div>
+            <div class="leading-tight">
+                <h1 class="text-xl md:text-2xl font-bold tracking-wide">MOON MARINE</h1>
+                <p class="text-xs text-accent">Mercury Authorized Dealer</p>
+            </div>
+        </div>
+
+        <!-- MEGA NAVIGATION DROPDOWN (Services) + regular links -->
+        <nav class="hidden md:flex items-center space-x-6 font-medium relative">
+            <a href="index.html" class="hover:text-accent">Home</a>
+            
+            <!-- About dropdown (simple) -->
+            <div class="relative group">
+                <a href="about.html" class="hover:text-accent">About</a>
+                <div class="absolute hidden group-hover:block bg-white text-primary p-4 rounded-2xl shadow-xl w-48 top-full left-0 border border-accent">
+                    <a href="about.html#history" class="block py-2 hover:bg-accent/20 px-3 rounded">History</a>
+                    <a href="about.html#team" class="block py-2 hover:bg-accent/20 px-3 rounded">Team</a>
+                    <a href="about.html#locations" class="block py-2 hover:bg-accent/20 px-3 rounded">Locations</a>
+                </div>
+            </div>
+
+            <!-- Services Mega dropdown -->
+            <div class="relative group">
+                <a href="services.html" class="hover:text-accent">Services</a>
+                <div class="absolute hidden group-hover:block bg-white text-primary p-6 rounded-3xl shadow-2xl w-[600px] top-full left-0 grid grid-cols-3 gap-4 border border-accent">
+                    <a href="engine-service.html" class="hover:bg-accent/20 p-2 rounded"><i class="fas fa-tools mr-2"></i>Engine Service</a>
+                    <a href="gps-systems.html" class="hover:bg-accent/20 p-2 rounded"><i class="fas fa-map-marked-alt mr-2"></i>GPS Systems</a>
+                    <a href="mercury-engines.html" class="hover:bg-accent/20 p-2 rounded"><i class="fas fa-water mr-2"></i>Mercury Engines</a>
+                    <a href="spare-parts.html" class="hover:bg-accent/20 p-2 rounded"><i class="fas fa-cogs mr-2"></i>Spare Parts</a>
+                    <a href="amc.html" class="hover:bg-accent/20 p-2 rounded"><i class="fas fa-calendar-check mr-2"></i>AMC</a>
+                    <a href="projects.html" class="hover:bg-accent/20 p-2 rounded"><i class="fas fa-ship mr-2"></i>Projects</a>
+                </div>
+            </div>
+
+            <a href="projects.html" class="hover:text-accent">Projects</a>
+            <a href="certifications.html" class="hover:text-accent">Certifications</a>
+            <a href="contact.html" class="hover:text-accent">Contact</a>
+        </nav>
+
+        <!-- WhatsApp button -->
+        <a href="https://wa.me/+917708007222" target="_blank" class="bg-accent text-primary px-5 py-2 rounded-full font-bold hover:scale-105 transition flex items-center gap-2 shadow-md"><i class="fab fa-whatsapp text-lg"></i> WhatsApp</a>
+    </div>
+</header>
+
+<!-- ==================== 8. PROJECTS PAGE (projects.html) ==================== -->
+<section id="projects" class="bg-accent text-primary py-20">
+    <div class="max-w-7xl mx-auto px-4">
+        <h2 class="text-4xl font-bold mb-8 text-center">🚢 Completed Projects</h2>
+        <div class="grid md:grid-cols-3 gap-6">
+            <div class="bg-white p-6 rounded-3xl shadow-xl">Chennai Port – 10 tug repower (2025)</div>
+            <div class="bg-white p-6 rounded-3xl shadow-xl">Nagapattinam fleet – 40 GPS/AIS (2024)</div>
+            <div class="bg-white p-6 rounded-3xl shadow-xl">Mumbai offshore – 6x Mercury 600hp (2026)</div>
+        </div>
+    </div>
+</section>
+
+
+<!-- ==================== FOOTER ==================== -->
+<footer class="bg-primary border-t border-accent/30 text-center p-6 text-gray-300">
+    <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center">
+        <div>© 2026 Moon Marine Services | Tharangambadi, India</div>
+        <div class="flex gap-4">
+            <a href="about.html" class="hover:text-accent">About</a>
+            <a href="services.html" class="hover:text-accent">Services</a>
+            <a href="projects.html" class="hover:text-accent">Projects</a>
+            <a href="certifications.html" class="hover:text-accent">Certifications</a>
+            <a href="contact.html" class="hover:text-accent">Contact</a>
+        </div>
+        <div><a href="https://wa.me/917708007222" class="text-accent text-2xl"><i class="fab fa-whatsapp"></i></a> +91 7708007222</div>
+    </div>
+</footer>
+
+<script>
+function sendToWhatsApp(service){ window.open("https://wa.me/+917708007222?text="+encodeURIComponent("Hello Moon Marine, I'm interested in "+service), "_blank"); }
+function razorpayDemo(){ alert('✅ Razorpay demo: ₹500 payment successful. Invoice & WhatsApp confirmation.'); }
+</script>
+
+<!-- In production, split into separate files: index.html, about.html, services.html, engine-service.html, gps-systems.html, mercury-engines.html, spare-parts.html, projects.html, certifications.html, amc.html, contact.html. They share header/footer. -->
+</body>
+</html>
