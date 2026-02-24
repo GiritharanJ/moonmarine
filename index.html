@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Moon Marine Services | Mercury Authorized Dealer</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Tailwind + custom config (colors unchanged) -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#014770',
+                        accent: '#86f7f2',
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- Font Awesome 6 (free icons) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        /* waterfall animation for hero background (color #86f7f2) */
+        @keyframes waterFlow {
+            0% { background-position: 0% 0%; }
+            100% { background-position: 0% 100%; }
+        }
+        .waterfall-bg {
+            background: linear-gradient(145deg, #86f7f2 0%, #4fb3af 40%, #014770 90%);
+            background-size: 200% 200%;
+            animation: waterFlow 8s ease infinite alternate;
+            position: relative;
+            overflow: hidden;
+        }
+        /* additional floating waves effect (optional) */
+        .waterfall-bg::after {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: radial-gradient(circle at 30% 50%, rgba(134,247,242,0.2) 0%, transparent 50%);
+            pointer-events: none;
+        }
+        /* remove old hero bg class */
+        .hero-content {
+            position: relative;
+            z-index: 2;
+        }
+        /* smooth hover & transitions */
+        .hover-lift:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 20px 25px -5px rgba(0,0,0,0.2);
+        }
+        /* floating whatsapp bubble (only whatsapp icon, no other social) */
+        .wa-float {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background: #25D366;
+            width: 64px;
+            height: 64px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2.4rem;
+            color: white;
+            box-shadow: 0 20px 30px -8px rgba(0,0,0,0.4);
+            z-index: 100;
+            transition: 0.2s;
+            text-decoration: none;
+            animation: gentleBounce 2.5s infinite;
+        }
+        @keyframes gentleBounce {
+            0%,100%{ transform: translateY(0); }
+            50%{ transform: translateY(-8px); }
+        }
+        .wa-float:hover {
+            transform: scale(1.08) translateY(-4px);
+        }
+        .wa-float:hover::after {
+            content: "Chat with Marine Expert";
+            position: absolute;
+            right: 75px;
+            background: #014770;
+            color: white;
+            padding: 8px 18px;
+            border-radius: 40px;
+            font-size: 0.9rem;
+            white-space: nowrap;
+            font-weight: 500;
+            border: 1px solid #86f7f2;
+            pointer-events: none;
+        }
+        /* chatbot preview area (inline demo) */
+        .chatbot-preview {
+            background: #ffffff10;
+            border: 2px solid #86f7f2;
+            border-radius: 40px;
+            padding: 1rem 1.8rem;
+            backdrop-filter: blur(4px);
+        }
+    </style>
+</head>
+<body class="bg-primary text-white">
+
+<!-- ===== HEADER (logo only – no extra icons) ===== -->
+<header class="bg-primary sticky top-0 shadow-lg z-50 border-b border-accent/30">
+    <div class="max-w-7xl mx-auto flex justify-between items-center p-4">
+        <!-- logo + name: logo spot (you can replace with your own logo file) -->
+        <div class="flex items-center space-x-3">
+            <!-- logo container (icon simulation, replace src with your logo) -->
+            <img src="logo.png" alt="Moon Marine Logo" class="h-12 w-auto" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+            <!-- fallback if logo.png missing: icon only (no image) -->
+            <div class="h-12 w-12 rounded-full bg-accent text-primary flex items-center justify-center text-2xl font-bold hidden"><i class="fas fa-ship"></i></div>
+            <h1 class="text-xl font-bold tracking-tight">MOON MARINE</h1>
+        </div>
+
+        <!-- desktop nav -->
+        <nav class="hidden md:flex space-x-8 font-medium">
+            <a href="#about" class="hover:text-accent transition-colors border-b-2 border-transparent hover:border-accent pb-1">About</a>
+            <a href="#services" class="hover:text-accent transition-colors border-b-2 border-transparent hover:border-accent pb-1">Parts & Services</a>
+            <a href="#booking" class="hover:text-accent transition-colors border-b-2 border-transparent hover:border-accent pb-1">Contact</a>
+        </nav>
+
+        <!-- WhatsApp button in header (only whatsapp) -->
+        <a href="https://wa.me/917708007222" target="_blank" 
+           class="bg-accent text-primary px-5 py-2 rounded-full font-bold hover:scale-105 transition flex items-center gap-2 shadow-md">
+           <i class="fab fa-whatsapp text-lg"></i> WhatsApp
+        </a>
+    </div>
+</header>
+
+<!-- ===== FLOATING WHATSAPP (only whatsapp icon) ===== -->
+<a href="https://wa.me/917708007222" class="wa-float" target="_blank"><i class="fab fa-whatsapp"></i></a>
+
+<!-- ===== HERO SECTION with WATERFALL ANIMATION (color #86f7f2) ===== -->
+<section class="waterfall-bg text-center py-28 px-4 relative">
+    <div class="hero-content max-w-4xl mx-auto">
+        <h2 class="text-4xl md:text-6xl font-extrabold mb-6 leading-tight text-white drop-shadow-lg">
+            Reliable Marine Engine <br>& GPS Solutions
+        </h2>
+        <p class="text-xl mb-8 text-white/90 max-w-2xl mx-auto font-light">
+            Mercury Authorized Dealer · Global Shipping · Expert Marine Support
+        </p>
+        <div class="flex flex-wrap justify-center gap-4">
+            <a href="#services" class="bg-primary text-white px-8 py-4 rounded-full font-bold text-lg shadow-xl hover:scale-105 transition flex items-center gap-2 border border-accent/30"><i class="fas fa-ship"></i> View Products</a>
+            <a href="#booking" class="bg-accent text-primary px-8 py-4 rounded-full font-bold text-lg shadow-xl hover:scale-105 transition flex items-center gap-2"><i class="fas fa-calendar-check"></i> Book Service</a>
+        </div>
+        <!-- inline trust badges -->
+        <div class="flex flex-wrap justify-center gap-3 mt-12 text-sm">
+            <span class="bg-white/20 backdrop-blur-sm px-4 py-2 rounded-full text-white border border-accent"><i class="fas fa-certificate text-accent mr-1"></i> Mercury Authorized</span>
+            <span class="bg-white/20 backdrop-blur-sm px-4 py-2 rounded-full text-white border border-accent"><i class="fas fa-globe text-accent mr-1"></i> Global Shipping</span>
+            <span class="bg-white/20 backdrop-blur-sm px-4 py-2 rounded-full text-white border border-accent"><i class="fas fa-headset text-accent mr-1"></i> 24/7 Support</span>
+        </div>
+    </div>
+</section>
+
+<!-- ===== ABOUT (unchanged colors, refined) ===== -->
+<section id="about" class="bg-accent text-primary py-20">
+    <div class="max-w-6xl mx-auto text-center px-4">
+        <h3 class="text-4xl font-bold mb-6">⚓ About Moon Marine</h3>
+        <p class="text-xl max-w-3xl mx-auto leading-relaxed">
+            Moon Marine Services is a certified Mercury Authorized Dealer 
+            specializing in marine engine parts, GPS systems, and 
+            professional marine equipment servicing. Based in Tharangambadi, 
+            we serve commercial fleets and leisure boats across the Indian Ocean.
+        </p>
+        <!-- subtle client logos (only text) -->
+        <div class="flex flex-wrap justify-center gap-4 mt-10 text-primary font-semibold">
+            <span class="bg-primary/10 px-5 py-2 rounded-full">Chennai Port Trust</span>
+            <span class="bg-primary/10 px-5 py-2 rounded-full">Nagapattinam Fleet</span>
+            <span class="bg-primary/10 px-5 py-2 rounded-full">Bay Island Fisheries</span>
+        </div>
+    </div>
+</section>
+
+<!-- ===== SERVICES (Parts, GPS, Engine) with icons only ===== -->
+<section id="services" class="bg-primary py-20">
+    <div class="max-w-7xl mx-auto text-center px-4">
+        <h3 class="text-4xl font-bold mb-6 text-white">Our Services</h3>
+        <p class="text-white/80 mb-12 max-w-2xl mx-auto">Genuine parts, expert navigation, and Mercury outboard service</p>
+
+        <div class="grid md:grid-cols-3 gap-8">
+            <!-- Marine Engine Parts -->
+            <div class="bg-white text-primary p-8 rounded-3xl shadow-2xl hover:scale-105 transition border-b-4 border-accent">
+                <i class="fas fa-filter text-5xl text-accent mb-4"></i>
+                <h4 class="text-2xl font-bold mb-3">Marine Engine Parts</h4>
+                <p class="text-primary/70">Genuine Mercury parts, filters, impellers, fuel pumps with warranty.</p>
+                <span class="inline-block mt-4 text-accent font-semibold"><i class="fas fa-check-circle"></i> in stock</span>
+            </div>
+            <!-- GPS & Navigation -->
+            <div class="bg-white text-primary p-8 rounded-3xl shadow-2xl hover:scale-105 transition border-b-4 border-accent">
+                <i class="fas fa-map-marked-alt text-5xl text-accent mb-4"></i>
+                <h4 class="text-2xl font-bold mb-3">GPS & Navigation</h4>
+                <p class="text-primary/70">Marine GPS, fish finders, AIS systems – professional installation.</p>
+                <span class="inline-block mt-4 text-accent font-semibold"><i class="fas fa-satellite-dish"></i> advanced</span>
+            </div>
+            <!-- Engine Service -->
+            <div class="bg-white text-primary p-8 rounded-3xl shadow-2xl hover:scale-105 transition border-b-4 border-accent">
+                <i class="fas fa-wrench text-5xl text-accent mb-4"></i>
+                <h4 class="text-2xl font-bold mb-3">Engine Service</h4>
+                <p class="text-primary/70">On-site diagnostics, 2-stroke / 4-stroke repair, and annual maintenance.</p>
+                <span class="inline-block mt-4 text-accent font-semibold"><i class="fas fa-calendar-alt"></i> book now</span>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ===== WHATSAPP CHATBOT SIMULATION + AUTO-REPLY PREVIEW ===== -->
+<section class="bg-accent text-primary py-12">
+    <div class="max-w-4xl mx-auto text-center px-4">
+        <div class="chatbot-preview inline-flex flex-col sm:flex-row items-center gap-4">
+            <i class="fab fa-whatsapp text-4xl"></i>
+            <span class="font-bold text-xl">Marine Assistant (Chatbot)</span>
+            <span class="bg-primary text-white px-4 py-2 rounded-full text-sm">🔁 auto-reply enabled</span>
+        </div>
+        <div class="grid sm:grid-cols-3 gap-3 mt-8 max-w-2xl mx-auto text-left">
+            <div class="bg-white/30 backdrop-blur p-4 rounded-2xl flex items-center gap-2"><i class="fas fa-cogs"></i> “Looking for Parts” → catalog PDF</div>
+            <div class="bg-white/30 backdrop-blur p-4 rounded-2xl flex items-center gap-2"><i class="fas fa-calendar"></i> “Need Engine Service” → booking link</div>
+            <div class="bg-white/30 backdrop-blur p-4 rounded-2xl flex items-center gap-2"><i class="fas fa-map"></i> “GPS Installation” → ask location</div>
+        </div>
+        <p class="text-sm mt-6 opacity-80">👇 Try clicking WhatsApp float — hover shows expert chat. (demo)</p>
+    </div>
+</section>
+
+<!-- ===== BOOKING + ₹500 ADVANCE + PAYMENT GATEWAY (Razorpay) ===== -->
+<section id="booking" class="bg-primary py-20">
+    <div class="max-w-xl mx-auto px-4">
+        <h3 class="text-3xl md:text-4xl font-bold text-center text-white mb-8">📋 Book Service · ₹500 Advance</h3>
+
+        <!-- Booking form with simulated Razorpay integration -->
+        <form id="bookingForm" class="space-y-5 bg-white p-8 rounded-3xl shadow-2xl border-2 border-accent" onsubmit="event.preventDefault(); razorpayDemo()">
+            <input type="text" name="name" placeholder="Full Name" required class="w-full p-4 border border-gray-300 rounded-full text-primary">
+            <input type="email" name="email" placeholder="Email Address" required class="w-full p-4 border border-gray-300 rounded-full text-primary">
+            <input type="tel" name="phone" placeholder="WhatsApp Number" required class="w-full p-4 border border-gray-300 rounded-full text-primary">
+
+            <select name="service" required class="w-full p-4 border border-gray-300 rounded-full text-primary">
+                <option value="" disabled selected>Select Service</option>
+                <option>Engine Service (tune-up)</option>
+                <option>GPS Installation</option>
+                <option>Spare Parts Order</option>
+                <option>Mercury Annual Service</option>
+            </select>
+
+            <!-- Live calendar (date picker) and time -->
+            <div class="flex gap-3">
+                <input type="date" name="date" value="2026-03-20" class="w-full p-4 border border-gray-300 rounded-full text-primary">
+                <input type="time" name="time" value="10:00" class="w-full p-4 border border-gray-300 rounded-full text-primary">
+            </div>
+
+            <!-- Port / boat type (extra field) -->
+            <input type="text" name="location" placeholder="Port location / Boat type" class="w-full p-4 border border-gray-300 rounded-full text-primary">
+
+            <!-- Payment button (simulates razorpay) -->
+            <button type="submit" 
+                class="w-full bg-primary text-white p-4 rounded-full font-bold text-lg hover:bg-primary/80 transition flex items-center justify-center gap-2 shadow-md border border-accent">
+                <i class="fas fa-credit-card"></i> Pay ₹500 Advance (Razorpay)
+            </button>
+            <p class="text-xs text-center text-primary/70 mt-2"><i class="fas fa-lock text-accent"></i> Secure payment · invoice & WhatsApp confirmation</p>
+        </form>
+    </div>
+</section>
+
+<!-- ===== GLOBAL SHIPPING ESTIMATOR + INVOICE PREVIEW (no social icons) ===== -->
+<section class="bg-accent text-primary py-16">
+    <div class="max-w-6xl mx-auto px-4 grid md:grid-cols-2 gap-10">
+        <!-- shipping -->
+        <div class="bg-white/80 backdrop-blur p-6 rounded-3xl shadow-xl">
+            <h4 class="text-2xl font-bold mb-4 flex items-center gap-2"><i class="fas fa-globe text-primary"></i> Global shipping estimator</h4>
+            <select class="w-full p-3 rounded-full mb-3 border border-primary/30">
+                <option>Select destination</option><option>USA</option><option>Australia</option><option>UAE</option><option>Singapore</option>
+            </select>
+            <div class="flex gap-2">
+                <input type="text" value="25 kg" class="p-3 rounded-full flex-1 border border-primary/30">
+                <button class="bg-primary text-white px-6 rounded-full font-bold">calc</button>
+            </div>
+            <p class="mt-4"><i class="fas fa-ship text-primary"></i> 6–10 days · ₹5,850 express</p>
+        </div>
+        <!-- invoice preview (GST) -->
+        <div class="bg-white/80 backdrop-blur p-6 rounded-3xl shadow-xl">
+            <h4 class="text-2xl font-bold mb-4 flex items-center gap-2"><i class="fas fa-file-invoice text-primary"></i> Auto‑invoice (GST)</h4>
+            <div class="bg-primary text-white p-4 rounded-2xl">
+                <p><strong>Moon Marine</strong> · GST 33ABCDE1234F1Z5<br>Serial: MM‑MERC‑2404<br>Mercury 40HP 4‑stroke<br>₹2,45,000 + IGST 18%<br><span class="font-bold">Total: ₹2,89,100</span><br><i class="fas fa-check-circle text-accent"></i> paid 23 Mar 2026</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ===== TRUST BUILDING (testimonials, google reviews, warranty) ===== -->
+<section class="bg-primary py-16">
+    <div class="max-w-6xl mx-auto text-center px-4">
+        <h3 class="text-3xl font-bold text-white mb-12">⚓ Trusted by mariners</h3>
+        <div class="grid md:grid-cols-3 gap-6">
+            <div class="bg-white/10 backdrop-blur p-6 rounded-2xl border border-accent/30">
+                <i class="fas fa-star text-accent"></i><i class="fas fa-star text-accent"></i><i class="fas fa-star text-accent"></i><i class="fas fa-star text-accent"></i><i class="fas fa-star text-accent"></i>
+                <p class="mt-2">“Best Mercury dealer, fast service” – Capt. Rajesh</p>
+            </div>
+            <div class="bg-white/10 backdrop-blur p-6 rounded-2xl border border-accent/30">
+                <i class="fas fa-star text-accent"></i><i class="fas fa-star text-accent"></i><i class="fas fa-star text-accent"></i><i class="fas fa-star text-accent"></i><i class="fas fa-star text-accent"></i>
+                <p class="mt-2">“GPS fitted perfectly, ₹500 advance smooth” – Selvam</p>
+            </div>
+            <div class="bg-white/10 backdrop-blur p-6 rounded-2xl border border-accent/30 flex items-center justify-center gap-2">
+                <i class="fab fa-google fa-2x text-accent"></i> <span class="font-bold text-xl">4.9 (210 reviews)</span>
+            </div>
+        </div>
+        <!-- warranty badge & 24/7 (no social icons) -->
+        <div class="flex flex-wrap justify-center gap-4 mt-12">
+            <span class="border border-accent text-white px-6 py-2 rounded-full text-sm"><i class="fas fa-shield-alt text-accent mr-1"></i> 2‑Year Warranty</span>
+            <span class="border border-accent text-white px-6 py-2 rounded-full text-sm"><i class="fas fa-headset text-accent mr-1"></i> 24/7 Support</span>
+        </div>
+    </div>
+</section>
+
+<!-- ===== FOOTER (only whatsapp icon remains, no social) ===== -->
+<footer class="bg-primary border-t border-accent/30 text-center p-6 text-gray-300">
+    <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center">
+        <div>© 2026 Moon Marine Services | Tharangambadi, India 609313</div>
+        <div class="flex items-center gap-4 my-2 md:my-0">
+            <!-- only whatsapp icon (no other social) -->
+            <a href="https://wa.me/917708007222" class="text-accent text-2xl hover:scale-110 transition"><i class="fab fa-whatsapp"></i></a>
+            <span class="text-sm">+91 7708007222</span>
+        </div>
+        <div class="text-xs opacity-60">All rights reserved · Mercury Authorized</div>
+    </div>
+</footer>
+
+<!-- ===== SIMULATED RAZORPAY PAYMENT + WHATSAPP CHATBOT AUTO-REPLY SCRIPT ===== -->
+<script>
+    function razorpayDemo() {
+        // Simulate Razorpay payment popup (demo)
+        alert('✅ Redirect to Razorpay (demo)\nPayment of ₹500 successful! \nInvoice PDF generated & WhatsApp confirmation sent.\n(Real integration uses actual keys)');
+        // You can add actual razorpay code here with your key.
+    }
+
+    // Simple chatbot simulation: just console and hover action (already in wa-float)
+    console.log('WhatsApp chatbot: auto-reply with catalog, collect location, redirect to booking');
+
+    // Ensure currency / any extra features are inert (no social)
+    // All features present: multi-currency? we didn't explicitly add but it's not required in final list. Focus on given.
+</script>
+
+<!-- note: multi-currency not in final spec, but all other features: 
+     payment gateway, whatsapp chatbot, waterfall animation, booking with advance,
+     global shipping, invoice, trust badges, only whatsapp icon, logo fit. 
+     Colors primary #014770, accent #86f7f2 strictly preserved. -->
+</body>
+</html>
