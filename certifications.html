@@ -153,26 +153,92 @@
     </div>
 </section>
 
-<!-- ==================== FOOTER ==================== -->
-<footer class="bg-primary border-t border-accent/30 text-center p-6 text-gray-300">
-    <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center">
-        <div>© 2026 Moon Marine Services | Tharangambadi, India</div>
-        <div class="flex gap-4">
-            <a href="about.html" class="hover:text-accent">About</a>
-            <a href="services.html" class="hover:text-accent">Services</a>
-            <a href="projects.html" class="hover:text-accent">Projects</a>
-            <a href="certifications.html" class="hover:text-accent">Certifications</a>
-            <a href="contact.html" class="hover:text-accent">Contact</a>
+   <!-- ========== REDESIGNED FOOTER (exactly as requested) ========== -->
+    <footer class="bg-primary border-t border-accent/30 py-10 px-4 md:px-6 text-gray-200">
+        <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8">
+
+            <!-- LEFT COLUMN: Company Description + Legal -->
+            <div class="space-y-4 text-sm leading-relaxed">
+                <h3 class="text-xl font-bold text-white flex items-center gap-2">
+                    <i class="fas fa-anchor text-accent"></i> Moon Marine
+                </h3>
+                <p class="text-gray-300">
+                    Moon Marine is a marine engineering company specializing in the supply of Mercury engines, GPS installation, boat machinery services, and maintenance. The company is also engaged in the supply and assembly of OEM spare parts for ship repair and marine contracts, including genuine spare parts for MTU and Detroit Diesel engines.
+                </p>
+                <p class="text-accent font-semibold">Legal: Authorized Agent for Mercury.</p>
+                <p class="text-xs text-gray-400 italic border-t border-accent/20 pt-3">
+                    Disclaimer: This website is operated by an independent supplier/dealer. All parts and warranties are subject to the terms and conditions of the respective companies.
+                </p>
+            </div>
+
+            <!-- CENTER COLUMN: Contact Info (with icons) -->
+            <div class="space-y-4">
+                <h3 class="text-xl font-bold text-white flex items-center gap-2">
+                    <i class="fas fa-address-card text-accent"></i> Contact Info
+                </h3>
+                <div class="space-y-3">
+                    <!-- location -->
+                    <div class="flex items-start gap-3">
+                        <i class="fas fa-map-marker-alt text-accent mt-1 w-5"></i>
+                        <span>Trangambadi harbour, Tamilnadu, India</span>
+                    </div>
+                    <!-- phone -->
+                    <div class="flex items-center gap-3">
+                        <i class="fas fa-phone-alt text-accent w-5"></i>
+                        <a href="tel:+917708007222" class="hover:text-accent transition">+91 7708007222</a>
+                    </div>
+                    <!-- email -->
+                    <div class="flex items-center gap-3">
+                        <i class="fas fa-envelope text-accent w-5"></i>
+                        <a href="mailto:rajivgandhi@moonmarine.com" class="hover:text-accent transition">rajivgandhi@moonmarine.com</a>
+                    </div>
+                    <!-- whatsapp (clickable) -->
+                    <div class="flex items-center gap-3">
+                        <i class="fab fa-whatsapp text-accent w-5 text-lg"></i>
+                        <a href="https://wa.me/917708007222" target="_blank" class="hover:text-accent transition">+91 7708007222 (WhatsApp)</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- RIGHT COLUMN: Supplier Showroom + Google Map -->
+            <div class="space-y-4">
+                <h3 class="text-xl font-bold text-white flex items-center gap-2">
+                    <i class="fas fa-store text-accent"></i> Supplier Showroom
+                </h3>
+                <!-- Embedded Google Map (Tharangambadi harbour area) -->
+                <div class="map-container w-full h-44 md:h-48 rounded-2xl overflow-hidden border-2 border-accent/30 shadow-lg">
+                    <iframe 
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3916.072769670292!2d79.85105147363885!3d11.033167154408469!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a551a3582f2180f%3A0xf0ccc33e5641ab4f!2sTharangambadi%20Fishing%20Hbr%20Rd%2C%20Tharangambadi%2C%20Tamil%20Nadu%20609313!5e0!3m2!1sen!2sin!4v1771992738056!5m2!1sen!2sin" 
+                        style="border:0;" 
+                        allowfullscreen="" 
+                        loading="lazy" 
+                        referrerpolicy="no-referrer-when-downgrade">
+                    </iframe>
+                </div>
+                <p class="text-sm text-gray-300"><i class="fas fa-map-pin text-accent mr-1"></i> Tharangambadi Harbour, Tamil Nadu</p>
+            </div>
         </div>
-        <div><a href="https://wa.me/917708007222" class="text-accent text-2xl"><i class="fab fa-whatsapp"></i></a> +91 7708007222</div>
-    </div>
-</footer>
+
+        <!-- Bottom bar with copyright & quick links (clean, minimal) -->
+        <div class="max-w-7xl mx-auto mt-10 pt-4 border-t border-accent/20 flex flex-col md:flex-row justify-between items-center text-xs text-gray-400">
+            <div>© 2026 Moon Marine Services | Tharangambadi, Tamilnadu, India</div>
+            <div class="flex gap-6 mt-2 md:mt-0">
+                <a href="about.html" class="hover:text-accent transition">About</a>
+                <a href="services.html" class="hover:text-accent transition">Services</a>
+                <a href="projects.html" class="hover:text-accent transition">Projects</a>
+                <a href="certifications.html" class="hover:text-accent transition">Certifications</a>
+                <a href="contact.html" class="hover:text-accent transition">Contact</a>
+            </div>
+        </div>
+    </footer>
+    
 
 <script src="assets/js/main.js"></script>
 
 <!-- In production, split into separate files: index.html, about.html, services.html, engine-service.html, gps-systems.html, mercury-engines.html, spare-parts.html, projects.html, certifications.html, amc.html, contact.html. They share header/footer. -->
 </body>
 </html>
+
 
 
 
