@@ -215,13 +215,52 @@
         </div>
         <!-- 10 popular services (grid) -->
         <div class="mt-20">
-            <h3 class="text-2xl font-bold mb-8">⚙️ Our Services</h3>
+            <h3 class="text-2xl font-bold mb-10 text-center">⚙ Our Services</h3>
             <div class="grid grid-cols-2 md:grid-cols-5 gap-4">
-                <div onclick="sendToWhatsApp('Engine Repair')" class="bg-white/10 p-4 rounded-2xl cursor-pointer hover:bg-white/20"><i class="fas fa-tools text-accent text-2xl"></i><p class="text-sm mt-1">Engine Repair</p></div>
-                <div onclick="sendToWhatsApp('Mercury Service')" class="bg-white/10 p-4 rounded-2xl cursor-pointer"><i class="fas fa-ship text-accent text-2xl"></i><p class="text-sm">Mercury Service</p></div>
-                <div onclick="sendToWhatsApp('GPS Installation')" class="bg-white/10 p-4 rounded-2xl cursor-pointer"><i class="fas fa-map-marked-alt text-accent text-2xl"></i><p class="text-sm">GPS Installation</p></div>
-                <div onclick="sendToWhatsApp('Fish Finder')" class="bg-white/10 p-4 rounded-2xl cursor-pointer"><i class="fas fa-fish text-accent text-2xl"></i><p class="text-sm">Fish Finder</p></div>
-                <div onclick="sendToWhatsApp('AIS Setup')" class="bg-white/10 p-4 rounded-2xl cursor-pointer"><i class="fas fa-broadcast-tower text-accent text-2xl"></i><p class="text-sm">AIS Setup</p></div>
+                <div onclick="sendToWhatsApp('Engine Repair')" class="cursor-pointer rounded-xl overflow-hidden hover:scale-105 transition">
+                <img src="assets/images/services/engine-repair.jpg" alt="Engine Repair" class="w-full h-40 object-cover">
+                    <div class="bg-white/10 text-center py-3">
+                <p class="text-sm font-medium">Engine Repair</p>
+            </div>
+        </div>
+               <div onclick="sendToWhatsApp('Mercury Service')" 
+             class="cursor-pointer rounded-xl overflow-hidden hover:scale-105 transition">
+             <img src="assets/images/services/mercury-service.jpg"
+                 alt="Mercury Service"
+                 class="w-full h-40 object-cover">
+            <div class="bg-white/10 text-center py-3">
+                <p class="text-sm font-medium">Mercury Service</p>
+            </div>
+        </div>
+              <div onclick="sendToWhatsApp('GPS Installation')" 
+             class="cursor-pointer rounded-xl overflow-hidden hover:scale-105 transition">
+            <img src="assets/images/services/gps-installation.jpg"
+                 alt="GPS Installation"
+                 class="w-full h-40 object-cover">
+            <div class="bg-white/10 text-center py-3">
+                <p class="text-sm font-medium">GPS Installation</p>
+            </div>
+        </div>
+              <div onclick="sendToWhatsApp('Fish Finder')" 
+             class="cursor-pointer rounded-xl overflow-hidden hover:scale-105 transition">
+            <img src="assets/images/services/fish-finder.jpg"
+                 alt="Fish Finder"
+                 class="w-full h-40 object-cover">
+            <div class="bg-white/10 text-center py-3">
+                <p class="text-sm font-medium">Fish Finder</p>
+            </div>
+        </div>
+               <div onclick="sendToWhatsApp('AIS Setup')" 
+             class="cursor-pointer rounded-xl overflow-hidden hover:scale-105 transition">
+
+            <img src="assets/images/services/ais-setup.jpg"
+                 alt="AIS Setup"
+                 class="w-full h-40 object-cover">
+
+            <div class="bg-white/10 text-center py-3">
+                <p class="text-sm font-medium">AIS Setup</p>
+            </div>
+        </div>
                 <div onclick="sendToWhatsApp('Spare Parts')" class="bg-white/10 p-4 rounded-2xl cursor-pointer"><i class="fas fa-cogs text-accent text-2xl"></i><p class="text-sm">Spare Parts</p></div>
                 <div onclick="sendToWhatsApp('Emergency')" class="bg-white/10 p-4 rounded-2xl cursor-pointer"><i class="fas fa-exclamation-triangle text-accent text-2xl"></i><p class="text-sm">Emergency</p></div>
                 <div onclick="sendToWhatsApp('Engine Installation')" class="bg-white/10 p-4 rounded-2xl cursor-pointer"><i class="fas fa-anchor text-accent text-2xl"></i><p class="text-sm">Installation</p></div>
@@ -324,6 +363,7 @@
 <!-- In production, split into separate files: index.html, about.html, services.html, engine-service.html, gps-systems.html, mercury-engines.html, spare-parts.html, projects.html, certifications.html, amc.html, contact.html. They share header/footer. -->
 </body>
 </html>
+
 
 
 
