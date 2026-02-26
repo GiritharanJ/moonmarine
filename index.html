@@ -199,59 +199,60 @@
 
 </header>    
 <!-- ==================== 1. HOME PAGE (index.html) ==================== -->
-<section id="home" class="relative h-[700px] flex items-center justify-center text-center overflow-hidden">
 
-    <!-- ===== BACKGROUND SLIDER ===== -->
-    <div class="absolute inset-0">
 
-        <img src="assets/images/slide1.png"
-             class="slide absolute w-full h-full object-cover opacity-100 transition-opacity duration-1000">
+ <section id="home" class="relative h-[700px] flex items-center justify-center text-center overflow-hidden">
 
-        <img src="assets/images/slide2.png"
-             class="slide absolute w-full h-full object-cover opacity-0 transition-opacity duration-1000">
+    <!-- Background Slider -->
+    <div class="absolute inset-0 -z-10">
+        <img src="assets/images/slide1.png" class="slide absolute w-full h-full object-cover opacity-100 transition-opacity duration-1000">
+        <img src="assets/images/slide2.png" class="slide absolute w-full h-full object-cover opacity-0 transition-opacity duration-1000">
+        <img src="assets/images/slide3.png" class="slide absolute w-full h-full object-cover opacity-0 transition-opacity duration-1000">
+        <img src="assets/images/slide4.jpg" class="slide absolute w-full h-full object-cover opacity-0 transition-opacity duration-1000">
+        <img src="assets/images/slide5.png" class="slide absolute w-full h-full object-cover opacity-0 transition-opacity duration-1000">
+        <img src="assets/images/slide6.jpg" class="slide absolute w-full h-full object-cover opacity-0 transition-opacity duration-1000">
 
-        <img src="assets/images/Slide3.png"
-             class="slide absolute w-full h-full object-cover opacity-0 transition-opacity duration-1000">
-
-        <img src="assets/images/slide4.jpg"
-             class="slide absolute w-full h-full object-cover opacity-0 transition-opacity duration-1000">
-
-        <img src="assets/images/slide5.png"
-             class="slide absolute w-full h-full object-cover opacity-0 transition-opacity duration-1000">
-
-        <img src="assets/images/slide6.jpg"
-             class="slide absolute w-full h-full object-cover opacity-0 transition-opacity duration-1000">
-
-        <!-- Dark Overlay -->
         <div class="absolute inset-0 bg-black/60"></div>
     </div>
 
-    <!-- ===== HERO CONTENT ===== -->
-
-    <div class="max-w-6xl mx-auto text-center">
-        <div class="inline-block bg-accent/20 backdrop-blur-sm px-5 py-2 rounded-full text-accent border border-accent/40 text-sm font-medium mb-6">
+    <!-- Hero Content -->
+    <div class="relative z-10 max-w-6xl mx-auto px-4">
+        <div class="inline-block bg-white/20 backdrop-blur-sm px-5 py-2 rounded-full text-white border border-white/30 text-sm font-medium mb-6">
             <i class="fas fa-certificate mr-2"></i> Mercury Authorized Dealer
         </div>
-        <h1 class="text-5xl md:text-6xl lg:text-7xl font-extrabold leading-tight">
-            <span class="block text-accent mt-2">Reliable Marine Engine</span>
+
+        <h1 class="text-5xl md:text-6xl lg:text-7xl font-extrabold leading-tight text-white">
+            <span class="block text-accent">Reliable Marine Engine</span>
             <span class="block">& GPS Solutions</span>
         </h1>
-        <p class="text-lg md:text-xl text-white/80 mt-6 max-w-3xl mx-auto">Mercury Authorized Dealer · Global Shipping </p>
+
+        <p class="text-lg md:text-xl text-white/80 mt-6">
+            Mercury Authorized Dealer · Global Shipping
+        </p>
+
         <div class="flex flex-wrap justify-center gap-5 mt-10">
-            <a href="services.html" class="bg-primary border-2 border-accent text-white px-8 py-4 rounded-full font-bold text-lg hover:bg-accent hover:text-primary transition shadow-lg flex items-center gap-2"><i class="fas fa-ship"></i> View Products</a>
-            <a href="contact.html" class="bg-accent text-primary px-8 py-4 rounded-full font-bold text-lg hover:bg-white transition shadow-lg flex items-center gap-2"><i class="fas fa-calendar-check"></i> Book Service</a>
-        </div>
- <!-- client logos (text) -->
-        <div class="flex flex-wrap justify-center gap-4 mt-16">
-            <span class="bg-white/10 px-5 py-2 rounded-full border border-accent/30">Trangambadi harbour Trust</span>
-            <span class="bg-white/10 px-5 py-2 rounded-full border border-accent/30">Nagapattinam Fleet</span>
-            <span class="bg-white/10 px-5 py-2 rounded-full border border-accent/30">Bay Island Fisheries</span>
+            <a href="services.html" class="border-2 border-white text-white px-8 py-4 rounded-full font-bold hover:bg-white hover:text-primary transition">
+                View Products
+            </a>
+
+            <a href="contact.html" class="bg-white text-primary px-8 py-4 rounded-full font-bold hover:bg-accent transition">
+                Book Service
+            </a>
         </div>
 
+        <div class="flex flex-wrap justify-center gap-4 mt-12">
+            <span class="bg-white/10 px-5 py-2 rounded-full border border-white/30">Trangambadi Harbour Trust</span>
+            <span class="bg-white/10 px-5 py-2 rounded-full border border-white/30">Nagapattinam Fleet</span>
+            <span class="bg-white/10 px-5 py-2 rounded-full border border-white/30">Bay Island Fisheries</span>
+        </div>
+    </div>
+</section>
         
         <!-- 10 popular services (grid) -->
-        <div class="mt-20">
-            <h3 class="text-2xl font-bold mb-10 text-center">⚙ Our Services</h3>
+      <section id="services" class="bg-primary py-20">
+    <div class="max-w-7xl mx-auto px-4">
+
+        <h3 class="text-2xl font-bold mb-10 text-center">⚙ Our Services</h3>
             <div class="grid grid-cols-2 md:grid-cols-5 gap-4">
                 <div onclick="sendToWhatsApp('Engine Repair')" class="cursor-pointer rounded-xl overflow-hidden hover:scale-105 transition">
                 <img src="assets/images/engine-repair.jpg" alt="Engine Repair" class="w-full h-40 object-cover">
@@ -428,6 +429,7 @@
 <!-- In production, split into separate files: index.html, about.html, services.html, engine-service.html, gps-systems.html, mercury-engines.html, spare-parts.html, projects.html, certifications.html, amc.html, contact.html. They share header/footer. -->
 </body>
 </html>
+
 
 
 
