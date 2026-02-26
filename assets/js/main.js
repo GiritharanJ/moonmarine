@@ -1,3 +1,7 @@
+function toggleMobileServices() {
+    document.getElementById("mobile-services").classList.toggle("hidden");
+}
+
 document.addEventListener("DOMContentLoaded", function () {
 
     const menuBtn = document.getElementById("menu-btn");
