@@ -66,7 +66,7 @@
 <a href="https://wa.me/+917708007222" class="wa-float" target="_blank"><i class="fab fa-whatsapp"></i></a>
 
 <!-- ==================== HEADER (shared across all pages) ==================== -->
-<header class="bg-primary top-0 z-50 shadow-lg">
+<header class="bg-primary shadow-md">
 
     <!-- Top Row -->
     <div class="max-w-7xl mx-auto flex justify-between items-center p-4">
@@ -87,56 +87,10 @@
         </div>
 
         <!-- Desktop Navigation -->
-       <nav class="hidden md:flex items-center space-x-8 font-medium relative">
-
-    <a href="index.html" class="hover:text-accent">Home</a>
-
-    <!-- ABOUT -->
-    <div class="group relative">
-        <button class="hover:text-accent">About</button>
-
-        <div class="absolute left-0 mt-4 w-64 bg-white text-black rounded-lg shadow-xl 
-                    opacity-0 invisible group-hover:opacity-100 group-hover:visible 
-                    transition-all duration-300 z-50">
-
-            <div class="p-4 space-y-3">
-                <a href="about.html" class="block hover:text-blue-600">Company Profile</a>
-                <a href="certifications.html" class="block hover:text-blue-600">Certifications</a>
-                <a href="projects.html" class="block hover:text-blue-600">Our Projects</a>
-            </div>
-        </div>
-    </div>
-
-    <!-- SERVICES (MEGA MENU) -->
-    <div class="group relative">
-        <button class="hover:text-accent">Services</button>
-
-        <div class="absolute left-1/2 -translate-x-1/2 mt-4 w-[700px] bg-white text-black 
-                    rounded-xl shadow-2xl p-8 
-                    opacity-0 invisible group-hover:opacity-100 group-hover:visible 
-                    transition-all duration-300 z-50">
-
-            <div class="grid grid-cols-3 gap-8">
-
-                <div>
-                    <h3 class="font-bold mb-3">Marine Engines</h3>
-                    <a href="engine-service.html" class="block hover:text-blue-600 mb-2">Engine Repair</a>
-                    <a href="mercury-engines.html" class="block hover:text-blue-600 mb-2">Mercury Engines</a>
-                </div>
-
-                <div>
-                    <h3 class="font-bold mb-3">GPS Systems</h3>
-                    <a href="gps-systems.html" class="block hover:text-blue-600 mb-2">Installation</a>
-                    <a href="gps-systems.html" class="block hover:text-blue-600 mb-2">Maintenance</a>
-                </div>
-                <div>
-                    <h3 class="font-bold mb-3">Spare Parts</h3>
-                    <a href="spare-parts.html" class="block hover:text-blue-600 mb-2">Original Parts</a>
-                    <a href="spare-parts.html" class="block hover:text-blue-600 mb-2">Order Parts</a>
-                </div>
-                 </div>
-        </div>
-    </div>
+        <nav class="hidden md:flex items-center space-x-6 font-medium">
+            <a href="index.html" class="hover:text-accent">Home</a>
+            <a href="about.html" class="hover:text-accent">About</a>
+            <a href="services.html" class="hover:text-accent">Services</a>
             <a href="projects.html" class="hover:text-accent">Projects</a>
             <a href="certifications.html" class="hover:text-accent">Certifications</a>
             <a href="contact.html" class="hover:text-accent">Contact</a>
@@ -162,42 +116,28 @@
     </div>
 
     <!-- Mobile Menu (Full Width) -->
-<div id="mobile-menu" class="hidden md:hidden bg-primary border-t border-accent/20">
+    <div id="mobile-menu"
+         class="hidden md:hidden bg-primary border-t border-accent/20">
 
-    <div class="flex flex-col py-6 px-6 space-y-4 font-medium">
-
-        <a href="index.html">Home</a>
-
-        <!-- Mobile Services Dropdown -->
-        <button onclick="toggleMobileServices()" 
-                class="text-left flex justify-between items-center">
-            Services
-            <i class="fas fa-chevron-down"></i>
-        </button>
-
-        <div id="mobile-services" class="hidden pl-4 space-y-2 text-sm">
-            <a href="engine-service.html">Engine Repair</a>
-            <a href="mercury-engines.html">Mercury Engines</a>
-            <a href="gps-systems.html">GPS Installation</a>
-            <a href="spare-parts.html">Spare Parts</a>
-        </div>
-
-        <a href="about.html" class="hover:text-accent">About</a>
+        <div class="flex flex-col text-center py-6 space-y-4 font-medium">
+            <a href="index.html" class="hover:text-accent">Home</a>
+            <a href="about.html" class="hover:text-accent">About</a>
+            <a href="services.html" class="hover:text-accent">Services</a>
             <a href="projects.html" class="hover:text-accent">Projects</a>
             <a href="certifications.html" class="hover:text-accent">Certifications</a>
             <a href="contact.html" class="hover:text-accent">Contact</a>
 
+            <!-- WhatsApp inside mobile -->
+            <a href="https://wa.me/+917708007222"
+               class="bg-accent text-primary mx-6 py-2 rounded-full font-bold">
+               WhatsApp
+            </a>
+        </div>
 
     </div>
 
-</div>
-
-
-
-    
-  
-
 </header>    
+  
 <!-- ==================== 1. HOME PAGE (index.html) ==================== -->
 
 
@@ -544,6 +484,7 @@
 <!-- In production, split into separate files: index.html, about.html, services.html, engine-service.html, gps-systems.html, mercury-engines.html, spare-parts.html, projects.html, certifications.html, amc.html, contact.html. They share header/footer. -->
 </body>
 </html>
+
 
 
 
