@@ -33,7 +33,13 @@ function sendToWhatsApp(service){
         "_blank"
     );
 }
-
+function sendEngineLead(model) {
+    const message = `Hello Moon Marine, I'm interested to purchase the ${model}. Please share price and free quotation.`;
+    window.open(
+        "https://wa.me/+917708007222?text=" + encodeURIComponent(message),
+        "_blank"
+    );
+}
 function razorpayDemo(){
     alert('✅ Razorpay demo: ₹500 payment successful.');
 }
