@@ -143,10 +143,95 @@
     <div class="max-w-7xl mx-auto px-4">
         <h2 class="text-4xl font-bold mb-8 text-center">Mercury Outboards – Authorized Range</h2>
         <div class="grid md:grid-cols-4 gap-6">
-            <div class="bg-white p-6 rounded-3xl shadow-xl"><i class="fas fa-water text-primary text-3xl"></i><h3 class="font-bold text-2xl mt-2">Verado®</h3><p class="text-sm">200–600hp, premium</p><span class="inline-block mt-2 text-primary">Learn More →</span></div>
-            <div class="bg-white p-6 rounded-3xl shadow-xl"><i class="fas fa-ship text-primary text-3xl"></i><h3 class="font-bold text-2xl mt-2">FourStroke</h3><p class="text-sm">75–300hp, recreational</p><span class="inline-block mt-2 text-primary">Learn More →</span></div>
-            <div class="bg-white p-6 rounded-3xl shadow-xl"><i class="fas fa-rocket text-primary text-3xl"></i><h3 class="font-bold text-2xl mt-2">Pro XS®</h3><p class="text-sm">performance, tournament</p><span class="inline-block mt-2 text-primary">Learn More →</span></div>
-            <div class="bg-white p-6 rounded-3xl shadow-xl"><i class="fas fa-anchor text-primary text-3xl"></i><h3 class="font-bold text-2xl mt-2">SeaPro™</h3><p class="text-sm">commercial duty</p><span class="inline-block mt-2 text-primary">Learn More →</span></div>
+ <div onclick="sendEngineLead('Verado® (250-600hp)')"
+                 class="cursor-pointer bg-white/10 rounded-xl overflow-hidden hover:scale-105 transition">
+
+                <img src="assets/images/Verado.jpeg"
+                     alt="Verado® (250-600hp)"
+                     class="w-full h-40 object-cover">
+
+                <div class="p-4 text-center">
+                    <h3 class="font-semibold text-sm">Verado® (250-600hp)</h3>
+                    <p class="text-xs text-white/70">Experience unmatched comfort with Mercury’s Advanced MidSection (AMS), delivering a smoother, quieter ride, combined with easy maintenance, superior fuel efficiency, and heavy-duty durability built for demanding marine environments.</p>
+                </div>
+            </div>
+
+            <!-- Duplicate below block and change model + image -->
+            
+            <div onclick="sendEngineLead('FourStroke (2.5-300hp)')" class="cursor-pointer bg-white/10 rounded-xl overflow-hidden hover:scale-105 transition">
+                <img src="assets/images/FourStroke.jpeg" class="w-full h-40 object-cover">
+                <div class="p-4 text-center">
+                    <h3 class="font-semibold text-sm">FourStroke (2.5-300hp)</h3>
+                    <p class="text-xs text-white/70">Enjoy a smooth and quiet ride with advanced vibration control, compact transom-friendly design, and rugged corrosion-resistant durability.</p>
+                </div>
+            </div>
+
+            <div onclick="sendEngineLead('Pro XS® (115-300hp)')" class="cursor-pointer bg-white/10 rounded-xl overflow-hidden hover:scale-105 transition">
+                <img src="assets/images/ProX.jpeg" class="w-full h-40 object-cover">
+                <div class="p-4 text-center">
+                    <h3 class="font-semibold text-sm">Pro XS® (115-300hp)</h3>
+                    <p class="text-xs text-white/70">Built for speed and instant throttle response, Pro XS outboards deliver powerful acceleration, lightweight efficiency, and maximum range for serious performance on the water.</p>
+                </div>
+            </div>
+
+            <div onclick="sendEngineLead('SeaPro™ (15-500hp)')" class="cursor-pointer bg-white/10 rounded-xl overflow-hidden hover:scale-105 transition">
+                <img src="assets/images/SeaPro.jpeg" class="w-full h-40 object-cover">
+                <div class="p-4 text-center">
+                    <h3 class="font-semibold text-sm">SeaPro™ (15-500hp)</h3>
+                    <p class="text-xs text-white/70">Optimized for maximum fuel efficiency even on 87-octane fuel, SeaPro outboards deliver dependable power for long working hours.</p>
+                </div>
+            </div>
+
+            <div onclick="sendEngineLead('TwoStroke (2.5-50hp)')" class="cursor-pointer bg-white/10 rounded-xl overflow-hidden hover:scale-105 transition">
+                <img src="assets/images/Twostroke.JPG" class="w-full h-40 object-cover">
+                <div class="p-4 text-center">
+                    <h3 class="font-semibold text-sm">TwoStroke (2.5-50hp)</h3>
+                    <p class="text-xs text-white/70">Compact, easy to start, and built for portability, Mercury TwoStroke engines offer excellent power-to-weight performance for versatile marine applications.</p>
+                </div>
+            </div>
+            <!-- Add remaining 5 same format -->
+ <div onclick="sendEngineLead('MerCruiser® Sterndrives & Inboards')" class="cursor-pointer bg-white/10 rounded-xl overflow-hidden hover:scale-105 transition">
+                <img src="assets/images/MerCruiser.jpeg" class="w-full h-40 object-cover">
+                <div class="p-4 text-center">
+                    <h3 class="font-semibold text-sm">MerCruiser® Sterndrives & Inboards</h3>
+                    <p class="text-xs text-white/70">Experience powerful acceleration with quieter operation, advanced fuel injection, and improved noise reduction technology.</p>
+                </div>
+            </div>
+
+
+             <div onclick="sendEngineLead('MerCruiser® Tow Sport')" class="cursor-pointer bg-white/10 rounded-xl overflow-hidden hover:scale-105 transition">
+                <img src="assets/images/MerCruiserTow.jpeg" class="w-full h-40 object-cover">
+                <div class="p-4 text-center">
+                    <h3 class="font-semibold text-sm">MerCruiser® Tow Sport</h3>
+                    <p class="text-xs text-white/70">Engineered for smooth, quiet performance and instant throttle response, MerCruiser Tow Sport Inboards deliver exceptional acceleration with advanced fuel efficiency. </p>
+                </div>
+            </div>
+
+
+             <div onclick="sendEngineLead('Drives')" class="cursor-pointer bg-white/10 rounded-xl overflow-hidden hover:scale-105 transition">
+                <img src="assets/images/Drives.jpeg" class="w-full h-40 object-cover">
+                <div class="p-4 text-center">
+                    <h3 class="font-semibold text-sm">Drives</h3>
+                    <p class="text-xs text-white/70">Designed for effortless ownership with simplified maintenance features, MerCruiser drives deliver reliable performance in every marine condition. </p>
+                </div>
+            </div>
+              <div onclick="sendEngineLead('Mercury Diesel')" class="cursor-pointer bg-white/10 rounded-xl overflow-hidden hover:scale-105 transition">
+                <img src="assets/images/Mercurydiesel.jpeg" class="w-full h-40 object-cover">
+                <div class="p-4 text-center">
+                    <h3 class="font-semibold text-sm">Mercury Diesel</h3>
+                    <p class="text-xs text-white/70">Mercury Diesel engines combine exceptional power-to-weight performance with simplified maintenance and advanced cooling systems. </p>
+                </div>
+            </div>
+  <div onclick="sendEngineLead('Avator')" class="cursor-pointer bg-white/10 rounded-xl overflow-hidden hover:scale-105 transition">
+                <img src="assets/images/Avator.jpeg" class="w-full h-40 object-cover">
+                <div class="p-4 text-center">
+                    <h3 class="font-semibold text-sm">Avator</h3>
+                    <p class="text-xs text-white/70">Avator electric outboards offer whisper-quiet performance, intuitive controls, and near-zero maintenance for effortless boating. </p>
+                </div>
+            </div>
+
+            
+
         </div>
     </div>
 </section>
@@ -236,4 +321,5 @@
 <!-- In production, split into separate files: index.html, about.html, services.html, engine-service.html, gps-systems.html, mercury-engines.html, spare-parts.html, projects.html, certifications.html, amc.html, contact.html. They share header/footer. -->
 </body>
 </html>
+
 
