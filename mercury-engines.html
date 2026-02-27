@@ -139,11 +139,28 @@
 </header>    
             
 <!-- ==================== 6. MERCURY ENGINES PAGE (mercury-engines.html) ==================== -->
-<section id="mercury-engines" class="bg-accent text-primary py-20">
+            <section class="bg-primary py-16 border-t border-accent/20">
+
     <div class="max-w-7xl mx-auto px-4">
-        <h2 class="text-4xl font-bold mb-8 text-center">Mercury Outboards – Authorized Range</h2>
-        <div class="grid md:grid-cols-4 gap-6">
- <div onclick="sendEngineLead('Verado® (250-600hp)')"
+
+        <!-- Section Title -->
+        <div class="text-center mb-12">
+            <h2 class="text-3xl md:text-4xl font-bold flex items-center justify-center gap-3">
+                Mercury Outboards – Authorized Range
+            </h2>
+
+            <div class="flex justify-center mt-4">
+                <img src="assets/images/mercury-logo.JPG" 
+                     alt="Mercury Logo"
+                     class="h-12 object-contain">
+            </div>
+        </div>
+
+        <!-- Engine Grid -->
+        <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6">
+
+            <!-- ENGINE CARD TEMPLATE -->
+            <div onclick="sendEngineLead('Verado® (250-600hp)')"
                  class="cursor-pointer bg-white/10 rounded-xl overflow-hidden hover:scale-105 transition">
 
                 <img src="assets/images/Verado.jpeg"
@@ -197,8 +214,6 @@
                     <p class="text-xs text-white/70">Experience powerful acceleration with quieter operation, advanced fuel injection, and improved noise reduction technology.</p>
                 </div>
             </div>
-
-
              <div onclick="sendEngineLead('MerCruiser® Tow Sport')" class="cursor-pointer bg-white/10 rounded-xl overflow-hidden hover:scale-105 transition">
                 <img src="assets/images/MerCruiserTow.jpeg" class="w-full h-40 object-cover">
                 <div class="p-4 text-center">
@@ -206,8 +221,6 @@
                     <p class="text-xs text-white/70">Engineered for smooth, quiet performance and instant throttle response, MerCruiser Tow Sport Inboards deliver exceptional acceleration with advanced fuel efficiency. </p>
                 </div>
             </div>
-
-
              <div onclick="sendEngineLead('Drives')" class="cursor-pointer bg-white/10 rounded-xl overflow-hidden hover:scale-105 transition">
                 <img src="assets/images/Drives.jpeg" class="w-full h-40 object-cover">
                 <div class="p-4 text-center">
@@ -229,12 +242,10 @@
                     <p class="text-xs text-white/70">Avator electric outboards offer whisper-quiet performance, intuitive controls, and near-zero maintenance for effortless boating. </p>
                 </div>
             </div>
-
-            
-
         </div>
     </div>
 </section>
+ 
 
    <!-- ========== REDESIGNED FOOTER (exactly as requested) ========== -->
     <footer class="bg-primary border-t border-accent/30 py-10 px-4 md:px-6 text-gray-200">
@@ -321,5 +332,6 @@
 <!-- In production, split into separate files: index.html, about.html, services.html, engine-service.html, gps-systems.html, mercury-engines.html, spare-parts.html, projects.html, certifications.html, amc.html, contact.html. They share header/footer. -->
 </body>
 </html>
+
 
 
