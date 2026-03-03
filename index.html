@@ -140,48 +140,51 @@
   
 <!-- ==================== 1. HOME PAGE (index.html) ==================== -->
 
-
- <section id="home" class="relative min-h-[470px] md:min-h-[550px] flex items-center justify-center text-center overflow-hidden">
-    <!-- Background Slider -->
+    <!-- ===== BOTTOM RIGHT CORNER CONTENT ===== -->
+<section id="home" class="relative min-h-[400px] md:min-h-[500px] flex flex-col items-center justify-between text-center overflow-hidden py-8">
+    <!-- Background Slider (two images) -->
     <div class="absolute inset-0 -z-10">
-        <img src="assets/images/slide1.png" class="slide absolute w-full h-full object-cover opacity-100 transition-opacity duration-1000">
-        <img src="assets/images/slide2.png" class="slide absolute w-full h-full object-cover opacity-0 transition-opacity duration-1000">
-
-        <div class="absolute inset-0 bg-black/60"></div>
+        <img src="assets/images/background.png" 
+             class="slide absolute w-full h-full object-cover opacity-100 transition-opacity duration-1000" 
+             alt="slide1"
+             onerror="this.style.display='none'">
+        <div class="absolute inset-0 bg-black/10"></div> <!-- darker overlay for readability -->
     </div>
 
-    <!-- Hero Content -->
-    <div class="relative z-10 max-w-6xl mx-auto px-4">
-        <div class="inline-block bg-white/20 backdrop-blur-sm px-5 py-2 rounded-full text-white border border-white/30 text-sm font-medium mb-6">
-            <i class="fas fa-certificate mr-2"></i> Mercury Authorized Dealer
+    <!-- TOP HEAD CONTENT (positioned at top) -->
+    <div class="relative z-10 w-full max-w-6xl mx-auto px-4 mt-8 md:mt-12">
+        <div class="inline-block bg-white/100 backdrop-blur-sm px-5 py-2 rounded-full text-black border border-white/30 text-sm font-medium">
+            <i class="fas fa-certificate mr-2"></i> Mercury Authorized Dealer · Global Shipping
         </div>
-
-        <h1 class="text-5xl md:text-6xl lg:text-7xl font-extrabold leading-tight text-white">
+        
+        <!-- Main heading (also part of top content) -->
+        <h1 class="text-4xl md:text-2xl lg:text-3xl font-extrabold leading-tight text-white mt-5">
             <span class="block text-accent">Reliable Marine Engine</span>
             <span class="block">& GPS Solutions</span>
         </h1>
+    </div>
 
-        <p class="text-lg md:text-xl text-white/80 mt-6">
-            Mercury Authorized Dealer · Global Shipping
-        </p>
-
-        <div class="flex flex-wrap justify-center gap-5 mt-10">
-            <a href="services.html" class="border-2 border-white text-white px-8 py-4 rounded-full font-bold hover:bg-white hover:text-primary transition">
+    <!-- BOTTOM CONTENT (buttons + client logos) -->
+    <div class="relative z-10 w-full max-w-6xl mx-auto px-4 mb-8 md:mb-12">
+        <!-- Buttons -->
+        <div class="flex flex-wrap justify-center gap-5">
+            <a href="services.html" class="bg-white text-primary px-8 py-4 rounded-full font-bold hover:bg-accent transition">
                 View Products
             </a>
-
             <a href="contact.html" class="bg-white text-primary px-8 py-4 rounded-full font-bold hover:bg-accent transition">
                 Book Service
             </a>
         </div>
 
-        <div class="flex flex-wrap justify-center gap-4 mt-12">
-            <span class="bg-white/10 px-5 py-2 rounded-full border border-white/30">Trangambadi Harbour Trust</span>
-            <span class="bg-white/10 px-5 py-2 rounded-full border border-white/30">Nagapattinam Fleet</span>
-            <span class="bg-white/10 px-5 py-2 rounded-full border border-white/30">Bay Island Fisheries</span>
+        <!-- Client logos / names -->
+        <div class="flex flex-wrap justify-center gap-4 mt-8">
+            <span class="bg-white/10 px-5 py-2 rounded-full border border-white/100">Trangambadi Harbour Trust</span>
+            <span class="bg-white/10 px-5 py-2 rounded-full border border-white/100">Nagapattinam Fleet</span>
+            <span class="bg-white/10 px-5 py-2 rounded-full border border-white/100">Bay Island Fisheries</span>
         </div>
     </div>
 </section>
+        
         
         <!-- 10 popular services (grid) -->
       <section id="services" class="bg-primary py-20">
