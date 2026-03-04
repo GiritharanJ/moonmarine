@@ -1,71 +1,49 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Moon Marine · Mercury Dealer</title>
-    <!-- Tailwind + custom colors (primary #111733, accent #faffff) -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        primary: '#111733',
-                        accent: '#faffff',
-                    }
-                }
-            }
-        }
-    </script>
-    <!-- Font Awesome 6 -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <style>
-        .wa-float {
-            position: fixed; bottom: 30px; right: 30px;
-            background: #25D366; width: 64px; height: 64px;
-            border-radius: 50%; display: flex; align-items: center; justify-content: center;
-            font-size: 2.4rem; color: white; box-shadow: 0 20px 30px -8px rgba(0,0,0,0.4);
-            z-index: 100; transition: 0.2s; text-decoration: none;
-            animation: gentleBounce 2.5s infinite;
-        }
-           /* waterfall animation for hero background (color #86f7f2) */
-        @keyframes waterFlow {
-            0% { background-position: 0% 0%; }
-            100% { background-position: 0% 100%; }
-        }
-        .waterfall-bg {
-    background: linear-gradient(145deg, #1b2550 0%, #111733 60%, #000814 100%);
-    background-size: 200% 200%;
-    animation: waterFlow 8s ease infinite alternate;
-            position: relative;
-            overflow: hidden;
-        }
-        /* additional floating waves effect (optional) */
-        .waterfall-bg::after {
-            content: '';
-            position: absolute;
-            top: 0; left: 0; right: 0; bottom: 0;
-            background: radial-gradient(circle at 30% 50%, rgba(134,247,242,0.2) 0%, transparent 50%);
-            pointer-events: none;
-        }
-        @keyframes gentleBounce { 0%,100%{ transform:translateY(0); } 50%{ transform:translateY(-8px); } }
-        .wa-float:hover { transform:scale(1.08) translateY(-4px); }
-        .wa-float:hover::after {
-            content: "Chat with Marine Expert"; position: absolute; right: 75px;
-            background: #111733; color: white; padding: 8px 18px; border-radius: 40px;
-            font-size: 0.9rem; white-space: nowrap; font-weight: 500;
-            border: 1px solid #faffff; pointer-events: none;
-        }
-        .hover-lift:hover { transform: translateY(-3px); box-shadow: 0 20px 25px -5px rgba(0,0,0,0.2); }
-    </style>
-</head>
-<body class="bg-primary text-white">
+ <section id="home" class="relative min-h-[470px] md:min-h-[550px] flex items-center justify-center text-center overflow-hidden">
+    <!-- Background Slider -->
+    <div class="absolute inset-0 -z-10">
+        <img src="assets/images/slide1.png" class="slide absolute w-full h-full object-cover opacity-100 transition-opacity duration-1000">
+<img src="assets/images/slide2.png" class="slide absolute w-full h-full object-cover opacity-100 transition-opacity duration-1000">
 
-<!-- FLOATING WHATSAPP (global) -->
-<a href="https://wa.me/+917708007222" class="wa-float" target="_blank"><i class="fab fa-whatsapp"></i></a>
 
-<!-- ==================== HEADER (shared across all pages) ==================== -->
+
+        <div class="absolute inset-0 bg-black/20"></div>
+    </div>
+
+    <!-- Hero Content -->
+    <div class="relative z-10 max-w-6xl mx-auto px-4">
+        <div class="inline-block bg-white/20 backdrop-blur-sm px-5 py-2 rounded-full text-white border border-white/30 text-sm font-medium mb-6">
+            <i class="fas fa-certificate mr-2"></i> Mercury Authorized Dealer · Global Shipping
+        </div>
+
+        <h1 class="text-5xl md:text-6xl lg:text-7xl font-extrabold leading-tight text-white">
+            <span class="block text-accent">Reliable Marine Engine</span>
+            <span class="block">& GPS Solutions</span>
+        </h1>
+
+        <div class="flex flex-wrap justify-center gap-5 mt-10">
+            <a href="services.html" class="border-2 border-white text-white px-8 py-4 rounded-full font-bold hover:bg-white hover:text-primary transition">
+                View Products
+            </a>
+
+            <a href="contact.html" class="bg-white text-primary px-8 py-4 rounded-full font-bold hover:bg-accent transition">
+                Book Service
+            </a>
+        </div>
+
+        <div class="flex flex-wrap justify-center gap-4 mt-12">
+            <span class="bg-white/10 px-5 py-2 rounded-full border border-white/30">Trangambadi Harbour Trust</span>
+            <span class="bg-white/10 px-5 py-2 rounded-full border border-white/30">Nagapattinam Fleet</span>
+            <span class="bg-white/10 px-5 py-2 rounded-full border border-white/30">Bay Island Fisheries</span>
+        </div>
+    </div>
+</section>
+
+
+
+
+
+
+
 <header class="bg-primary shadow-md">
 
     <!-- Top Row -->
@@ -91,20 +69,22 @@
             <a href="index.html" class="hover:text-accent">Home</a>
             <a href="about.html" class="hover:text-accent">About</a>
             <a href="services.html" class="hover:text-accent">Services</a>
-            <a href="projects.html" class="hover:text-accent">Projects</a>
-            <a href="certifications.html" class="hover:text-accent">Certifications</a>
             <a href="contact.html" class="hover:text-accent">Contact</a>
         </nav>
 
+
+        
+      
+      </div>
+<div class="flex md:flex items-center space-x-3">
+
         <!-- Right Section -->
-        <div class="flex items-center gap-4">
+        
 
             <!-- WhatsApp Button (desktop only) -->
-            <a href="https://wa.me/+917708007222"
-               target="_blank"
-               class="hidden md:flex bg-accent text-primary px-5 py-2 rounded-full font-bold items-center gap-2">
-                <i class="fab fa-whatsapp"></i> WhatsApp
-            </a>
+            <a href="https://wa.me/+917708007222" target="_blank" class="w-8 h-8 flex items-center justify-center rounded-md border border-orange-300/30 bg-white/5 text-white hover:bg-white hover:text-[#25D366] transition-all" title="WhatsApp">
+          <svg class="w-3 h-3 fill-current" viewBox="0 0 32 32"><path d="M16 0C7.163 0 0 7.163 0 16c0 2.824.738 5.476 2.031 7.776L0 32l8.457-2.012A15.93 15.93 0 0 0 16 32c8.837 0 16-7.163 16-16S24.837 0 16 0z"/></svg>
+        </a>
 
             <!-- Mobile Hamburger -->
             <button id="menu-btn" class="md:hidden text-2xl text-accent">
@@ -123,388 +103,18 @@
             <a href="index.html" class="hover:text-accent">Home</a>
             <a href="about.html" class="hover:text-accent">About</a>
             <a href="services.html" class="hover:text-accent">Services</a>
-            <a href="projects.html" class="hover:text-accent">Projects</a>
-            <a href="certifications.html" class="hover:text-accent">Certifications</a>
             <a href="contact.html" class="hover:text-accent">Contact</a>
 
             <!-- WhatsApp inside mobile -->
-            <a href="https://wa.me/+917708007222"
-               class="bg-accent text-primary mx-6 py-2 rounded-full font-bold">
-               WhatsApp
-            </a>
+             <a href="https://wa.me/+917708007222" target="_blank" class="w-8 h-8 flex items-center justify-center rounded-md border border-orange-300/30 bg-white/5 text-white hover:bg-white hover:text-[#25D366] transition-all" title="WhatsApp">
+          <svg class="w-3 h-3 fill-current" viewBox="0 0 32 32"><path d="M16 0C7.163 0 0 7.163 0 16c0 2.824.738 5.476 2.031 7.776L0 32l8.457-2.012A15.93 15.93 0 0 0 16 32c8.837 0 16-7.163 16-16S24.837 0 16 0z"/></svg>
+        </a>
         </div>
 
     </div>
 
 </header>    
   
-<!-- ==================== 1. HOME PAGE (index.html) ==================== -->
-
-    <!-- ===== BOTTOM RIGHT CORNER CONTENT ===== -->
-<section id="home" class="relative min-h-[400px] md:min-h-[500px] flex flex-col items-center justify-between text-center overflow-hidden py-8">
-    <!-- Background Slider (two images) -->
-    <div class="absolute inset-0 -z-10">
-        <img src="assets/images/background.png" 
-             class="slide absolute w-full h-full object-cover opacity-100 transition-opacity duration-1000" 
-             alt="slide1"
-             onerror="this.style.display='none'">
-        <div class="absolute inset-0 bg-black/10"></div> <!-- darker overlay for readability -->
-    </div>
-
-    <!-- TOP HEAD CONTENT (positioned at top) -->
-    <div class="relative z-10 w-full max-w-6xl mx-auto px-4 mt-8 md:mt-12">
-        <div class="inline-block bg-white/100 backdrop-blur-sm px-5 py-2 rounded-full text-black border border-white/30 text-sm font-medium">
-            <i class="fas fa-certificate mr-2"></i> Mercury Authorized Dealer · Global Shipping
-        </div>
-        
-        <!-- Main heading (also part of top content) -->
-        <h1 class="text-4xl md:text-2xl lg:text-3xl font-extrabold leading-tight text-white mt-5">
-            <span class="block text-accent">Reliable Marine Engine</span>
-            <span class="block">& GPS Solutions</span>
-        </h1>
-    </div>
-
-    <!-- BOTTOM CONTENT (buttons + client logos) -->
-    <div class="relative z-10 w-full max-w-6xl mx-auto px-4 mb-8 md:mb-12">
-        <!-- Buttons -->
-        <div class="flex flex-wrap justify-center gap-5">
-            <a href="services.html" class="bg-white text-primary px-8 py-4 rounded-full font-bold hover:bg-accent transition">
-                View Products
-            </a>
-            <a href="contact.html" class="bg-white text-primary px-8 py-4 rounded-full font-bold hover:bg-accent transition">
-                Book Service
-            </a>
-        </div>
-
-        <!-- Client logos / names -->
-        <div class="flex flex-wrap justify-center gap-4 mt-8">
-            <span class="bg-white/10 px-5 py-2 rounded-full border border-white/100">Trangambadi Harbour Trust</span>
-            <span class="bg-white/10 px-5 py-2 rounded-full border border-white/100">Nagapattinam Fleet</span>
-            <span class="bg-white/10 px-5 py-2 rounded-full border border-white/100">Bay Island Fisheries</span>
-        </div>
-    </div>
-</section>
-        
-        
-        <!-- 10 popular services (grid) -->
-      <section id="services" class="bg-primary py-20">
-    <div class="max-w-7xl mx-auto px-4">
-
-        <h3 class="text-2xl font-bold mb-10 text-center">⚙ Our Services</h3>
-            <div class="grid grid-cols-2 md:grid-cols-5 gap-4">
-                <div onclick="sendToWhatsApp('Engine Repair')" class="cursor-pointer rounded-xl overflow-hidden hover:scale-105 transition">
-                <img src="assets/images/engine-repair.jpeg" alt="Engine Repair" class="w-full h-40 object-cover">
-                    <div class="bg-white/10 text-center py-3">
-                <p class="text-sm font-medium">Engine Repair</p>
-            </div>
-        </div>
-               <div onclick="sendToWhatsApp('Mercury Service')" 
-             class="cursor-pointer rounded-xl overflow-hidden hover:scale-105 transition">
-             <img src="assets/images/mercury-service.png"
-                 alt="Mercury Service"
-                 class="w-full h-40 object-cover">
-            <div class="bg-white/10 text-center py-3">
-                <p class="text-sm font-medium">Mercury Service</p>
-            </div>
-        </div>
-              <div onclick="sendToWhatsApp('GPS Installation')" 
-             class="cursor-pointer rounded-xl overflow-hidden hover:scale-105 transition">
-            <img src="assets/images/gps-installation.jpeg"
-                 alt="GPS Installation"
-                 class="w-full h-40 object-cover">
-            <div class="bg-white/10 text-center py-3">
-                <p class="text-sm font-medium">GPS Installation</p>
-            </div>
-        </div>
-              <div onclick="sendToWhatsApp('Fish Finder')" 
-             class="cursor-pointer rounded-xl overflow-hidden hover:scale-105 transition">
-            <img src="assets/images/fish-finder.jpeg"
-                 alt="Fish Finder"
-                 class="w-full h-40 object-cover">
-            <div class="bg-white/10 text-center py-3">
-                <p class="text-sm font-medium">Fish Finder</p>
-            </div>
-        </div>
-               <div onclick="sendToWhatsApp('AIS Setup')" 
-             class="cursor-pointer rounded-xl overflow-hidden hover:scale-105 transition">
-
-            <img src="assets/images/ais-setup.jpeg"
-                 alt="AIS Setup"
-                 class="w-full h-40 object-cover">
-
-            <div class="bg-white/10 text-center py-3">
-                <p class="text-sm font-medium">AIS Setup</p>
-            </div>
-        </div>
-                <div onclick="sendToWhatsApp('Spare Parts')"  class="cursor-pointer rounded-xl overflow-hidden hover:scale-105 transition"> <img src="assets/images/spare-parts.png"
-                 alt="Spare Parts"
-                 class="w-full h-40 object-cover">
-
-            <div class="bg-white/10 text-center py-3">
-                <p class="text-sm font-medium">Spare Parts</p>
-            </div>
-        </div>
-                <div onclick="sendToWhatsApp('Emergency')" class="cursor-pointer rounded-xl overflow-hidden hover:scale-105 transition"> <img src="assets/images/emergency.png"
-                 alt="Emergency"
-                 class="w-full h-40 object-cover">
-
-            <div class="bg-white/10 text-center py-3">
-                <p class="text-sm font-medium">Emergency</p>
-            </div>
-        </div>
-                <div onclick="sendToWhatsApp('Engine Installation')" class="cursor-pointer rounded-xl overflow-hidden hover:scale-105 transition"> <img src="assets/images/installation.jpeg"
-                 alt="Engine Installation"
-                 class="w-full h-40 object-cover">
-
-            <div class="bg-white/10 text-center py-3">
-                <p class="text-sm font-medium">Engine Installation</p>
-            </div>
-        </div>
-                <div onclick="sendToWhatsApp('Electrical')" class="cursor-pointer rounded-xl overflow-hidden hover:scale-105 transition"> <img src="assets/images/electrical.jpeg"
-                 alt="Electrical"
-                 class="w-full h-40 object-cover">
-
-            <div class="bg-white/10 text-center py-3">
-                <p class="text-sm font-medium">Electrical</p>
-            </div>
-        </div>
-                <div onclick="sendToWhatsApp('AMC')" class="cursor-pointer rounded-xl overflow-hidden hover:scale-105 transition"> <img src="assets/images/amc.jpg"
-                 alt="AMC"
-                 class="w-full h-40 object-cover">
-
-            <div class="bg-white/10 text-center py-3">
-                <p class="text-sm font-medium">AMC</p>
-            </div>
-        </div>
-            </div>
-        </div>
-    </div>
-</section>
-
-    <!-- ================= AUTHORIZED DISTRIBUTOR SECTION ================= -->
-<section class="bg-primary py-16 border-t border-accent/20">
-
-    <div class="max-w-7xl mx-auto px-4">
-
-        <!-- Section Title -->
-        <div class="text-center mb-12">
-            <h2 class="text-3xl md:text-4xl font-bold flex items-center justify-center gap-3">
-                Authorized Distributor
-            </h2>
-
-            <div class="flex justify-center mt-4">
-                <img src="assets/images/mercury-logo.JPG" 
-                     alt="Mercury Logo"
-                     class="h-12 object-contain">
-            </div>
-        </div>
-
-        <!-- Engine Grid -->
-        <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6">
-
-            <!-- ENGINE CARD TEMPLATE -->
-            <div onclick="sendEngineLead('Verado® (250-600hp)')"
-                 class="cursor-pointer bg-white/10 rounded-xl overflow-hidden hover:scale-105 transition">
-
-                <img src="assets/images/Verado.jpeg"
-                     alt="Verado® (250-600hp)"
-                     class="w-full h-40 object-cover">
-
-                <div class="p-4 text-center">
-                    <h3 class="font-semibold text-sm">Verado® (250-600hp)</h3>
-                    <p class="text-xs text-white/70">Experience unmatched comfort with Mercury’s Advanced MidSection (AMS), delivering a smoother, quieter ride, combined with easy maintenance, superior fuel efficiency, and heavy-duty durability built for demanding marine environments.</p>
-                </div>
-            </div>
-
-            <!-- Duplicate below block and change model + image -->
-            
-            <div onclick="sendEngineLead('FourStroke (2.5-300hp)')" class="cursor-pointer bg-white/10 rounded-xl overflow-hidden hover:scale-105 transition">
-                <img src="assets/images/FourStroke.jpeg" class="w-full h-40 object-cover">
-                <div class="p-4 text-center">
-                    <h3 class="font-semibold text-sm">FourStroke (2.5-300hp)</h3>
-                    <p class="text-xs text-white/70">Enjoy a smooth and quiet ride with advanced vibration control, compact transom-friendly design, and rugged corrosion-resistant durability.</p>
-                </div>
-            </div>
-
-            <div onclick="sendEngineLead('Pro XS® (115-300hp)')" class="cursor-pointer bg-white/10 rounded-xl overflow-hidden hover:scale-105 transition">
-                <img src="assets/images/ProX.jpeg" class="w-full h-40 object-cover">
-                <div class="p-4 text-center">
-                    <h3 class="font-semibold text-sm">Pro XS® (115-300hp)</h3>
-                    <p class="text-xs text-white/70">Built for speed and instant throttle response, Pro XS outboards deliver powerful acceleration, lightweight efficiency, and maximum range for serious performance on the water.</p>
-                </div>
-            </div>
-
-            <div onclick="sendEngineLead('SeaPro™ (15-500hp)')" class="cursor-pointer bg-white/10 rounded-xl overflow-hidden hover:scale-105 transition">
-                <img src="assets/images/SeaPro.jpeg" class="w-full h-40 object-cover">
-                <div class="p-4 text-center">
-                    <h3 class="font-semibold text-sm">SeaPro™ (15-500hp)</h3>
-                    <p class="text-xs text-white/70">Optimized for maximum fuel efficiency even on 87-octane fuel, SeaPro outboards deliver dependable power for long working hours.</p>
-                </div>
-            </div>
-
-            <div onclick="sendEngineLead('TwoStroke (2.5-50hp)')" class="cursor-pointer bg-white/10 rounded-xl overflow-hidden hover:scale-105 transition">
-                <img src="assets/images/Twostroke.JPG" class="w-full h-40 object-cover">
-                <div class="p-4 text-center">
-                    <h3 class="font-semibold text-sm">TwoStroke (2.5-50hp)</h3>
-                    <p class="text-xs text-white/70">Compact, easy to start, and built for portability, Mercury TwoStroke engines offer excellent power-to-weight performance for versatile marine applications.</p>
-                </div>
-            </div>
-            <!-- Add remaining 5 same format -->
- <div onclick="sendEngineLead('MerCruiser® Sterndrives & Inboards')" class="cursor-pointer bg-white/10 rounded-xl overflow-hidden hover:scale-105 transition">
-                <img src="assets/images/MerCruiser.jpeg" class="w-full h-40 object-cover">
-                <div class="p-4 text-center">
-                    <h3 class="font-semibold text-sm">MerCruiser® Sterndrives & Inboards</h3>
-                    <p class="text-xs text-white/70">Experience powerful acceleration with quieter operation, advanced fuel injection, and improved noise reduction technology.</p>
-                </div>
-            </div>
-
-
-             <div onclick="sendEngineLead('MerCruiser® Tow Sport')" class="cursor-pointer bg-white/10 rounded-xl overflow-hidden hover:scale-105 transition">
-                <img src="assets/images/MerCruiserTow.jpeg" class="w-full h-40 object-cover">
-                <div class="p-4 text-center">
-                    <h3 class="font-semibold text-sm">MerCruiser® Tow Sport</h3>
-                    <p class="text-xs text-white/70">Engineered for smooth, quiet performance and instant throttle response, MerCruiser Tow Sport Inboards deliver exceptional acceleration with advanced fuel efficiency. </p>
-                </div>
-            </div>
-
-
-             <div onclick="sendEngineLead('Drives')" class="cursor-pointer bg-white/10 rounded-xl overflow-hidden hover:scale-105 transition">
-                <img src="assets/images/Drives.jpeg" class="w-full h-40 object-cover">
-                <div class="p-4 text-center">
-                    <h3 class="font-semibold text-sm">Drives</h3>
-                    <p class="text-xs text-white/70">Designed for effortless ownership with simplified maintenance features, MerCruiser drives deliver reliable performance in every marine condition. </p>
-                </div>
-            </div>
-              <div onclick="sendEngineLead('Mercury Diesel')" class="cursor-pointer bg-white/10 rounded-xl overflow-hidden hover:scale-105 transition">
-                <img src="assets/images/Mercurydiesel.jpeg" class="w-full h-40 object-cover">
-                <div class="p-4 text-center">
-                    <h3 class="font-semibold text-sm">Mercury Diesel</h3>
-                    <p class="text-xs text-white/70">Mercury Diesel engines combine exceptional power-to-weight performance with simplified maintenance and advanced cooling systems. </p>
-                </div>
-            </div>
-  <div onclick="sendEngineLead('Avator')" class="cursor-pointer bg-white/10 rounded-xl overflow-hidden hover:scale-105 transition">
-                <img src="assets/images/Avator.jpeg" class="w-full h-40 object-cover">
-                <div class="p-4 text-center">
-                    <h3 class="font-semibold text-sm">Avator</h3>
-                    <p class="text-xs text-white/70">Avator electric outboards offer whisper-quiet performance, intuitive controls, and near-zero maintenance for effortless boating. </p>
-                </div>
-            </div>
-
-
-            
-        </div>
-    </div>
-</section>
-    
-
-
-    <!-- ========== REDESIGNED FOOTER (exactly as requested) ========== -->
-    <footer class="bg-primary border-t border-accent/30 py-10 px-4 md:px-6 text-gray-200">
-        <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8">
-
-            <!-- LEFT COLUMN: Company Description + Legal -->
-            <div class="space-y-4 text-sm leading-relaxed">
-                <h3 class="text-xl font-bold text-white flex items-center gap-2">
-                    <i class="fas fa-anchor text-accent"></i> Moon Marine
-                </h3>
-                <p class="text-gray-300">
-                    Moon Marine is a marine engineering company specializing in the supply of Mercury engines, GPS installation, boat machinery services, and maintenance. The company is also engaged in the supply and assembly of OEM spare parts for ship repair and marine contracts, including genuine spare parts for MTU and Detroit Diesel engines.
-                </p>
-                <p class="text-accent font-semibold">Legal: Authorized Agent for Mercury.</p>
-                <p class="text-xs text-gray-400 italic border-t border-accent/20 pt-3">
-                    Disclaimer: This website is operated by an independent supplier/dealer. All parts and warranties are subject to the terms and conditions of the respective companies.
-                </p>
-            </div>
-
-            <!-- CENTER COLUMN: Contact Info (with icons) -->
-            <div class="space-y-4">
-                <h3 class="text-xl font-bold text-white flex items-center gap-2">
-                    <i class="fas fa-address-card text-accent"></i> Contact Info
-                </h3>
-                <div class="space-y-3">
-                    <!-- location -->
-                    <div class="flex items-start gap-3">
-                        <i class="fas fa-map-marker-alt text-accent mt-1 w-5"></i>
-                        <span>Trangambadi harbour, Tamilnadu, India</span>
-                    </div>
-                    <!-- phone -->
-                    <div class="flex items-center gap-3">
-                        <i class="fas fa-phone-alt text-accent w-5"></i>
-                        <a href="tel:+917708007222" class="hover:text-accent transition">+91 7708007222</a>
-                    </div>
-                    <!-- email -->
-                    <div class="flex items-center gap-3">
-                        <i class="fas fa-envelope text-accent w-5"></i>
-                        <a href="mailto:rajivgandhi@moonmarine.com" class="hover:text-accent transition">rajivgandhi@moonmarine.com</a>
-                    </div>
-                    <!-- whatsapp (clickable) -->
-                    <div class="flex items-center gap-3">
-                        <i class="fab fa-whatsapp text-accent w-5 text-lg"></i>
-                        <a href="https://wa.me/917708007222" target="_blank" class="hover:text-accent transition">+91 7708007222 (WhatsApp)</a>
-                    </div>
-                </div>
-            </div>
-
-            <!-- RIGHT COLUMN: Supplier Showroom + Google Map -->
-            <div class="space-y-4">
-                <h3 class="text-xl font-bold text-white flex items-center gap-2">
-                    <i class="fas fa-store text-accent"></i> Supplier Showroom
-                </h3>
-                <!-- Embedded Google Map (Tharangambadi harbour area) -->
-                <div class="map-container w-full h-44 md:h-48 rounded-2xl overflow-hidden border-2 border-accent/30 shadow-lg">
-                      <iframe 
-                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3916.1033551660285!2d79.85285627363886!3d11.030871854451732!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a551b4fb045a32b%3A0xeba9cb01122ea496!2sMoon%20Marine%20Services!5e0!3m2!1sen!2sin!4v1772252795624!5m2!1sen!2sin" 
-                        class="w-full h-full"
-                        style="border:0;"
-                        allowfullscreen=""
-                        loading="lazy"
-                        referrerpolicy="no-referrer-when-downgrade">
-                    </iframe>
-                </div>
-                <p class="text-sm text-gray-300"><i class="fas fa-map-pin text-accent mr-1"></i> Tharangambadi Harbour, Tamil Nadu</p>
-            </div>
-        </div>
-
-        <!-- Bottom bar with copyright & quick links (clean, minimal) -->
-        <div class="max-w-7xl mx-auto mt-10 pt-4 border-t border-accent/20 flex flex-col md:flex-row justify-between items-center text-xs text-gray-400">
-            <div>© 2026 Moon Marine Services | Tharangambadi, Tamilnadu, India</div>
-            <div class="flex gap-6 mt-2 md:mt-0">
-                <a href="about.html" class="hover:text-accent transition">About</a>
-                <a href="services.html" class="hover:text-accent transition">Services</a>
-                <a href="projects.html" class="hover:text-accent transition">Projects</a>
-                <a href="certifications.html" class="hover:text-accent transition">Certifications</a>
-                <a href="contact.html" class="hover:text-accent transition">Contact</a>
-            </div>
-        </div>
-    </footer>
-    
-
-
-<script src="assets/js/main.js"></script>
-<!-- In production, split into separate files: index.html, about.html, services.html, engine-service.html, gps-systems.html, mercury-engines.html, spare-parts.html, projects.html, certifications.html, amc.html, contact.html. They share header/footer. -->
-</body>
-</html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
