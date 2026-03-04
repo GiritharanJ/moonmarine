@@ -1,3 +1,23 @@
+const menuBtn = document.getElementById("menu-btn");
+const mobileMenu = document.getElementById("mobile-menu");
+const closeMenu = document.getElementById("close-menu");
+const overlay = document.getElementById("mobile-overlay");
+
+menuBtn.onclick = () => {
+    mobileMenu.classList.add("open");
+    overlay.classList.add("open");
+};
+
+closeMenu.onclick = () => {
+    mobileMenu.classList.remove("open");
+    overlay.classList.remove("open");
+};
+
+overlay.onclick = () => {
+    mobileMenu.classList.remove("open");
+    overlay.classList.remove("open");
+};
+
 function toggleMobileServices() {
     document.getElementById("mobile-services").classList.toggle("hidden");
 }
