@@ -219,7 +219,7 @@ transition:0.2s;
 </header>
 <!-- ==================== 11. CONTACT + BOOKING + PAYMENT (contact.html) ==================== -->
   <!-- ========== CONTACT SECTION: TWO FORMS (Quotation & Booking) ========== -->
-    <section id="contact" class="bg-primary py-12 px-2">
+ <section id="contact" class="bg-primary py-12 px-2">
 <div class="max-w-2xl mx-auto">
 
 <h2 class="text-4xl md:text-5xl font-bold text-center text-white mb-4">
@@ -232,37 +232,31 @@ Payment and service confirmation will be provided after discussion.
 </p>
 
 <div class="bg-white/10 backdrop-blur-sm p-8 rounded-3xl border-2 border-accent/30 shadow-2xl">
+   
 
-<form action="https://formsubmit.co/moonmarinenavicationcomunicati@gmail.com" method="POST" class="space-y-5">
+ <form id="serviceForm"
+action="https://formsubmit.co/moonmarinenavicationcomunicati@gmail.com"
+method="POST"
+class="space-y-5">
 
-<input type="text"
-name="name"
-placeholder="Full Name"
-required
+<input type="text" name="name" placeholder="Full Name" required
 class="w-full p-4 border border-gray-300 rounded-full text-primary bg-white">
 
-<input type="email"
-name="email"
-placeholder="Email Address"
-required
+<input type="email" name="email" placeholder="Email Address" required
 class="w-full p-4 border border-gray-300 rounded-full text-primary bg-white">
 
-<input type="tel"
-name="phone"
-placeholder="Mobile / WhatsApp Number"
-required
+<input type="tel" name="phone" placeholder="Mobile / WhatsApp Number" required
 class="w-full p-4 border border-gray-300 rounded-full text-primary bg-white">
 
-<select name="request_type"
-required
+<select id="requestType" name="request_type" required
 class="w-full p-4 border border-gray-300 rounded-full text-primary bg-white">
 
 <option value="" disabled selected>Select Request Type</option>
-<option>Service Booking</option>
-<option>Product Purchase</option>
-<option>Engine Quotation</option>
-<option>Spare Parts Quotation</option>
-<option>GPS / AIS Installation</option>
+<option value="service">Service Booking</option>
+<option value="product">Product Purchase</option>
+<option value="engine_quote">Engine Quotation</option>
+<option value="spare_quote">Spare Parts Quotation</option>
+<option value="gps_install">GPS / AIS Installation</option>
 
 </select>
 
@@ -275,17 +269,26 @@ class="w-full p-4 border border-gray-300 rounded-full text-primary bg-white">
 name="preferred_date"
 class="w-full p-4 border border-gray-300 rounded-full text-primary bg-white">
 
-<textarea
-name="message"
+<textarea name="message"
 placeholder="Additional details (optional)"
 class="w-full p-4 border border-gray-300 rounded-2xl text-primary bg-white"
 rows="4"></textarea>
 
-<button type="submit"
+<!-- SEND REQUEST BUTTON -->
+<button id="sendBtn" type="submit"
 class="w-full bg-accent text-primary font-bold py-4 px-6 rounded-full text-lg hover:bg-opacity-80 transition flex items-center justify-center gap-2 shadow-md">
 
 <i class="fas fa-paper-plane"></i>
 Send Request
+
+</button>
+
+<!-- PAY ADVANCE BUTTON -->
+<button id="payBtn" type="button"
+class="hidden w-full bg-green-500 text-white font-bold py-4 px-6 rounded-full text-lg hover:bg-green-600 transition flex items-center justify-center gap-2 shadow-md">
+
+<i class="fas fa-credit-card"></i>
+Pay ₹500 Advance
 
 </button>
 
