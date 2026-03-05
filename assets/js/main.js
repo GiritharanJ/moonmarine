@@ -60,6 +60,34 @@ function sendEngineLead(model) {
         "_blank"
     );
 }
-function razorpayDemo(){
-    alert('✅ Razorpay demo: ₹500 payment successful.');
+const requestType = document.getElementById("requestType");
+const sendBtn = document.getElementById("sendBtn");
+const payBtn = document.getElementById("payBtn");
+
+requestType.addEventListener("change", function(){
+
+let value = this.value;
+
+if(value === "service" || value === "gps_install"){
+
+sendBtn.classList.add("hidden");
+payBtn.classList.remove("hidden");
+
 }
+else{
+
+payBtn.classList.add("hidden");
+sendBtn.classList.remove("hidden");
+
+}
+
+});
+<script>
+
+document.getElementById("payBtn").onclick = function(){
+
+window.location.href = "https://rzp.io/l/";
+
+};
+
+</script>
