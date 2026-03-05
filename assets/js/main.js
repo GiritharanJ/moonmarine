@@ -60,38 +60,43 @@ function sendEngineLead(model) {
         "_blank"
     );
 }
+
+document.addEventListener("DOMContentLoaded", function(){
+
 const requestType = document.getElementById("requestType");
 const sendBtn = document.getElementById("sendBtn");
 const payBtn = document.getElementById("payBtn");
 
+if(requestType){
+
 requestType.addEventListener("change", function(){
 
 if(this.value === "service"){
+
 sendBtn.style.display = "none";
 payBtn.style.display = "block";
-}
-else{
+
+}else{
+
 payBtn.style.display = "none";
 sendBtn.style.display = "block";
+
 }
 
 });
 
-document.getElementById("payBtn").onclick = function(){
+}
 
+});
+document.addEventListener("DOMContentLoaded", function(){
+
+const payBtn = document.getElementById("payBtn");
+
+if(payBtn){
+payBtn.onclick = function(){
 window.location.href = "https://razorpay.me/@giritharanjanakiraman";
-
 };
-
-const form = document.querySelector("form");
-const thankMessage = document.getElementById("thankMessage");
-
-form.addEventListener("submit", function(){
-
-setTimeout(() => {
-form.style.display = "none";
-thankMessage.style.display = "block";
-}, 500);
+}
 
 });
 
