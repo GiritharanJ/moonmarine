@@ -26,55 +26,64 @@
     }
 
     // ===== FORM BUTTON TOGGLE (Send Request / Pay ₹500) - FIXED =====
-    document.addEventListener("DOMContentLoaded", function() {
-        const requestType = document.getElementById("requestType");
-        const sendBtn = document.getElementById("sendBtn");
-        const payBtn = document.getElementById("payBtn");
-        const serviceForm = document.getElementById("serviceForm");
-        const thankMessage = document.getElementById("thankMessage");
+   document.addEventListener("DOMContentLoaded", function() {
 
-        // Toggle between send and pay buttons based on selection
-        if (requestType && sendBtn && payBtn) {
-            requestType.addEventListener("change", function() {
-                if (this.value === "service") {
-                    sendBtn.classList.add("hidden");
-                    payBtn.classList.remove("hidden");
-                } else {
-                    payBtn.classList.add("hidden");
-                    sendBtn.classList.remove("hidden");
-                }
-            });
-        }
+const requestType = document.getElementById("requestType");
+const sendBtn = document.getElementById("sendBtn");
+const payBtn = document.getElementById("payBtn");
+const serviceForm = document.getElementById("serviceForm");
+const thankMessage = document.getElementById("thankMessage");
 
-        // Payment button click - redirect to Razorpay
-        if (payBtn) {
-            payBtn.onclick = function() {
-                window.location.href = "https://razorpay.me/@giritharanjanakiraman";
-            };
-        }
+// Toggle buttons
+if (requestType && sendBtn && payBtn) {
 
-        // Form submission handling - show thank you message without reloading
-        if (serviceForm) {
-            serviceForm.addEventListener("submit", function(e) {
-                e.preventDefault(); // Prevent actual form submission for demo
-                
-                // Hide the form (optional)
-                // serviceForm.style.display = 'none';
-                
-                // Show thank you message
-                if (thankMessage) {
-                    thankMessage.classList.remove("hidden");
-                }
-                
-                // You can still submit the form via AJAX if needed
-                // For now, we'll just show the message
-                console.log("Form submitted - thank you message shown");
-                
-                // If you want to actually submit to formsubmit.co, uncomment below:
-                // this.submit();
-            });
-        }
+requestType.addEventListener("change", function(){
 
+if(this.value === "service"){
+
+sendBtn.classList.add("hidden");
+payBtn.classList.remove("hidden");
+
+}else{
+
+payBtn.classList.add("hidden");
+sendBtn.classList.remove("hidden");
+
+}
+
+});
+
+}
+
+// Razorpay redirect
+if(payBtn){
+
+payBtn.onclick = function(){
+
+window.location.href = "https://razorpay.me/@giritharanjanakiraman";
+
+};
+
+}
+
+// Show thank message AFTER submit
+if(serviceForm){
+
+serviceForm.addEventListener("submit", function(){
+
+setTimeout(function(){
+
+if(thankMessage){
+thankMessage.classList.remove("hidden");
+}
+
+},500);
+
+});
+
+}
+
+});
         // Fix for formsubmit.co - set _next to current page to avoid redirect
         const nextInput = document.querySelector('input[name="_next"]');
         if (nextInput) {
