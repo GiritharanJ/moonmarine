@@ -26,7 +26,8 @@
     }
 
     // ===== FORM BUTTON TOGGLE (Send Request / Pay ₹500) - FIXED =====
-   document.addEventListener("DOMContentLoaded", function() {
+ 
+    document.addEventListener("DOMContentLoaded", function(){
 
 const requestType = document.getElementById("requestType");
 const sendBtn = document.getElementById("sendBtn");
@@ -34,8 +35,9 @@ const payBtn = document.getElementById("payBtn");
 const serviceForm = document.getElementById("serviceForm");
 const thankMessage = document.getElementById("thankMessage");
 
+
 // Toggle buttons
-if (requestType && sendBtn && payBtn) {
+if(requestType){
 
 requestType.addEventListener("change", function(){
 
@@ -55,42 +57,45 @@ sendBtn.classList.remove("hidden");
 
 }
 
+
 // Razorpay redirect
 if(payBtn){
 
 payBtn.onclick = function(){
 
-window.location.href = "https://razorpay.me/@giritharanjanakiraman";
+window.location.href="https://razorpay.me/@giritharanjanakiraman";
 
 };
 
 }
+
 
 // Show thank message AFTER submit
 if(serviceForm){
 
 serviceForm.addEventListener("submit", function(){
 
-setTimeout(function(){
-
 if(thankMessage){
+
 thankMessage.classList.remove("hidden");
-}
-
-},500);
-
-});
 
 }
 
 });
-        // Fix for formsubmit.co - set _next to current page to avoid redirect
-        const nextInput = document.querySelector('input[name="_next"]');
-        if (nextInput) {
-            nextInput.value = window.location.href; // Stay on same page
-        }
-    });
 
+}
+
+
+// Fix for formsubmit redirect
+const nextInput = document.querySelector('input[name="_next"]');
+
+if(nextInput){
+
+nextInput.value = window.location.href;
+
+}
+
+});
     // ===== OTHER FUNCTIONS (kept from original) =====
     function toggleMobileServices() {
         document.getElementById("mobile-services").classList.toggle("hidden");
