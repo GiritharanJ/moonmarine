@@ -66,28 +66,33 @@ const payBtn = document.getElementById("payBtn");
 
 requestType.addEventListener("change", function(){
 
-let value = this.value;
-
-if(value === "service" || value === "gps_install"){
-
-sendBtn.classList.add("hidden");
-payBtn.classList.remove("hidden");
-
+if(this.value === "service"){
+sendBtn.style.display = "none";
+payBtn.style.display = "block";
 }
 else{
-
-payBtn.classList.add("hidden");
-sendBtn.classList.remove("hidden");
-
+payBtn.style.display = "none";
+sendBtn.style.display = "block";
 }
 
 });
-<script>
 
 document.getElementById("payBtn").onclick = function(){
 
 window.location.href = "https://razorpay.me/@giritharanjanakiraman";
 
 };
+
+const form = document.querySelector("form");
+const thankMessage = document.getElementById("thankMessage");
+
+form.addEventListener("submit", function(){
+
+setTimeout(() => {
+form.style.display = "none";
+thankMessage.style.display = "block";
+}, 500);
+
+});
 
 </script>
