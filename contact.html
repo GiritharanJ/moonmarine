@@ -252,14 +252,15 @@ class="w-full p-4 border border-gray-300 rounded-full text-primary bg-white">
 class="w-full p-4 border border-gray-300 rounded-full text-primary bg-white">
 
 <option value="" disabled selected>Select Request Type</option>
+
 <option value="service">Service Booking</option>
-<option value="product">Product Purchase</option>
-<option value="engine_quote">Engine Quotation</option>
-<option value="spare_quote">Spare Parts Quotation</option>
-<option value="gps_install">GPS / AIS Installation</option>
+<option value="service">GPS / AIS Installation</option>
+
+<option value="quotation">Product Purchase</option>
+<option value="quotation">Engine Quotation</option>
+<option value="quotation">Spare Parts Quotation</option>
 
 </select>
-
 <input type="text"
 name="service_details"
 placeholder="Service or Product Details"
@@ -275,6 +276,8 @@ class="w-full p-4 border border-gray-300 rounded-2xl text-primary bg-white"
 rows="4"></textarea>
 
 <!-- SEND REQUEST BUTTON -->
+<div class="space-y-4">
+
 <button id="sendBtn" type="submit"
 class="w-full bg-accent text-primary font-bold py-4 px-6 rounded-full text-lg hover:bg-opacity-80 transition flex items-center justify-center gap-2 shadow-md">
 
@@ -283,7 +286,6 @@ Send Request
 
 </button>
 
-<!-- PAY ADVANCE BUTTON -->
 <button id="payBtn" type="button"
 class="hidden w-full bg-green-500 text-white font-bold py-4 px-6 rounded-full text-lg hover:bg-green-600 transition flex items-center justify-center gap-2 shadow-md">
 
@@ -292,10 +294,19 @@ Pay ₹500 Advance
 
 </button>
 
-<input type="hidden" name="_captcha" value="false">
+</div>
+
+<input type="hidden" name="_next" value="#contact">
 
 </form>
+<div id="thankMessage"
+class="hidden text-center text-white mt-6 bg-green-500/20 p-4 rounded-xl border border-green-400">
 
+Thank you for contacting Moon Marine.  
+We will contact you within 24 hours via phone or WhatsApp.
+
+</div>
+	
 <p class="text-xs text-center text-white/60 mt-4">
 After receiving your request, we will contact you within 24 hours via phone or WhatsApp.
 </p>
@@ -399,6 +410,7 @@ After receiving your request, we will contact you within 24 hours via phone or W
 <!-- In production, split into separate files: index.html, about.html, services.html, engine-service.html, gps-systems.html, mercury-engines.html, spare-parts.html, projects.html, certifications.html, amc.html, contact.html. They share header/footer. -->
 </body>
 </html>
+
 
 
 
