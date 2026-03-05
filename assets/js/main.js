@@ -21,18 +21,6 @@ overlay.onclick = () => {
 function toggleMobileServices() {
     document.getElementById("mobile-services").classList.toggle("hidden");
 }
-
-document.addEventListener("DOMContentLoaded", function () {
-
-    const menuBtn = document.getElementById("menu-btn");
-    const mobileMenu = document.getElementById("mobile-menu");
-
-    menuBtn.addEventListener("click", function () {
-        mobileMenu.classList.toggle("hidden");
-    });
-
-});
-
 let slides = document.querySelectorAll(".slide");
 let currentSlide = 0;
 
@@ -61,20 +49,20 @@ function sendEngineLead(model) {
     );
 }
 
-document.addEventListener("DOMContentLoaded", function () {
+document.addEventListener("DOMContentLoaded", function(){
 
 const requestType = document.getElementById("requestType");
 const sendBtn = document.getElementById("sendBtn");
 const payBtn = document.getElementById("payBtn");
 
-requestType.addEventListener("change", function () {
+requestType.addEventListener("change", function(){
 
-if (this.value === "service") {
+if(this.value === "service"){
 
 sendBtn.classList.add("hidden");
 payBtn.classList.remove("hidden");
 
-} else {
+}else{
 
 payBtn.classList.add("hidden");
 sendBtn.classList.remove("hidden");
@@ -83,11 +71,11 @@ sendBtn.classList.remove("hidden");
 
 });
 
-});
 document.getElementById("payBtn").onclick = function(){
 
 window.location.href = "https://razorpay.me/@giritharanjanakiraman";
 
 };
 
+});
 </script>
