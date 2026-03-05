@@ -86,7 +86,7 @@ sendBtn.classList.remove("hidden");
 
 document.getElementById("payBtn").onclick = function(){
 
-window.location.href = "https://rzp.io/l/";
+window.location.href = "https://razorpay.me/@giritharanjanakiraman";
 
 };
 
