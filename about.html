@@ -220,47 +220,71 @@ transition:0.2s;
 
 
 <!-- ==================== 2. ABOUT PAGE (about.html) ==================== -->
-<section id="about" class="bg-accent text-primary py-20">
-	 <div class="absolute inset-0 -z-10">
-        <img src="assets/images/background.png" 
-             class="slide absolute w-full h-full object-cover opacity-100 transition-opacity duration-1000" 
-             alt="slide1"
-             onerror="this.style.display='none'">
-        <div class="absolute inset-0 bg-black/02"></div> <!-- darker overlay for readability -->
+<section id="about" class="relative py-20 text-white">
+
+    <!-- Background Image -->
+    <div class="absolute inset-0 -z-10">
+        <img src="assets/images/background.png"
+             class="w-full h-full object-cover"
+             alt="marine background">
+        <div class="absolute inset-0 bg-primary/40"></div>
     </div>
 
     <div class="max-w-6xl mx-auto px-4">
-        <h2 class="text-4xl font-bold mb-8 text-center">⚓Company Profile</h2>
-        <div class="grid md:grid-cols-2 gap-12">
+
+        <h2 class="text-3xl md:text-4xl font-bold text-center mb-12">
+            ⚓ About Moon Marine
+        </h2>
+
+        <div class="grid md:grid-cols-2 gap-10 items-start">
+
+            <!-- Left Content -->
             <div>
                 <h3 class="text-2xl font-bold mb-4">Moon Marine Services</h3>
-                <p class="mb-3">Established in 2015, Moon Marine has grown into a premier Mercury authorized dealer and marine solution provider across the Indian Ocean. With a 25,000 sq. ft. workshop in Tharangambadi and service locations in 12 major ports, we serve commercial fleets, fishing cooperatives, and government vessels.</p>
-                <p><i class="fas fa-check-circle mr-2"></i> 100+ engines serviced annually</p>
-                <p><i class="fas fa-check-circle mr-2"></i> 10+ port contracts</p>
-                <p><i class="fas fa-check-circle mr-2"></i> ISO 9001:2025 (in process)</p>
-                <p><i class="fas fa-check-circle mr-2"></i> Mercury Premier Dealer since 2018</p>
+
+                <p class="text-white/100 leading-relaxed">
+                    Moon Marine Services specializes in the supply of Mercury engines,
+                    marine GPS installation, boat machinery services, and marine equipment maintenance.
+                    Our team supports fishing fleets, marine contractors, and vessel operators
+                    with reliable technical service and genuine spare parts.
+                </p>
+
+                <p class="mt-4 text-white/100">
+                    We are committed to delivering dependable marine solutions
+                    that keep vessels operating safely and efficiently in demanding
+                    sea environments.
+                </p>
             </div>
-            <div class="bg-white/50 p-8 rounded-3xl">
-                <h4 class="font-bold text-xl mb-3">📜 Founder Message</h4>
-                <p class="italic">“Our mission is to deliver zero-downtime marine operations through genuine parts and rapid service.” — Rajivgandhi</p>
-                <div class="grid grid-cols-2 gap-3 mt-6">
-                    <span class="bg-primary text-white px-3 py-1 rounded-full text-sm text-center">📍 5 Ports</span>
-                    <span class="bg-primary text-white px-3 py-1 rounded-full text-sm text-center">🛠️Experienced Technicians</span>
-                    <span class="bg-primary text-white px-3 py-1 rounded-full text-sm text-center">📅 Since 2015</span>
-                    <span class="bg-primary text-white px-3 py-1 rounded-full text-sm text-center">🏆 Client 100% satisfaction </span>
+
+            <!-- Right Content -->
+            <div class="space-y-6">
+
+                <!-- Vision -->
+                <div class="bg-white/50 backdrop-blur-sm p-6 rounded-2xl border border-white/20">
+                    <h4 class="text-xl font-semibold mb-2 flex items-center gap-2">
+                        🌍 Vision
+                    </h4>
+                    <p class="text-white/100 text-sm leading-relaxed">
+                        To become a trusted marine engineering partner across coastal
+                        regions by delivering reliable engine solutions, navigation systems,
+                        and professional marine technical services.
+                    </p>
                 </div>
+
+                <!-- Mission -->
+                <div class="bg-white/50 backdrop-blur-sm p-6 rounded-2xl border border-white/20">
+                    <h4 class="text-xl font-semibold mb-2 flex items-center gap-2">
+                        ⚙️ Mission
+                    </h4>
+                    <p class="text-white/100 text-sm leading-relaxed">
+                        To provide high-quality marine services, genuine spare parts,
+                        and expert technical support that ensure safe, efficient,
+                        and uninterrupted vessel operations.
+                    </p>
+                </div>
+
             </div>
-        </div>
-        <!-- Timeline -->
-        <div class="mt-16">
-            <h4 class="text-2xl font-bold mb-6 text-center">Company Timeline</h4>
-            <div class="flex flex-wrap justify-center gap-8 text-sm">
-                <div class="bg-white px-6 py-3 rounded-full shadow-md">2015 · Founded</div>
-                <div class="bg-white px-6 py-3 rounded-full shadow-md">2018 · Mercury Dealer</div>
-                <div class="bg-white px-6 py-3 rounded-full shadow-md">2020 · Premier Dealer</div>
-                <div class="bg-white px-6 py-3 rounded-full shadow-md">2023 · ISO 9001</div>
-                <div class="bg-white px-6 py-3 rounded-full shadow-md">2026 · Pan-India</div>
-            </div>
+
         </div>
     </div>
 </section>
@@ -361,6 +385,7 @@ transition:0.2s;
 <!-- In production, split into separate files: index.html, about.html, services.html, engine-service.html, gps-systems.html, mercury-engines.html, spare-parts.html, projects.html, certifications.html, amc.html, contact.html. They share header/footer. -->
 </body>
 </html>
+
 
 
 
