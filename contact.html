@@ -21,56 +21,57 @@
     <!-- Font Awesome 6 -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
-/* MOBILE MENU SLIDE PANEL */
-#mobile-menu{
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 280px;
-    height: 100%;
-    background-color: #111733;
-    padding: 24px;
-    transform: translateX(-100%);
-    transition: transform 0.3s ease;
-    z-index: 1000;
-    overflow-y: auto;
-}
+        /* MOBILE MENU SLIDE PANEL - FIXED */
+        #mobile-menu {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 280px;
+            height: 100%;
+            background-color: #111733;
+            padding: 24px;
+            transform: translateX(-100%);
+            transition: transform 0.3s ease;
+            z-index: 1000;
+            overflow-y: auto;
+        }
 
-#mobile-menu.open{
-    transform: translateX(0);
-}
+        #mobile-menu.open {
+            transform: translateX(0);
+        }
 
-/* OVERLAY */
-.mobile-overlay{
-    display:none;
-    position:fixed;
-    top:0;
-    left:0;
-    width:100%;
-    height:100%;
-    background:rgba(0,0,0,0.5);
-    z-index:900;
-}
+        /* OVERLAY */
+        .mobile-overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.5);
+            z-index: 900;
+        }
 
-.mobile-overlay.open{
-    display:block;
-}
+        .mobile-overlay.open {
+            display: block;
+        }
 
-/* hide mobile menu on desktop */
-@media (min-width:768px){
-    #mobile-menu{
-        display:none;
-    }
-}
-.social-icon{
-display:flex;
-align-items:center;
-justify-content:center;
-width:36px;
-height:36px;
-border-radius:9999px;
-transition:0.2s;
-}
+        /* hide mobile menu on desktop */
+        @media (min-width:768px){
+            #mobile-menu {
+                display: none;
+            }
+        }
+        
+        .social-icon {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 36px;
+            height: 36px;
+            border-radius: 9999px;
+            transition: 0.2s;
+        }
 
         .wa-float {
             position: fixed; bottom: 30px; right: 30px;
@@ -80,19 +81,19 @@ transition:0.2s;
             z-index: 100; transition: 0.2s; text-decoration: none;
             animation: gentleBounce 2.5s infinite;
         }
-           /* waterfall animation for hero background (color #86f7f2) */
+        
+        /* waterfall animation for hero background */
         @keyframes waterFlow {
             0% { background-position: 0% 0%; }
             100% { background-position: 0% 100%; }
         }
         .waterfall-bg {
-    background: linear-gradient(145deg, #1b2550 0%, #111733 60%, #000814 100%);
-    background-size: 200% 200%;
-    animation: waterFlow 8s ease infinite alternate;
+            background: linear-gradient(145deg, #1b2550 0%, #111733 60%, #000814 100%);
+            background-size: 200% 200%;
+            animation: waterFlow 8s ease infinite alternate;
             position: relative;
             overflow: hidden;
         }
-        /* additional floating waves effect (optional) */
         .waterfall-bg::after {
             content: '';
             position: absolute;
@@ -100,7 +101,10 @@ transition:0.2s;
             background: radial-gradient(circle at 30% 50%, rgba(134,247,242,0.2) 0%, transparent 50%);
             pointer-events: none;
         }
-        @keyframes gentleBounce { 0%,100%{ transform:translateY(0); } 50%{ transform:translateY(-8px); } }
+        @keyframes gentleBounce { 
+            0%,100%{ transform:translateY(0); } 
+            50%{ transform:translateY(-8px); } 
+        }
         .wa-float:hover { transform:scale(1.08) translateY(-4px); }
         .wa-float:hover::after {
             content: "Chat with Marine Expert"; position: absolute; right: 75px;
@@ -109,6 +113,11 @@ transition:0.2s;
             border: 1px solid #faffff; pointer-events: none;
         }
         .hover-lift:hover { transform: translateY(-3px); box-shadow: 0 20px 25px -5px rgba(0,0,0,0.2); }
+        
+        /* Thank you message styling */
+        #thankMessage {
+            transition: all 0.3s ease;
+        }
     </style>
 </head>
 <body class="bg-primary text-white">
@@ -116,11 +125,11 @@ transition:0.2s;
 <!-- FLOATING WHATSAPP (global) -->
 <a href="https://wa.me/+917708007222" class="wa-float" target="_blank"><i class="fab fa-whatsapp"></i></a>
 
-<!-- ==================== HEADER (shared across all pages) ==================== -->
+<!-- MOBILE OVERLAY -->
 <div id="mobile-overlay" class="mobile-overlay"></div>
 
 <!-- ===== HEADER - DESKTOP VIEW FIXED ===== -->
-<header class="bg-primary shadow-md top-0 z-50">
+<header class="bg-primary shadow-md sticky top-0 z-50">
     <div class="max-w-7xl mx-auto flex justify-between items-center p-4">
 
         <!-- Logo -->
@@ -138,8 +147,8 @@ transition:0.2s;
             <a href="index.html" class="hover:text-accent transition-colors">Home</a>
             <a href="about.html" class="hover:text-accent transition-colors">About</a>
             <a href="services.html" class="hover:text-accent transition-colors">Services</a>
-	    <a href="projects.html" class="hover:text-accent transition-colors">Projects</a>
-	    <a href="certifications.html" class="hover:text-accent transition-colors">Certifications</a>
+            <a href="projects.html" class="hover:text-accent transition-colors">Projects</a>
+            <a href="certifications.html" class="hover:text-accent transition-colors">Certifications</a>
             <a href="contact.html" class="hover:text-accent transition-colors">Contact</a>
         </nav>
 
@@ -172,256 +181,210 @@ transition:0.2s;
         </div>
     </div>
 
-    <!-- MOBILE MENU (slide-out) -->
-  <!-- MOBILE MENU -->
-<div id="mobile-menu">
-    
-    <div class="flex justify-between items-center mb-8">
-        <span class="text-xl font-bold text-accent">Menu</span>
-        <button id="close-menu" class="text-3xl text-accent">
-            <i class="fas fa-times"></i>
-        </button>
-    </div>
-
-    <div class="space-y-4">
-        <a href="index.html" class="block text-lg border-b border-accent/20 pb-2">Home</a>
-        <a href="about.html" class="block text-lg border-b border-accent/20 pb-2">About</a>
-        <a href="services.html" class="block text-lg border-b border-accent/20 pb-2">Services</a>
-    <a href="projects.html" class="hover:text-accent transition-colors">Projects</a>
-	    <a href="certifications.html" class="hover:text-accent transition-colors">Certifications</a>
-        <a href="contact.html" class="block text-lg border-b border-accent/20 pb-2">Contact</a>
-    </div>
-
-    <div class="mt-8 pt-4 border-t border-accent/20">
-        <p class="text-sm text-accent mb-4">Connect with us</p>
-
-        <div class="flex gap-4">
-            <a href="https://wa.me/+917708007222" target="_blank" class="social-icon bg-[#25D366] text-white">
-                <i class="fab fa-whatsapp"></i>
-            </a>
-
-            <a href="https://www.facebook.com/moonmarineservice/" target="_blank" class="social-icon bg-[#1877F2] text-white">
-                <i class="fab fa-facebook-f"></i>
-            </a>
-
-            <a href="https://www.instagram.com/moonmarineservice/" target="_blank" class="social-icon bg-gradient-to-br from-[#833AB4] via-[#FD1D1D] to-[#FCAF45] text-white">
-                <i class="fab fa-instagram"></i>
-            </a>
-
-            <a href="https://www.youtube.com/@moonmarineservice" target="_blank" class="social-icon bg-[#FF0000] text-white">
-                <i class="fab fa-youtube"></i>
-            </a>
-        </div>
-    </div>
-
-</div>
-<div id="mobile-overlay" class="mobile-overlay"></div>
-</header>
-<!-- ==================== 11. CONTACT + BOOKING + PAYMENT (contact.html) ==================== -->
-  <!-- ========== CONTACT SECTION: TWO FORMS (Quotation & Booking) ========== -->
- <section id="contact" class="bg-primary py-12 px-2">
-<div class="max-w-2xl mx-auto">
-
-<h2 class="text-4xl md:text-5xl font-bold text-center text-white mb-4">
-Request Service or Product Quotation
-</h2>
-
-<p class="text-center text-accent/80 mb-10 max-w-xl mx-auto">
-Submit your request. Our team will contact you via WhatsApp or phone. 
-Payment and service confirmation will be provided after discussion.
-</p>
-
-<div class="bg-white/10 backdrop-blur-sm p-8 rounded-3xl border-2 border-accent/30 shadow-2xl">
-   
-
-<form id="serviceForm"
-action="https://formsubmit.co/moonmarinenavicationcomunicati@gmail.com"
-method="POST"
-class="space-y-5">
-
-<input type="text" name="name" placeholder="Full Name" required
-class="w-full p-4 border border-gray-300 rounded-full text-primary bg-white">
-
-<input type="email" name="email" placeholder="Email Address" required
-class="w-full p-4 border border-gray-300 rounded-full text-primary bg-white">
-
-<input type="tel" name="phone" placeholder="Mobile / WhatsApp Number" required
-class="w-full p-4 border border-gray-300 rounded-full text-primary bg-white">
-
-<select id="requestType" name="request_type" required
-class="w-full p-4 border border-gray-300 rounded-full text-primary bg-white">
-
-<option value="" disabled selected>Select Request Type</option>
-
-<option value="service">Service Booking</option>
-<option value="service">GPS / AIS Installation</option>
-
-<option value="quotation">Product Purchase</option>
-<option value="quotation">Engine Quotation</option>
-<option value="quotation">Spare Parts Quotation</option>
-
-</select>
-<input type="text"
-name="service_details"
-placeholder="Service or Product Details"
-class="w-full p-4 border border-gray-300 rounded-full text-primary bg-white">
-
-<input type="date"
-name="preferred_date"
-class="w-full p-4 border border-gray-300 rounded-full text-primary bg-white">
-
-<textarea name="message"
-placeholder="Additional details (optional)"
-class="w-full p-4 border border-gray-300 rounded-2xl text-primary bg-white"
-rows="4"></textarea>
-
-<!-- SEND REQUEST BUTTON -->
-<div class="space-y-4">
-
-<button id="sendBtn" type="submit"
-class="w-full bg-accent text-primary font-bold py-4 px-6 rounded-full text-lg hover:bg-opacity-80 transition flex items-center justify-center gap-2 shadow-md">
-
-<i class="fas fa-paper-plane"></i>
-Send Request
-
-</button>
-
-<button id="payBtn" type="button"
-class="hidden w-full bg-green-500 text-white font-bold py-4 px-6 rounded-full text-lg hover:bg-green-600 transition flex items-center justify-center gap-2 shadow-md">
-
-<i class="fas fa-credit-card"></i>
-Pay ₹500 Advance
-
-</button>
-
-</div>
-
-<input type="hidden" name="_next" value="#contact">
-<input type="hidden" name="_captcha" value="false">
-
-</form>
-<div id="thankMessage"
-class="hidden text-center text-white mt-6 bg-green-500/20 p-4 rounded-xl border border-green-400">
-
-Thank you for contacting Moon Marine.  
-We will contact you within 24 hours via phone or WhatsApp.
-
-</div>
-	
-<p class="text-xs text-center text-white/60 mt-4">
-After receiving your request, we will contact you within 24 hours via phone or WhatsApp.
-</p>
-
-</div>
-
-</div>
-</section>
-   <!-- ========== REDESIGNED FOOTER (exactly as requested) ========== -->
-   <footer class="bg-primary border-t border-accent/30 py-10 px-4 md:px-6 text-gray-200">
-        <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8">
-
-            <!-- LEFT COLUMN: Company Description + Legal -->
-            <div class="space-y-4 text-sm leading-relaxed">
-                <h3 class="text-xl font-bold text-white flex items-center gap-2">
-                    <i class="fas fa-anchor text-accent"></i> Moon Marine
-                </h3>
-                <p class="text-gray-300">
-                    Moon Marine is a marine engineering company specializing in the supply of Mercury engines, GPS installation, boat machinery services, and maintenance. The company is also engaged in the supply and assembly of OEM spare parts for ship repair and marine contracts, including genuine spare parts for MTU and Detroit Diesel engines.
-                </p>
-                <p class="text-accent font-semibold">Legal: Authorized Agent for Mercury.</p>
-                <p class="text-xs text-gray-400 italic border-t border-accent/20 pt-3">
-                    Disclaimer: This website is operated by an independent supplier/dealer. All parts and warranties are subject to the terms and conditions of the respective companies.
-                </p>
-            </div>
-
-            <!-- CENTER COLUMN: Contact Info (with icons) -->
-            <div class="space-y-4">
-                <h3 class="text-xl font-bold text-white flex items-center gap-2">
-                    <i class="fas fa-address-card text-accent"></i> Contact Info
-                </h3>
-                <div class="space-y-3">
-                    <!-- location -->
-                    <div class="flex items-start gap-3">
-                        <i class="fas fa-map-marker-alt text-accent mt-1 w-5"></i>
-                        <span>Trangambadi harbour, Tamilnadu, India</span>
-                    </div>
-                    <!-- phone -->
-                    <div class="flex items-center gap-3">
-                        <i class="fas fa-phone-alt text-accent w-5"></i>
-                        <a href="tel:+917708007222" class="hover:text-accent transition">+91 7708007222</a>
-                    </div>
-                    <!-- email -->
-                    <div class="flex items-center gap-3">
-                        <i class="fas fa-envelope text-accent w-5"></i>
-                        <a href="mailto:rajivgandhi@moonmarine.com" class="hover:text-accent transition">rajivgandhi@moonmarine.com</a>
-                    </div>
-                    <!-- whatsapp (clickable) -->
-                    <div class="flex items-center gap-3">
-                        <i class="fab fa-whatsapp text-accent w-5 text-lg"></i>
-                        <a href="https://wa.me/917708007222" target="_blank" class="hover:text-accent transition">+91 7708007222 (WhatsApp)</a>
-                    </div>
-                </div>
-            </div>
-
-            <!-- RIGHT COLUMN: Supplier Showroom + Google Map -->
-            <div class="space-y-4">
-                <h3 class="text-xl font-bold text-white flex items-center gap-2">
-                    <i class="fas fa-store text-accent"></i> Supplier Showroom
-                </h3>
-                <!-- Embedded Google Map (Tharangambadi harbour area) -->
-                <div class="map-container w-full h-44 md:h-48 rounded-2xl overflow-hidden border-2 border-accent/30 shadow-lg">
-                      <iframe 
-                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3916.1033551660285!2d79.85285627363886!3d11.030871854451732!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a551b4fb045a32b%3A0xeba9cb01122ea496!2sMoon%20Marine%20Services!5e0!3m2!1sen!2sin!4v1772252795624!5m2!1sen!2sin" 
-                        class="w-full h-full"
-                        style="border:0;"
-                        allowfullscreen=""
-                        loading="lazy"
-                        referrerpolicy="no-referrer-when-downgrade">
-                    </iframe>
-                </div>
-                <p class="text-sm text-gray-300"><i class="fas fa-map-pin text-accent mr-1"></i> Tharangambadi Harbour, Tamil Nadu</p>
-            </div>
+    <!-- MOBILE MENU (slide-out) - FIXED with clickable links -->
+    <div id="mobile-menu">
+        <div class="flex justify-between items-center mb-8">
+            <span class="text-xl font-bold text-accent">Menu</span>
+            <button id="close-menu" class="text-3xl text-accent">
+                <i class="fas fa-times"></i>
+            </button>
         </div>
 
-        <!-- Bottom bar with copyright & quick links (clean, minimal) -->
-        <div class="max-w-7xl mx-auto mt-10 pt-4 border-t border-accent/20 flex flex-col md:flex-row justify-between items-center text-xs text-gray-400">
-            <div>© 2026 Moon Marine Services | Tharangambadi, Tamilnadu, India</div>
-            <div class="flex gap-20 mt-0 md:mt-0">
-                <a href="https://wa.me/+917708007222" target="_blank" class="social-icon bg-[#25D366] hover:bg-[#20b359] text-white">
+        <div class="space-y-4">
+            <a href="index.html" class="block text-lg border-b border-accent/20 pb-2 hover:text-accent">Home</a>
+            <a href="about.html" class="block text-lg border-b border-accent/20 pb-2 hover:text-accent">About</a>
+            <a href="services.html" class="block text-lg border-b border-accent/20 pb-2 hover:text-accent">Services</a>
+            <a href="projects.html" class="block text-lg border-b border-accent/20 pb-2 hover:text-accent">Projects</a>
+            <a href="certifications.html" class="block text-lg border-b border-accent/20 pb-2 hover:text-accent">Certifications</a>
+            <a href="contact.html" class="block text-lg border-b border-accent/20 pb-2 hover:text-accent">Contact</a>
+        </div>
+
+        <div class="mt-8 pt-4 border-t border-accent/20">
+            <p class="text-sm text-accent mb-4">Connect with us</p>
+
+            <div class="flex gap-4">
+                <a href="https://wa.me/+917708007222" target="_blank" class="social-icon bg-[#25D366] text-white">
                     <i class="fab fa-whatsapp"></i>
                 </a>
-                <!-- Facebook -->
-                <a href="https://www.facebook.com/moonmarineservice/" target="_blank" class="social-icon bg-[#1877F2] hover:bg-[#166fe5] text-white">
+                <a href="https://www.facebook.com/moonmarineservice/" target="_blank" class="social-icon bg-[#1877F2] text-white">
                     <i class="fab fa-facebook-f"></i>
                 </a>
-                <!-- Instagram -->
-                <a href="https://www.instagram.com/moonmarineservice/" target="_blank" class="social-icon bg-gradient-to-br from-[#833AB4] via-[#FD1D1D] to-[#FCAF45] hover:opacity-90 text-white">
+                <a href="https://www.instagram.com/moonmarineservice/" target="_blank" class="social-icon bg-gradient-to-br from-[#833AB4] via-[#FD1D1D] to-[#FCAF45] text-white">
                     <i class="fab fa-instagram"></i>
                 </a>
-                <!-- YouTube -->
-                <a href="https://www.youtube.com/@moonmarineservice" target="_blank" class="social-icon bg-[#FF0000] hover:bg-[#cc0000] text-white">
+                <a href="https://www.youtube.com/@moonmarineservice" target="_blank" class="social-icon bg-[#FF0000] text-white">
                     <i class="fab fa-youtube"></i>
                 </a>
             </div>
         </div>
-    </footer>
-    
-<script src="assets/js/main.js"></script>
+    </div>
+</header>
 
-<!-- In production, split into separate files: index.html, about.html, services.html, engine-service.html, gps-systems.html, mercury-engines.html, spare-parts.html, projects.html, certifications.html, amc.html, contact.html. They share header/footer. -->
+<!-- ========== CONTACT SECTION: TWO FORMS (Quotation & Booking) FIXED ========== -->
+<section id="contact" class="bg-primary py-12 px-2">
+    <div class="max-w-2xl mx-auto">
+        <h2 class="text-4xl md:text-5xl font-bold text-center text-white mb-4">
+            Request Service or Product Quotation
+        </h2>
+        <p class="text-center text-accent/80 mb-10 max-w-xl mx-auto">
+            Submit your request. Our team will contact you via WhatsApp or phone. 
+            Payment and service confirmation will be provided after discussion.
+        </p>
+
+        <div class="bg-white/10 backdrop-blur-sm p-8 rounded-3xl border-2 border-accent/30 shadow-2xl">
+            <form id="serviceForm" 
+                  action="https://formsubmit.co/moonmarinenavicationcomunicati@gmail.com" 
+                  method="POST" 
+                  class="space-y-5">
+                
+                <input type="text" name="name" placeholder="Full Name" required
+                       class="w-full p-4 border border-gray-300 rounded-full text-primary bg-white">
+                
+                <input type="email" name="email" placeholder="Email Address" required
+                       class="w-full p-4 border border-gray-300 rounded-full text-primary bg-white">
+                
+                <input type="tel" name="phone" placeholder="Mobile / WhatsApp Number" required
+                       class="w-full p-4 border border-gray-300 rounded-full text-primary bg-white">
+                
+                <select id="requestType" name="request_type" required
+                        class="w-full p-4 border border-gray-300 rounded-full text-primary bg-white">
+                    <option value="" disabled selected>Select Request Type</option>
+                    <option value="service">Service Booking</option>
+                    <option value="service">GPS / AIS Installation</option>
+                    <option value="quotation">Product Purchase</option>
+                    <option value="quotation">Engine Quotation</option>
+                    <option value="quotation">Spare Parts Quotation</option>
+                </select>
+                
+                <input type="text" name="service_details" placeholder="Service or Product Details"
+                       class="w-full p-4 border border-gray-300 rounded-full text-primary bg-white">
+                
+                <input type="date" name="preferred_date"
+                       class="w-full p-4 border border-gray-300 rounded-full text-primary bg-white">
+                
+                <textarea name="message" placeholder="Additional details (optional)"
+                          class="w-full p-4 border border-gray-300 rounded-2xl text-primary bg-white"
+                          rows="4"></textarea>
+
+                <!-- HIDDEN FIELDS for formsubmit.co to work properly -->
+                <input type="hidden" name="_next" value="">
+                <input type="hidden" name="_captcha" value="false">
+
+                <!-- SEND REQUEST BUTTON -->
+                <div class="space-y-4">
+                    <button id="sendBtn" type="submit"
+                            class="w-full bg-accent text-primary font-bold py-4 px-6 rounded-full text-lg hover:bg-opacity-80 transition flex items-center justify-center gap-2 shadow-md">
+                        <i class="fas fa-paper-plane"></i>
+                        Send Request
+                    </button>
+
+                    <button id="payBtn" type="button"
+                            class="hidden w-full bg-green-500 text-white font-bold py-4 px-6 rounded-full text-lg hover:bg-green-600 transition flex items-center justify-center gap-2 shadow-md">
+                        <i class="fas fa-credit-card"></i>
+                        Pay ₹500 Advance
+                    </button>
+                </div>
+            </form>
+
+            <!-- THANK YOU MESSAGE (hidden by default) -->
+            <div id="thankMessage" class="hidden text-center text-white mt-6 bg-green-500/20 p-4 rounded-xl border border-green-400">
+                Thank you for contacting Moon Marine.<br>
+                We will contact you within 24 hours via phone or WhatsApp.
+            </div>
+
+            <p class="text-xs text-center text-white/60 mt-4">
+                After receiving your request, we will contact you within 24 hours via phone or WhatsApp.
+            </p>
+        </div>
+    </div>
+</section>
+
+<!-- ========== REDESIGNED FOOTER ========== -->
+<footer class="bg-primary border-t border-accent/30 py-10 px-4 md:px-6 text-gray-200">
+    <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8">
+
+        <!-- LEFT COLUMN: Company Description + Legal -->
+        <div class="space-y-4 text-sm leading-relaxed">
+            <h3 class="text-xl font-bold text-white flex items-center gap-2">
+                <i class="fas fa-anchor text-accent"></i> Moon Marine
+            </h3>
+            <p class="text-gray-300">
+                Moon Marine is a marine engineering company specializing in the supply of Mercury engines, GPS installation, boat machinery services, and maintenance. The company is also engaged in the supply and assembly of OEM spare parts for ship repair and marine contracts, including genuine spare parts for MTU and Detroit Diesel engines.
+            </p>
+            <p class="text-accent font-semibold">Legal: Authorized Agent for Mercury.</p>
+            <p class="text-xs text-gray-400 italic border-t border-accent/20 pt-3">
+                Disclaimer: This website is operated by an independent supplier/dealer. All parts and warranties are subject to the terms and conditions of the respective companies.
+            </p>
+        </div>
+
+        <!-- CENTER COLUMN: Contact Info (with icons) -->
+        <div class="space-y-4">
+            <h3 class="text-xl font-bold text-white flex items-center gap-2">
+                <i class="fas fa-address-card text-accent"></i> Contact Info
+            </h3>
+            <div class="space-y-3">
+                <!-- location -->
+                <div class="flex items-start gap-3">
+                    <i class="fas fa-map-marker-alt text-accent mt-1 w-5"></i>
+                    <span>Trangambadi harbour, Tamilnadu, India</span>
+                </div>
+                <!-- phone -->
+                <div class="flex items-center gap-3">
+                    <i class="fas fa-phone-alt text-accent w-5"></i>
+                    <a href="tel:+917708007222" class="hover:text-accent transition">+91 7708007222</a>
+                </div>
+                <!-- email -->
+                <div class="flex items-center gap-3">
+                    <i class="fas fa-envelope text-accent w-5"></i>
+                    <a href="mailto:rajivgandhi@moonmarine.com" class="hover:text-accent transition">rajivgandhi@moonmarine.com</a>
+                </div>
+                <!-- whatsapp (clickable) -->
+                <div class="flex items-center gap-3">
+                    <i class="fab fa-whatsapp text-accent w-5 text-lg"></i>
+                    <a href="https://wa.me/917708007222" target="_blank" class="hover:text-accent transition">+91 7708007222 (WhatsApp)</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- RIGHT COLUMN: Supplier Showroom + Google Map -->
+        <div class="space-y-4">
+            <h3 class="text-xl font-bold text-white flex items-center gap-2">
+                <i class="fas fa-store text-accent"></i> Supplier Showroom
+            </h3>
+            <!-- Embedded Google Map (Tharangambadi harbour area) -->
+            <div class="map-container w-full h-44 md:h-48 rounded-2xl overflow-hidden border-2 border-accent/30 shadow-lg">
+                <iframe 
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3916.1033551660285!2d79.85285627363886!3d11.030871854451732!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a551b4fb045a32b%3A0xeba9cb01122ea496!2sMoon%20Marine%20Services!5e0!3m2!1sen!2sin!4v1772252795624!5m2!1sen!2sin" 
+                    class="w-full h-full"
+                    style="border:0;"
+                    allowfullscreen=""
+                    loading="lazy"
+                    referrerpolicy="no-referrer-when-downgrade">
+                </iframe>
+            </div>
+            <p class="text-sm text-gray-300"><i class="fas fa-map-pin text-accent mr-1"></i> Tharangambadi Harbour, Tamil Nadu</p>
+        </div>
+    </div>
+
+    <!-- Bottom bar with copyright & social icons -->
+    <div class="max-w-7xl mx-auto mt-10 pt-4 border-t border-accent/20 flex flex-col md:flex-row justify-between items-center text-xs text-gray-400">
+        <div>© 2026 Moon Marine Services | Tharangambadi, Tamilnadu, India</div>
+        <div class="flex gap-2 mt-2 md:mt-0">
+            <a href="https://wa.me/+917708007222" target="_blank" class="social-icon bg-[#25D366] hover:bg-[#20b359] text-white">
+                <i class="fab fa-whatsapp"></i>
+            </a>
+            <a href="https://www.facebook.com/moonmarineservice/" target="_blank" class="social-icon bg-[#1877F2] hover:bg-[#166fe5] text-white">
+                <i class="fab fa-facebook-f"></i>
+            </a>
+            <a href="https://www.instagram.com/moonmarineservice/" target="_blank" class="social-icon bg-gradient-to-br from-[#833AB4] via-[#FD1D1D] to-[#FCAF45] hover:opacity-90 text-white">
+                <i class="fab fa-instagram"></i>
+            </a>
+            <a href="https://www.youtube.com/@moonmarineservice" target="_blank" class="social-icon bg-[#FF0000] hover:bg-[#cc0000] text-white">
+                <i class="fab fa-youtube"></i>
+            </a>
+        </div>
+    </div>
+</footer>
+<script src="assets/js/main.js"></script>
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
