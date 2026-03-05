@@ -230,9 +230,9 @@ transition:0.2s;
         </p>
 
         <div class="bg-white/10 backdrop-blur-sm p-8 rounded-3xl border-2 border-accent/30 shadow-2xl">
-            <form id="serviceForm" 
-                  action="https://formsubmit.co/moonmarinenavicationcomunicati@gmail.com" 
-                  method="POST" 
+            <form id="serviceForm"
+action="https://formsubmit.co/moonmarinenavicationcomunicati@gmail.com"
+method="POST"
                   class="space-y-5">
                 
                 <input type="text" name="name" placeholder="Full Name" required
@@ -264,10 +264,6 @@ transition:0.2s;
                           class="w-full p-4 border border-gray-300 rounded-2xl text-primary bg-white"
                           rows="4"></textarea>
 
-                <!-- HIDDEN FIELDS for formsubmit.co to work properly -->
-                <input type="hidden" name="_next" value="">
-                <input type="hidden" name="_captcha" value="false">
-
                 <!-- SEND REQUEST BUTTON -->
                 <div class="space-y-4">
                     <button id="sendBtn" type="submit"
@@ -282,6 +278,9 @@ transition:0.2s;
                         Pay ₹500 Advance
                     </button>
                 </div>
+				  <!-- HIDDEN FIELDS for formsubmit.co to work properly -->
+                <input type="hidden" name="_next" value="">
+                <input type="hidden" name="_captcha" value="false">
             </form>
 
             <!-- THANK YOU MESSAGE (hidden by default) -->
@@ -389,5 +388,6 @@ transition:0.2s;
 <script src="assets/js/main.js"></script>
 </body>
 </html>
+
 
 
