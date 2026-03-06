@@ -220,7 +220,13 @@ transition:0.2s;
 
 
 <!-- ==================== 9. CERTIFICATIONS PAGE (certifications.html) ==================== -->
-<section id="certifications" class="bg-primary py-20">
+<section id="certifications" class="relative py-20 text-white">
+	<div class="absolute inset-0 -z-10">
+        <img src="assets/images/background.png"
+             class="w-full h-full object-cover"
+             alt="marine background">
+        <div class="absolute inset-0 bg-primary/40"></div>
+    </div>
     <div class="max-w-6xl mx-auto px-4 text-center">
         <h2 class="text-4xl font-bold text-white mb-8">📜 Licenses & Authorizations</h2>
         <div class="grid md:grid-cols-3 gap-6">
@@ -327,6 +333,7 @@ transition:0.2s;
 <!-- In production, split into separate files: index.html, about.html, services.html, engine-service.html, gps-systems.html, mercury-engines.html, spare-parts.html, projects.html, certifications.html, amc.html, contact.html. They share header/footer. -->
 </body>
 </html>
+
 
 
 
