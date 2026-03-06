@@ -224,7 +224,7 @@ transition:0.2s;
         <!-- ===== MARINE ENGINE SERVICE SECTION ===== -->
         <div class="text-center mb-12">
             <h2 class="text-3xl md:text-4xl font-bold flex items-center justify-center gap-3 text-white">
-                Marine Engine Service
+               ⚙️ Marine Engine Service
             </h2>
         </div>
 
@@ -410,11 +410,8 @@ transition:0.2s;
         <!-- ===== GPS & NAVIGATION SECTION ===== -->
         <div class="text-center mb-12">
             <h2 class="text-3xl md:text-4xl font-bold flex items-center justify-center gap-3 text-white">
-                GPS & Navigation
+               🛰️ GPS & Navigation
             </h2>
-            <div class="flex justify-center mt-4">
-                <img src="assets/images/gps-installation.jpeg" alt="GPS Logo" class="h-12 object-contain">
-            </div>
         </div>
 
         <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-6 mb-16">
@@ -450,11 +447,8 @@ transition:0.2s;
         <!-- ===== SPARE PARTS SUPPLY SECTION ===== -->
         <div class="text-center mb-12">
             <h2 class="text-3xl md:text-4xl font-bold flex items-center justify-center gap-3 text-white">
-                Spare Parts Supply
+                🔩 Spare Parts Supply
             </h2>
-            <div class="flex justify-center mt-4">
-                <img src="assets/images/spare-parts.jpeg" alt="Spare Parts Logo" class="h-12 object-contain">
-            </div>
         </div>
 
         <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-6 mb-16">
@@ -485,6 +479,43 @@ transition:0.2s;
                     <p class="text-xs text-white/70">Genuine / OEM</p>
                 </div>
             </div>
+ <!-- ===== SPARE PARTS SUPPLY SECTION ===== -->
+        <div class="text-center mb-12">
+            <h2 class="text-3xl md:text-4xl font-bold flex items-center justify-center gap-3 text-white">
+                📅 Annual Maintenance Contracts
+            </h2>
+        </div>
+
+        <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-6 mb-16">
+            <!-- Filters -->
+            <div onclick="sendToWhatsApp('BRONZE - Please share price and availability')" 
+                 class="cursor-pointer bg-white/10 rounded-xl overflow-hidden hover:scale-105 transition border border-accent/20 hover:border-accent">
+                <img src="assets/images/parts.JPG" alt="Filters" class="w-full h-40 object-cover">
+                <div class="p-4 text-center">
+                    <h3 class="font-semibold text-sm">BRONZE</h3>
+                    <p class="text-xs text-white/70">Basic-2 inspections · 10% parts</p>
+                </div>
+            </div>
+            <!-- Impellers -->
+            <div onclick="sendToWhatsApp('SILVER - Please share price')" 
+                 class="cursor-pointer bg-white/10 rounded-xl overflow-hidden hover:scale-105 transition border border-accent/20 hover:border-accent">
+                <img src="assets/images/impeller.JPG" alt="Impellers" class="w-full h-40 object-cover">
+                <div class="p-4 text-center">
+                    <h3 class="font-semibold text-sm">SILVER</h3>
+                    <p class="text-xs text-white/70">Standard-4 inspections · 20% parts · emergency<</p>
+                </div>
+            </div>
+            <!-- Fuel Pumps -->
+            <div onclick="sendToWhatsApp('Fuel Pumps - Genuine/OEM - Please share price')" 
+                 class="cursor-pointer bg-white/10 rounded-xl overflow-hidden hover:scale-105 transition border border-accent/20 hover:border-accent">
+                <img src="assets/images/fuel.JPG" alt="Fuel Pumps" class="w-full h-40 object-cover">
+                <div class="p-4 text-center">
+                    <h3 class="font-semibold text-sm">GOLD</h3>
+                    <p class="text-xs text-white/70">Premium-unlimited call · 30% parts · full coverage</p>
+                </div>
+            </div>
+			
+			
         </div>
     </div>
 </section>
@@ -588,6 +619,7 @@ transition:0.2s;
 <!-- In production, split into separate files: index.html, about.html, services.html, engine-service.html, gps-systems.html, mercury-engines.html, spare-parts.html, projects.html, certifications.html, amc.html, contact.html. They share header/footer. -->
 </body>
 </html>
+
 
 
 
