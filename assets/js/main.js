@@ -1,3 +1,24 @@
+ // WhatsApp function for general inquiries
+    function sendToWhatsApp(message) {
+        const phoneNumber = "+917708007222";
+        const url = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
+        window.open(url, '_blank');
+    }
+
+    // Specific function for engine leads (with predefined message format)
+    function sendEngineLead(model) {
+        const message = `Hello Moon Marine, I'm interested to purchase the ${model}. Please share price and free quotation.`;
+        const phoneNumber = "+917708007222";
+        const url = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
+        window.open(url, '_blank');
+    }
+
+    // Make sure images load with fallbacks
+    document.querySelectorAll('img').forEach(img => {
+        img.onerror = function() {
+            this.src = 'https://via.placeholder.com/300x200?text=Image+Not+Found';
+        };
+    });
 
     // ===== MOBILE MENU FUNCTIONALITY - FIXED =====
     const menuBtn = document.getElementById("menu-btn");
