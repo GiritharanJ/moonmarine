@@ -13,13 +13,6 @@
         window.open(url, '_blank');
     }
 
-    // Make sure images load with fallbacks
-    document.querySelectorAll('img').forEach(img => {
-        img.onerror = function() {
-            this.src = 'https://via.placeholder.com/300x200?text=Image+Not+Found';
-        };
-    });
-
     // ===== MOBILE MENU FUNCTIONALITY - FIXED =====
     const menuBtn = document.getElementById("menu-btn");
     const mobileMenu = document.getElementById("mobile-menu");
