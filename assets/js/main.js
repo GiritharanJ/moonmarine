@@ -78,7 +78,7 @@ function processRazorpayPayment() {
 
     // Razorpay options
     const options = {
-        key: "https://razorpay.me/@giritharanjanakiraman", // 🔴 REPLACE WITH YOUR ACTUAL RAZORPAY LIVE KEY
+        key: "rzp_test_SOFGkNAl65XbTx", // 🔴 REPLACE WITH YOUR ACTUAL RAZORPAY LIVE KEY
         amount: "500", // Amount in paise (50000 = ₹500)
         currency: "INR",
         name: "Moon Marine Services",
@@ -89,7 +89,7 @@ function processRazorpayPayment() {
             
             // Send WhatsApp confirmation (optional)
             const message = `Hello ${name}, your ${service} booking is confirmed with payment ID: ${response.razorpay_payment_id}. Thank you for choosing Moon Marine!`;
-            window.open(`https://wa.me/917708007222?text=${encodeURIComponent(message)}`, '_blank');
+            window.open(`https://wa.me/+917708007222?text=${encodeURIComponent(message)}`, '_blank');
             
             closeRequestForm();
         },
