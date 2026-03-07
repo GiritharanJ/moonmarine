@@ -21,6 +21,17 @@
     <!-- Font Awesome 6 -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
+		@keyframes gradientMove {
+0% {background-position:0% 50%;}
+50% {background-position:100% 50%;}
+100% {background-position:0% 50%;}
+}
+
+.animated-bg{
+background: linear-gradient(270deg,#0f172a,#111733,#1e3a8a,#0f172a);
+background-size:400% 400%;
+animation: gradientMove 12s ease infinite;
+}
 /* MOBILE MENU SLIDE PANEL */
 #mobile-menu{
     position: fixed;
@@ -385,6 +396,7 @@ transition:0.2s;
 <!-- In production, split into separate files: index.html, about.html, services.html, engine-service.html, gps-systems.html, mercury-engines.html, spare-parts.html, projects.html, certifications.html, amc.html, contact.html. They share header/footer. -->
 </body>
 </html>
+
 
 
 
