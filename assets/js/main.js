@@ -199,39 +199,56 @@ container.appendChild(bubble);
 
 // ===== RAZORPAY PAYMENT =====
 
-function processPayment(service,name,phone){
+function startPayment(){
 
-if(typeof Razorpay==="undefined"){
-alert("Payment gateway loading");
+const name = document.getElementById("fname").value;
+const phone = document.getElementById("fphone").value;
+const service = document.getElementById("fservice").value;
+
+if(!name || !phone){
+alert("Please enter name and phone");
 return;
 }
 
-const options={
+var options = {
 
-key:"rzp_live_SOFjRPAj8NXqRQ",
+key: "rzp_live_SOFjRPAj8NXqRQ",
 
-amount:1000,
+amount: 1000,
 
-currency:"INR",
+currency: "INR",
 
-name:"Moon Marine Services",
+name: "Moon Marine Services",
 
-description:`Advance payment for ${service}`,
+description: "Advance Service Booking",
 
-prefill:{
-name:name,
-contact:phone
-},
+handler: function (response) {
 
-handler:function(response){
+alert("Payment successful");
 
-alert("Payment successful\nPayment ID: "+response.razorpay_payment_id);
+sendBookingEmail(name,phone,service,response.razorpay_payment_id);
 
 }
 
 };
 
-const rzp=new Razorpay(options);
+var rzp = new Razorpay(options);
 rzp.open();
+
+}
+
+function sendBookingEmail(name,phone,service,paymentId){
+
+const formData = new FormData();
+
+formData.append("name",name);
+formData.append("phone",phone);
+formData.append("service",service);
+formData.append("payment_id",paymentId);
+
+fetch("https://formsubmit.co/ajax/moonmarinenavicationcomunicati@gmail.com",{
+method:"POST",
+body:formData
+});
 
 }
