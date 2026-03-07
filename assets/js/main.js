@@ -69,7 +69,7 @@ function processRazorpayPayment() {
     // Razorpay options
     const options = {
         key: "rzp_live_SOFjRPAj8NXqRQ", // 🔴 Replace with your Razorpay live key
-        amount: "500", // ₹500 in paise
+        amount: "50000", // ₹500 in paise
         currency: "INR",
         name: "Moon Marine Services",
         description: `Advance for ${service}`,
