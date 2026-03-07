@@ -78,7 +78,7 @@ function processRazorpayPayment() {
 
     // Razorpay options
     const options = {
-        key: "rzp_test_SOFGkNAl65XbTx", // 🔴 REPLACE WITH YOUR ACTUAL RAZORPAY LIVE KEY
+        key: "rzp_live_SOFjRPAj8NXqRQ", // 🔴 REPLACE WITH YOUR ACTUAL RAZORPAY LIVE KEY
         amount: "500", // Amount in paise (50000 = ₹500)
         currency: "INR",
         name: "Moon Marine Services",
