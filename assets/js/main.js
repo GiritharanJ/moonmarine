@@ -101,7 +101,6 @@ function processRazorpayPayment() {
         },
         prefill: {
             name: name,
-            email: email,
             contact: mobile
         },
         theme: { color: "#0c0a36" }
@@ -125,7 +124,6 @@ function submitFormToFormSubmit(details) {
     // Create FormData object
     const formData = new FormData();
     formData.append('name', details.name);
-    formData.append('email', details.email);
     formData.append('phone', details.mobile);
     formData.append('service', details.service);
     formData.append('payment_id', details.paymentId);
