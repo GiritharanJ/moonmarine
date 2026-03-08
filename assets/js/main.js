@@ -30,6 +30,21 @@ document.body.style.overflow="";
 
 }
 
+// close menu when clicking menu links
+const menuLinks = document.querySelectorAll("#mobile-menu a");
+
+menuLinks.forEach(link=>{
+link.addEventListener("click",function(){
+
+mobileMenu.classList.remove("open");
+overlay.classList.remove("open");
+document.body.style.overflow="";
+
+});
+});
+
+});
+
 // initialize gallery and bubbles
 loadGallery();
 createBubbles();
@@ -249,26 +264,36 @@ function sendBookingEmail(name,phone,service,location,message,paymentId){
 
 const formData = new FormData();
 
-formData.append("name",name);
-formData.append("phone",phone);
-formData.append("service",service);
-formData.append("location",location);
-formData.append("message",message);
-formData.append("payment_id",paymentId);
+formData.append("name", name);
+formData.append("phone", phone);
+formData.append("service", service);
+formData.append("location", location);
+formData.append("message", message);
+formData.append("payment_id", paymentId);
 
-fetch("https://formsubmit.co/ajax/moonmarinenavicationcomunicati@gmail.com",{
-method:"POST",
-body:formData
+formData.append("_subject", "New Moon Marine Booking - Payment Received");
+formData.append("_captcha", "false");
+
+fetch("https://formsubmit.co/ajax/moonmarinenavicationcomunicati@gmail.com", {
+method: "POST",
+body: formData
 })
-.then(()=>{
+.then(response => response.json())
+.then(data => {
 
 alert("Booking confirmed! We will contact you soon.");
 
+// reset form
+document.getElementById("fname").value="";
+document.getElementById("fphone").value="";
+document.getElementById("fservice").value="";
+document.getElementById("flocation").value="";
+document.getElementById("fmessage").value="";
+
 })
-.catch(()=>{
-
-alert("Payment successful but email not sent.");
-
+.catch(error => {
+console.error(error);
+alert("Payment successful but email sending failed.");
 });
 
 }
