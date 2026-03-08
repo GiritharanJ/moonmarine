@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Moon Marine · Mercury Dealer</title>
-    <!-- Tailwind + custom colors (primary #111733, accent #faffff) -->
+    <title>Moon Marine · Mercury Authorized Dealer</title>
+    <!-- Tailwind + custom colors -->
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
         tailwind.config = {
@@ -19,213 +19,26 @@
         }
     </script>
     <!-- Font Awesome 6 -->
+    <link rel="stylesheet" href="assets/css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <!-- Razorpay SDK -->
     <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
-    <style>
-        /* MOBILE MENU SLIDE PANEL */
-        #mobile-menu {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 280px;
-            height: 100%;
-            background-color: #111733;
-            padding: 24px;
-            transform: translateX(-100%);
-            transition: transform 0.3s ease;
-            z-index: 1000;
-            overflow-y: auto;
-        }
-
-        #mobile-menu.open {
-            transform: translateX(0);
-        }
-
-        /* OVERLAY */
-        .mobile-overlay {
-            display: none;
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0,0,0,0.5);
-            z-index: 900;
-        }
-
-        .mobile-overlay.open {
-            display: block;
-        }
-
-        /* hide mobile menu on desktop */
-        @media (min-width:768px){
-            #mobile-menu {
-                display: none;
-            }
-        }
-        
-        .social-icon {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            width: 36px;
-            height: 36px;
-            border-radius: 9999px;
-            transition: 0.2s;
-        }
-
-        .wa-float {
-            position: fixed; bottom: 30px; right: 30px;
-            background: #25D366; width: 64px; height: 64px;
-            border-radius: 50%; display: flex; align-items: center; justify-content: center;
-            font-size: 2.4rem; color: white; box-shadow: 0 20px 30px -8px rgba(0,0,0,0.4);
-            z-index: 100; transition: 0.2s; text-decoration: none;
-            animation: gentleBounce 2.5s infinite;
-        }
-        
-        /* waterfall animation for hero background */
-        @keyframes waterFlow {
-            0% { background-position: 0% 0%; }
-            100% { background-position: 0% 100%; }
-        }
-        
-        .waterfall-bg {
-            background: linear-gradient(145deg, #1b2550 0%, #111733 60%, #000814 100%);
-            background-size: 200% 200%;
-            animation: waterFlow 8s ease infinite alternate;
-            position: relative;
-            overflow: hidden;
-        }
-        
-        .waterfall-bg::after {
-            content: '';
-            position: absolute;
-            top: 0; left: 0; right: 0; bottom: 0;
-            background: radial-gradient(circle at 30% 50%, rgba(134,247,242,0.2) 0%, transparent 50%);
-            pointer-events: none;
-        }
-        
-        @keyframes gentleBounce { 
-            0%,100%{ transform:translateY(0); } 
-            50%{ transform:translateY(-8px); } 
-        }
-        
-        .wa-float:hover { 
-            transform:scale(1.08) translateY(-4px); 
-        }
-        
-        .wa-float:hover::after {
-            content: "Chat with Marine Expert"; 
-            position: absolute; 
-            right: 75px;
-            background: #111733; 
-            color: white; 
-            padding: 8px 18px; 
-            border-radius: 40px;
-            font-size: 0.9rem; 
-            white-space: nowrap; 
-            font-weight: 500;
-            border: 1px solid #faffff; 
-            pointer-events: none;
-        }
-        
-        .hover-lift:hover { 
-            transform: translateY(-3px); 
-            box-shadow: 0 20px 25px -5px rgba(0,0,0,0.2); 
-        }
-        
-        * { 
-            font-family: 'Inter', sans-serif; 
-        }
-        
-        body { 
-            background-color: #ffffff; 
-            color: #1e1e1e; 
-        }
-        
-        .glass-card {
-            background: rgba(255, 255, 255, 0.95);
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(12, 10, 54, 0.1);
-        }
-        
-        .hover-scale {
-            transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
-        }
-        
-        .hover-scale:hover {
-            transform: scale(1.02) translateY(-4px);
-            box-shadow: 0 25px 40px -15px rgba(12, 10, 54, 0.3);
-        }
-        
-        .service-card {
-            transition: all 0.3s ease;
-            border: 1px solid rgba(12, 10, 54, 0.08);
-        }
-        
-        .service-card:hover {
-            border-color: #0c0a36;
-            box-shadow: 0 20px 30px -10px rgba(12, 10, 54, 0.15);
-        }
-        
-        .btn-primary {
-            background: #0c0a36;
-            color: white;
-            transition: all 0.2s;
-        }
-        
-        .btn-primary:hover {
-            background: #1a1750;
-            transform: translateY(-2px);
-            box-shadow: 0 10px 20px -5px rgba(12, 10, 54, 0.3);
-        }
-        
-        .btn-green {
-            background: #10b981;
-            color: white;
-            transition: all 0.2s;
-        }
-        
-        .btn-green:hover {
-            background: #059669;
-            transform: translateY(-2px);
-            box-shadow: 0 10px 20px -5px rgba(16, 185, 129, 0.3);
-        }
-        
-        @keyframes fadeInUp {
-            from { opacity: 0; transform: translateY(20px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-        
-        .animate-fade-up {
-            animation: fadeInUp 0.6s ease forwards;
-        }
-        
-        /* Fix for input text color */
-        input, textarea, select {
-            color: #111733 !important;
-        }
-        
-        input::placeholder, textarea::placeholder {
-            color: #9ca3af !important;
-        }
-    </style>
+   
 </head>
-<body class="bg-primary text-white">
+<body>
 
-<!-- FLOATING WHATSAPP (global) -->
+<!-- BUBBLES BACKGROUND -->
+<div id="bubbles"></div>
+
+<!-- FLOATING WHATSAPP -->
 <a href="https://wa.me/+917708007222" class="wa-float" target="_blank"><i class="fab fa-whatsapp"></i></a>
 
 <!-- MOBILE OVERLAY -->
 <div id="mobile-overlay" class="mobile-overlay"></div>
 
 <!-- ===== HEADER ===== -->
-<header class="bg-primary shadow-md top-0 z-50">
+<header class="bg-primary shadow-md sticky top-0 z-50">
     <div class="max-w-7xl mx-auto flex justify-between items-center p-4">
-
         <!-- Logo -->
         <div class="flex items-center gap-3">
             <img src="assets/images/logo.jpeg" alt="Moon Marine Logo" class="h-14 object-contain" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
@@ -237,31 +50,23 @@
         </div>
 
         <!-- Desktop Navigation -->
-        <nav class="hidden md:flex items-center space-x-6 font-medium">
+        <nav class="hidden md:flex items-center space-x-6 font-medium desktop-nav">
             <a href="index.html" class="hover:text-accent transition-colors">Home</a>
             <a href="about.html" class="hover:text-accent transition-colors">About</a>
             <a href="services.html" class="hover:text-accent transition-colors">Services</a>
             <a href="projects.html" class="hover:text-accent transition-colors">Projects</a>
-            <a href="certifications.html" class="hover:text-accent transition-colors">Certifications</a>
-            <a href="contact.html" class="hover:text-accent transition-colors">Contact</a>
+            <a href="mercury-engines.html" class="hover:text-accent transition-colors">Products</a>
+            <a href="#contact" class="hover:text-accent transition-colors">Contact</a>
         </nav>
 
         <!-- Right Section -->
         <div class="flex items-center space-x-2">
             <!-- Desktop Social Icons -->
             <div class="hidden md:flex items-center space-x-2">
-                <a href="https://wa.me/+917708007222" target="_blank" class="social-icon bg-[#25D366] hover:bg-[#20b359] text-white">
-                    <i class="fab fa-whatsapp"></i>
-                </a>
-                <a href="https://www.facebook.com/moonmarineservice/" target="_blank" class="social-icon bg-[#1877F2] hover:bg-[#166fe5] text-white">
-                    <i class="fab fa-facebook-f"></i>
-                </a>
-                <a href="https://www.instagram.com/moonmarineservice/" target="_blank" class="social-icon bg-gradient-to-br from-[#833AB4] via-[#FD1D1D] to-[#FCAF45] hover:opacity-90 text-white">
-                    <i class="fab fa-instagram"></i>
-                </a>
-                <a href="https://www.youtube.com/@moonmarineservice" target="_blank" class="social-icon bg-[#FF0000] hover:bg-[#cc0000] text-white">
-                    <i class="fab fa-youtube"></i>
-                </a>
+                <a href="https://wa.me/+917708007222" target="_blank" class="social-icon bg-[#25D366] hover:bg-[#20b359] text-white"><i class="fab fa-whatsapp"></i></a>
+                <a href="https://www.facebook.com/moonmarineservice/" target="_blank" class="social-icon bg-[#1877F2] hover:bg-[#166fe5] text-white"><i class="fab fa-facebook-f"></i></a>
+                <a href="https://www.instagram.com/moonmarineservice/" target="_blank" class="social-icon bg-gradient-to-br from-[#833AB4] via-[#FD1D1D] to-[#FCAF45] hover:opacity-90 text-white"><i class="fab fa-instagram"></i></a>
+                <a href="https://www.youtube.com/@moonmarineservice" target="_blank" class="social-icon bg-[#FF0000] hover:bg-[#cc0000] text-white"><i class="fab fa-youtube"></i></a>
             </div>
 
             <!-- Mobile Hamburger -->
@@ -275,39 +80,28 @@
     <div id="mobile-menu">
         <div class="flex justify-between items-center mb-8">
             <span class="text-xl font-bold text-accent">Menu</span>
-            <button id="close-menu" class="text-3xl text-accent">
-                <i class="fas fa-times"></i>
-            </button>
+            <button id="close-menu" class="text-3xl text-accent"><i class="fas fa-times"></i></button>
         </div>
-
         <div class="space-y-4">
             <a href="index.html" class="block text-lg border-b border-accent/20 pb-2 hover:text-accent">Home</a>
             <a href="about.html" class="block text-lg border-b border-accent/20 pb-2 hover:text-accent">About</a>
             <a href="services.html" class="block text-lg border-b border-accent/20 pb-2 hover:text-accent">Services</a>
             <a href="projects.html" class="block text-lg border-b border-accent/20 pb-2 hover:text-accent">Projects</a>
-            <a href="certifications.html" class="block text-lg border-b border-accent/20 pb-2 hover:text-accent">Certifications</a>
-            <a href="contact.html" class="block text-lg border-b border-accent/20 pb-2 hover:text-accent">Contact</a>
+            <a href="mercury-engines.html" class="block text-lg border-b border-accent/20 pb-2 hover:text-accent">Products</a>
+            <a href="#contact" class="block text-lg border-b border-accent/20 pb-2 hover:text-accent">Contact</a>
         </div>
-
         <div class="mt-8 pt-4 border-t border-accent/20">
             <p class="text-sm text-accent mb-4">Connect with us</p>
             <div class="flex gap-4">
-                <a href="https://wa.me/+917708007222" target="_blank" class="social-icon bg-[#25D366] text-white">
-                    <i class="fab fa-whatsapp"></i>
-                </a>
-                <a href="https://www.facebook.com/moonmarineservice/" target="_blank" class="social-icon bg-[#1877F2] text-white">
-                    <i class="fab fa-facebook-f"></i>
-                </a>
-                <a href="https://www.instagram.com/moonmarineservice/" target="_blank" class="social-icon bg-gradient-to-br from-[#833AB4] via-[#FD1D1D] to-[#FCAF45] text-white">
-                    <i class="fab fa-instagram"></i>
-                </a>
-                <a href="https://www.youtube.com/@moonmarineservice" target="_blank" class="social-icon bg-[#FF0000] text-white">
-                    <i class="fab fa-youtube"></i>
-                </a>
+                <a href="https://wa.me/+917708007222" target="_blank" class="social-icon bg-[#25D366] text-white"><i class="fab fa-whatsapp"></i></a>
+                <a href="https://www.facebook.com/moonmarineservice/" target="_blank" class="social-icon bg-[#1877F2] text-white"><i class="fab fa-facebook-f"></i></a>
+                <a href="https://www.instagram.com/moonmarineservice/" target="_blank" class="social-icon bg-gradient-to-br from-[#833AB4] via-[#FD1D1D] to-[#FCAF45] text-white"><i class="fab fa-instagram"></i></a>
+                <a href="https://www.youtube.com/@moonmarineservice" target="_blank" class="social-icon bg-[#FF0000] text-white"><i class="fab fa-youtube"></i></a>
             </div>
         </div>
     </div>
 </header>
+
 
 <!-- ========== SERVICES PAGE ========== -->
 <section id="services-page" class="py-20 px-4">
@@ -654,3 +448,4 @@
 
 </body>
 </html>
+
