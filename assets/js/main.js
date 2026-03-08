@@ -228,11 +228,24 @@ return;
 }
 
 // Razorpay payment
+function submitForm(){
+
+const name = document.getElementById("fname").value;
+const phone = document.getElementById("fphone").value;
+const service = document.getElementById("fservice").value;
+const location = document.getElementById("flocation").value;
+const message = document.getElementById("fmessage").value;
+
+if(!name || !phone){
+alert("Please enter your name and phone number");
+return;
+}
+
 var options = {
 
 key: "rzp_live_SOFjRPAj8NXqRQ",
 
-amount: 1000, // ₹500
+amount: 50000,
 
 currency: "INR",
 
@@ -249,7 +262,14 @@ handler:function(response){
 
 alert("Payment Successful!");
 
-sendBookingEmail(name,phone,service,location,message,response.razorpay_payment_id);
+sendBookingEmail(
+name,
+phone,
+service,
+location,
+message,
+response.razorpay_payment_id
+);
 
 }
 
