@@ -65,7 +65,7 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: #cdcdfa
+            background: #cdcdfa;
             z-index: 900;
         }
 
@@ -502,7 +502,8 @@
 
         /* ===== CONTACT SECTION ===== */
        
-
+* { box-sizing: border-box; }
+  body { font-family: 'Exo 2', sans-serif; background: var(--primary); color: var(--accent); margin: 0; }
   /* =========================================================
      RAIN CANVAS (full scene: raindrops, lightning, boat)
   ========================================================= */
