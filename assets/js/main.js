@@ -245,7 +245,7 @@ var options = {
 
 key: "rzp_live_SOFjRPAj8NXqRQ",
 
-amount: 50000,
+amount: 1000,
 
 currency: "INR",
 
