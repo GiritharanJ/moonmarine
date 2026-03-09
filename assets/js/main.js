@@ -22,33 +22,7 @@ var CONTACT_PHP    = 'contact.php';
 ========================================================= */
 document.addEventListener('DOMContentLoaded', function () {
 
-    /* Mobile Menu ---------------------------------------- */
-    var menuBtn    = document.getElementById('menu-btn');
-    var mobileMenu = document.getElementById('mobile-menu');
-    var closeMenu  = document.getElementById('close-menu');
-    var overlay    = document.getElementById('mobile-overlay');
-
-    if (menuBtn && mobileMenu && closeMenu && overlay) {
-
-        menuBtn.addEventListener('click', function () {
-            mobileMenu.classList.add('open');
-            overlay.classList.add('open');
-            document.body.style.overflow = 'hidden';
-        });
-
-        function closeMobileMenu() {
-            mobileMenu.classList.remove('open');
-            overlay.classList.remove('open');
-            document.body.style.overflow = '';
-        }
-
-        closeMenu.addEventListener('click', closeMobileMenu);
-        overlay.addEventListener('click', closeMobileMenu);
-
-        mobileMenu.querySelectorAll('a').forEach(function (link) {
-            link.addEventListener('click', closeMobileMenu);
-        });
-    }
+    /* Mobile Menu — handled by inline script in index.html (avoids double-bind) */
 
     /* Gallery -------------------------------------------- */
     if (document.getElementById('galleryGrid'))   { loadGallery(); }
