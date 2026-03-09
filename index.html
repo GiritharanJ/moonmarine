@@ -40,30 +40,24 @@
 <div id="mobile-overlay" class="mobile-overlay"></div>
 
 <!-- ===== HEADER ===== -->
+<!-- ===== HEADER ===== -->
 <header class="bg-primary shadow-md sticky top-0 z-50">
-    <div class="max-w-7xl mx-auto flex justify-between items-center py-3 px-4">
-        <!-- Logo -->
-        <div class="flex items-center gap-3">
-            <img src="assets/images/logo.jpeg" alt="Moon Marine Logo" class="h-14 object-contain" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
-            <div class="h-14 w-14 rounded-full bg-accent text-primary items-center justify-center text-2xl font-bold hidden"><i class="fas fa-ship"></i></div>
-            <div class="leading-tight">
-                <h1 class="text-xl md:text-2xl font-bold tracking-wide">MOON MARINE</h1>
-                <p class="text-xs text-accent">Mercury Authorized Dealer</p>
+    <div class="max-w-7xl mx-auto px-4">
+        <!-- Top row: Logo + Brand centered, Social icons right -->
+        <div class="flex items-center justify-between py-2">
+            <!-- Left spacer (desktop only) -->
+            <div class="w-24 hidden md:block"></div>
+
+            <!-- Logo & Brand (centered) -->
+            <div class="flex items-center gap-3">
+                <img src="assets/images/logo.jpeg" alt="Moon Marine Logo" class="h-12 w-12 rounded-full object-cover border-2 border-accent" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                <div class="h-12 w-12 rounded-full bg-accent text-primary items-center justify-center text-2xl font-bold hidden"><i class="fas fa-ship"></i></div>
+                <div class="leading-tight">
+                    <h1 class="text-xl md:text-2xl font-bold tracking-wide">MOON MARINE</h1>
+                    <p class="text-xs text-accent">Mercury Authorized Dealer</p>
+                </div>
             </div>
-        </div>
 
-        <!-- Desktop Navigation -->
-        <nav class="hidden md:flex items-center space-x-6 font-medium desktop-nav">
-            <a href="index.html" class="hover:text-accent transition-colors">Home</a>
-            <a href="about.html" class="hover:text-accent transition-colors">About</a>
-            <a href="services.html" class="hover:text-accent transition-colors">Services</a>
-            <a href="projects.html" class="hover:text-accent transition-colors">Projects</a>
-            <a href="mercury-engines.html" class="hover:text-accent transition-colors">Products</a>
-            <a href="#contact" class="hover:text-accent transition-colors">Contact</a>
-        </nav>
-
-        <!-- Right Section -->
-        <div class="flex items-center space-x-2">
             <!-- Desktop Social Icons -->
             <div class="hidden md:flex items-center space-x-2">
                 <a href="https://wa.me/+917708007222" target="_blank" class="social-icon bg-[#25D366] hover:bg-[#20b359] text-white"><i class="fab fa-whatsapp"></i></a>
@@ -73,13 +67,23 @@
             </div>
 
             <!-- Mobile Hamburger -->
-            <button id="menu-btn" class="md:hidden text-3xl text-accent focus:outline-none ml-2">
+            <button id="menu-btn" class="md:hidden text-3xl text-accent focus:outline-none">
                 <i class="fas fa-bars"></i>
             </button>
         </div>
+
+        <!-- Desktop Navigation (centered below) -->
+        <nav class="hidden md:flex justify-center items-center space-x-8 font-medium py-3 border-t border-accent/10">
+            <a href="index.html" class="hover:text-accent transition-colors">Home</a>
+            <a href="about.html" class="hover:text-accent transition-colors">About</a>
+            <a href="services.html" class="hover:text-accent transition-colors">Services</a>
+            <a href="projects.html" class="hover:text-accent transition-colors">Projects</a>
+            <a href="mercury-engines.html" class="hover:text-accent transition-colors">Products</a>
+            <a href="#contact" class="hover:text-accent transition-colors">Contact</a>
+        </nav>
     </div>
 
-    <!-- MOBILE MENU -->
+    <!-- MOBILE MENU (slide-out) - CORRECTED STRUCTURE -->
     <div id="mobile-menu">
         <div class="flex justify-between items-center mb-8">
             <span class="text-xl font-bold text-accent">Menu</span>
@@ -709,6 +713,7 @@
 <script src="assets/js/main.js"></script>
 </body>
 </html>
+
 
 
 
