@@ -40,6 +40,7 @@
 <div id="mobile-overlay" class="mobile-overlay"></div>
 
 <!-- ===== HEADER ===== -->
+<!-- ===== HEADER ===== -->
 <header class="bg-primary shadow-md sticky top-0 z-50">
     <div class="max-w-7xl mx-auto flex justify-between items-center py-3 px-4">
         <!-- Logo -->
@@ -287,169 +288,430 @@
     </div>
 </div>
 
-<section id="contact" class="wave-bg">
-    <div style="position:relative; z-index:1; padding:100px 24px;">
-        <div style="max-width:1200px; margin:0 auto;">
-            <div class="text-center" style="margin-bottom:60px;">
-                <p class="section-label">Get In Touch</p>
-                <h2 class="section-title">Contact & <span class="text-accent">Booking</span></h2>
-                <div class="section-divider"></div>
-                <p style="color:rgba(250,255,255,0.7);">Request a service or get a quick quote. We respond within minutes on WhatsApp.</p>
-            </div>
+<!-- ===== CONTACT / BOOKING ===== -->
+<!-- =====================================================================
+     CONTACT SECTION
+===================================================================== -->
+<section id="contact" class="relative overflow-hidden py-20 px-4" style="background: linear-gradient(180deg, #060d22 0%, #0b1535 40%, #111733 100%); min-height: 100vh;">
 
-            <div class="contact-wrap">
-                <!-- Info Column -->
-                <div>
-                    <div class="contact-info">
-                        <div class="item">
-                            <div class="item-icon"><i class="fas fa-phone-alt"></i></div>
-                            <div><div class="item-label">Call Us</div><div class="item-value"><a href="tel:+917708007222">+91 7708007222</a></div></div>
-                        </div>
-                        <div class="item">
-                            <div class="item-icon" style="background:rgba(37,211,102,0.1); border-color:rgba(37,211,102,0.3); color:#25D366;"><i class="fab fa-whatsapp"></i></div>
-                            <div><div class="item-label">WhatsApp</div><div class="item-value"><a href="https://wa.me/917708007222" target="_blank">+91 7708007222 — Quick Service Booking</a></div></div>
-                        </div>
-                        <div class="item">
-                            <div class="item-icon"><i class="fas fa-envelope"></i></div>
-                            <div><div class="item-label">Email</div><div class="item-value"><a href="mailto:moonmarinenavicationcomunicati@gmail.com">moonmarinenavicationcomunicati@gmail.com</a></div></div>
-                        </div>
-                        <div class="item">
-                            <div class="item-icon"><i class="fas fa-map-marker-alt"></i></div>
-                            <div><div class="item-label">Head Office</div><div class="item-value">Tharangambadi Harbour, Tamil Nadu, India</div></div>
-                        </div>
-                    </div>
+  <!-- CANVAS: Animated rain + boat scene -->
+  <canvas id="rain-canvas"></canvas>
 
-                    <!-- Map -->
-                    <div class="map-wrap">
-                        <iframe 
-                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3916.1033551660285!2d79.85285627363886!3d11.030871854451732!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a551b4fb045a32b%3A0xeba9cb01122ea496!2sMoon%20Marine%20Services!5e0!3m2!1sen!2sin!4v1772252795624!5m2!1sen!2sin" 
-                            allowfullscreen loading="lazy" referrerpolicy="no-referrer-when-downgrade">
-                        </iframe>
-                    </div>
-                </div>
+  <!-- CSS rain layer (extra density streaks) -->
+  <div class="rain-layer" id="rainLayer"></div>
 
-                <!-- Form Column -->
-                <div class="contact-form">
-                    <h3><i class="fas fa-paper-plane" style="color:var(--accent); margin-right:10px;"></i>Service Request Form</h3>
-                    <div class="form-row">
-                        <div class="form-group">
-                            <label>Your Name</label>
-                            <input type="text" id="fname" placeholder="Full name">
-                        </div>
-                        <div class="form-group">
-                            <label>Phone Number</label>
-                            <input type="tel" id="fphone" placeholder="+91 XXXXXXXXXX">
-                        </div>
-                        <div class="form-group">
-                            <label>Service Type</label>
-                            <select id="fservice">
-                                <option value="">Select a service...</option>
-                                <option>Engine Repair</option>
-                                <option>Mercury Service</option>
-                                <option>GPS Installation</option>
-                                <option>Fish Finder Setup</option>
-                                <option>AIS Installation</option>
-                                <option>Spare Parts</option>
-                                <option>Emergency Service</option>
-                                <option>Electrical Work</option>
-                                <option>Engine Purchase</option>
-                                <option>Other</option>
-                            </select>
-                        </div>
-                        <div class="form-group">
-                            <label>Location</label>
-                            <select id="flocation">
-                                <option value="">Select location...</option>
-                                <option>Nagapattinam</option>
-                                <option>Tharangambadi</option>
-                                <option>Karaikal</option>
-                                <option>Chennai</option>
-                                <option>Cuddalore</option>
-                                <option>Pondicherry</option>
-                                <option>Other</option>
-                            </select>
-                        </div>
-                        <div class="form-group form-full">
-                            <label>Message / Details</label>
-                            <textarea id="fmessage" placeholder="Describe your issue or requirement..."></textarea>
-                        </div>
-                        <div class="form-group form-full" style="display:flex; gap:12px; flex-wrap:wrap;">
-                            <button onclick="submitForm()" style="flex:1; padding:14px; background:var(--accent); color:#111733; border-radius:10px; border:none; font-weight:700; font-size:0.9rem; cursor:pointer; text-transform:uppercase; transition:0.2s;">
-                                <i class="fas fa-paper-plane" style="margin-right:6px;"></i>Send Request
-                            </button>
-                            <button onclick="submitWhatsApp()" style="flex:1; padding:14px; background:#25D366; color:white; border-radius:10px; border:none; font-weight:700; font-size:0.9rem; cursor:pointer; text-transform:uppercase; transition:0.2s;">
-                                <i class="fab fa-whatsapp" style="margin-right:6px;"></i>Send via WhatsApp
-                            </button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+  <!-- Ripples on water surface -->
+  <div id="rippleContainer"></div>
+
+  <!-- Atmospheric layers -->
+  <div class="scene-overlay"></div>
+  <div class="horizon-glow"></div>
+  <div class="sea-shimmer"></div>
+  <div class="lightning-flash" id="lightningFlash"></div>
+
+  <!-- Stars -->
+  <div id="starsContainer" class="absolute inset-0 pointer-events-none z-0"></div>
+
+  <!-- ── CONTENT ── -->
+  <div class="relative z-10 max-w-7xl mx-auto">
+
+    <!-- Header -->
+    <div class="text-center mb-14">
+      <p class="text-xs uppercase tracking-[0.2em] text-teal-300 mb-3 font-semibold" style="color:var(--teal);">Get In Touch</p>
+      <h2 class="font-bold mt-1 leading-tight" style="font-family:'Cinzel',serif; font-size:clamp(1.8rem,4vw,3.2rem);">
+        Contact &amp; <span style="color:var(--teal);">Booking</span>
+      </h2>
+      <div class="w-16 h-0.5 mx-auto my-4 rounded-full" style="background:linear-gradient(90deg,var(--teal),transparent);"></div>
+      <p class="text-white/60 max-w-xl mx-auto text-sm">Request a service or get a quick quote. We respond within minutes on WhatsApp.</p>
     </div>
-    <div class="wave-container" style="height:80px;"></div>
+
+    <!-- Grid -->
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12">
+
+      <!-- LEFT: Info + Map -->
+      <div class="space-y-6">
+
+        <!-- Contact info card -->
+        <div class="rounded-2xl p-6 space-y-0 divide-y divide-white/10"
+             style="background:rgba(255,255,255,0.05); border:1px solid rgba(255,255,255,0.1); backdrop-filter:blur(12px);">
+
+          <!-- Phone -->
+          <div class="flex items-center gap-4 py-4 first:pt-0 last:pb-0">
+            <div class="flex-shrink-0 w-11 h-11 rounded-full flex items-center justify-center text-lg"
+                 style="background:rgba(77,217,208,0.12); color:var(--teal); border:1px solid rgba(77,217,208,0.25);">
+              <i class="fas fa-phone-alt"></i>
+            </div>
+            <div><div class="lbl">Call Us</div><div class="val"><a href="tel:+917708007222">+91 7708007222</a></div></div>
+          </div>
+
+          <!-- WhatsApp -->
+          <div class="flex items-center gap-4 py-4">
+            <div class="flex-shrink-0 w-11 h-11 rounded-full flex items-center justify-center text-lg"
+                 style="background:rgba(37,211,102,0.12); color:#25D366; border:1px solid rgba(37,211,102,0.25);">
+              <i class="fab fa-whatsapp"></i>
+            </div>
+            <div><div class="lbl">WhatsApp</div><div class="val"><a href="https://wa.me/917708007222" target="_blank">+91 7708007222 — Quick Service Booking</a></div></div>
+          </div>
+
+          <!-- Email -->
+          <div class="flex items-center gap-4 py-4">
+            <div class="flex-shrink-0 w-11 h-11 rounded-full flex items-center justify-center text-lg"
+                 style="background:rgba(77,217,208,0.12); color:var(--teal); border:1px solid rgba(77,217,208,0.25);">
+              <i class="fas fa-envelope"></i>
+            </div>
+            <div>
+              <div class="lbl">Email</div>
+              <div class="val" style="font-size:0.82rem;">
+                <a href="mailto:moonmarinenavicationcomunicati@gmail.com" class="break-all">moonmarinenavicationcomunicati@gmail.com</a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Location -->
+          <div class="flex items-center gap-4 py-4 last:pb-0">
+            <div class="flex-shrink-0 w-11 h-11 rounded-full flex items-center justify-center text-lg"
+                 style="background:rgba(77,217,208,0.12); color:var(--teal); border:1px solid rgba(77,217,208,0.25);">
+              <i class="fas fa-map-marker-alt"></i>
+            </div>
+            <div><div class="lbl">Head Office</div><div class="val">Tharangambadi Harbour, Tamil Nadu, India</div></div>
+          </div>
+        </div>
+
+        <!-- Map -->
+        <div class="w-full rounded-2xl overflow-hidden shadow-2xl"
+             style="height:260px; border:1px solid rgba(77,217,208,0.25);">
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3916.1033551660285!2d79.85285627363886!3d11.030871854451732!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a551b4fb045a32b%3A0xeba9cb01122ea496!2sMoon%20Marine%20Services!5e0!3m2!1sen!2sin!4v1772252795624!5m2!1sen!2sin"
+            class="w-full h-full" style="border:0;" allowfullscreen loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+          </iframe>
+        </div>
+      </div>
+
+      <!-- RIGHT: Form -->
+      <div class="rounded-2xl p-6 md:p-8"
+           style="background:rgba(255,255,255,0.04); border:1px solid rgba(255,255,255,0.1); backdrop-filter:blur(14px);">
+
+        <h3 style="font-family:'Cinzel',serif; font-size:1.25rem;" class="mb-6 flex items-center gap-2">
+          <i class="fas fa-paper-plane" style="color:var(--teal);"></i>
+          Service Request Form
+        </h3>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <div>
+            <label class="block text-xs text-white/50 mb-1.5 uppercase tracking-wide">Your Name</label>
+            <input type="text" id="fname" placeholder="Full name" class="glass-input">
+          </div>
+          <div>
+            <label class="block text-xs text-white/50 mb-1.5 uppercase tracking-wide">Phone Number</label>
+            <input type="tel" id="fphone" placeholder="+91 XXXXXXXXXX" class="glass-input">
+          </div>
+          <div>
+            <label class="block text-xs text-white/50 mb-1.5 uppercase tracking-wide">Service Type</label>
+            <select id="fservice" class="glass-input">
+              <option value="">Select a service...</option>
+              <option>Engine Repair</option>
+              <option>Mercury Service</option>
+              <option>GPS Installation</option>
+              <option>Fish Finder Setup</option>
+              <option>AIS Installation</option>
+              <option>Spare Parts</option>
+              <option>Emergency Service</option>
+              <option>Electrical Work</option>
+              <option>Engine Purchase</option>
+              <option>Other</option>
+            </select>
+          </div>
+          <div>
+            <label class="block text-xs text-white/50 mb-1.5 uppercase tracking-wide">Location</label>
+            <select id="flocation" class="glass-input">
+              <option value="">Select location...</option>
+              <option>Nagapattinam</option>
+              <option>Tharangambadi</option>
+              <option>Karaikal</option>
+              <option>Chennai</option>
+              <option>Cuddalore</option>
+              <option>Pondicherry</option>
+              <option>Other</option>
+            </select>
+          </div>
+          <div class="md:col-span-2">
+            <label class="block text-xs text-white/50 mb-1.5 uppercase tracking-wide">Message / Details</label>
+            <textarea id="fmessage" rows="4" placeholder="Describe your issue or requirement..." class="glass-input" style="resize:none;"></textarea>
+          </div>
+          <div class="md:col-span-2 flex flex-col sm:flex-row gap-3">
+            <button onclick="submitForm()"
+              class="flex-1 flex items-center justify-center gap-2 py-3.5 px-6 rounded-xl font-bold text-sm uppercase tracking-wider transition-all duration-200"
+              style="background:var(--teal); color:#060d22;"
+              onmouseover="this.style.background='white';this.style.color='#111733';"
+              onmouseout="this.style.background='var(--teal)';this.style.color='#060d22';">
+              <i class="fas fa-paper-plane"></i> Send Request
+            </button>
+            <button onclick="submitWhatsApp()"
+              class="flex-1 flex items-center justify-center gap-2 py-3.5 px-6 rounded-xl font-bold text-sm uppercase tracking-wider transition-all duration-200"
+              style="background:#25D366; color:white;"
+              onmouseover="this.style.background='#1fb358';"
+              onmouseout="this.style.background='#25D366';">
+              <i class="fab fa-whatsapp"></i> Send via WhatsApp
+            </button>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Boat scene SVG (bottom of section) -->
+  <div class="absolute bottom-0 left-0 right-0 z-2 pointer-events-none overflow-hidden" style="height:200px; z-index:2;">
+    <svg viewBox="0 0 1440 200" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none"
+         class="w-full h-full">
+      <!-- Sea waves -->
+      <defs>
+        <linearGradient id="seaGrad" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0%" stop-color="#0d1b3e" stop-opacity="0.9"/>
+          <stop offset="100%" stop-color="#060d22" stop-opacity="1"/>
+        </linearGradient>
+      </defs>
+      <path d="M0,100 Q180,70 360,100 T720,100 T1080,100 T1440,100 L1440,200 L0,200 Z" fill="url(#seaGrad)"/>
+      <!-- Wave crests -->
+      <path d="M0,110 Q180,85 360,110 T720,110 T1080,110 T1440,110" fill="none" stroke="rgba(77,217,208,0.12)" stroke-width="1.5">
+        <animateTransform attributeName="transform" type="translate" values="0,0;-30,0;0,0" dur="6s" repeatCount="indefinite"/>
+      </path>
+      <path d="M0,120 Q240,95 480,120 T960,120 T1440,120" fill="none" stroke="rgba(77,217,208,0.07)" stroke-width="1">
+        <animateTransform attributeName="transform" type="translate" values="0,0;30,0;0,0" dur="8s" repeatCount="indefinite"/>
+      </path>
+    </svg>
+
+    <!-- Lighthouse (far right) -->
+    <svg class="absolute" style="right:8%;bottom:60px;width:50px;height:110px;" viewBox="0 0 50 110" xmlns="http://www.w3.org/2000/svg">
+      <rect x="20" y="40" width="10" height="60" fill="#0d1b3e" rx="2"/>
+      <rect x="18" y="30" width="14" height="15" fill="#1a2a5e" rx="2"/>
+      <!-- Light -->
+      <circle cx="25" cy="30" r="5" fill="rgba(255,240,150,0.9)">
+        <animate attributeName="r" values="4;6;4" dur="2s" repeatCount="indefinite"/>
+        <animate attributeName="fill-opacity" values="0.8;1;0.8" dur="2s" repeatCount="indefinite"/>
+      </circle>
+      <!-- Beam -->
+      <g class="beam" style="transform-origin:25px 30px;">
+        <polygon points="25,25 5,0 45,0" fill="rgba(255,240,150,0.06)"/>
+      </g>
+      <!-- Stripes -->
+      <rect x="20" y="55" width="10" height="5" fill="rgba(255,255,255,0.12)" rx="1"/>
+      <rect x="20" y="68" width="10" height="5" fill="rgba(255,255,255,0.12)" rx="1"/>
+    </svg>
+  </div>
+
+  <!-- Animated Boat SVG -->
+  <div class="absolute z-3 pointer-events-none" id="boatContainer"
+       style="bottom:88px; left:12%; z-index:3; width:130px;">
+    <div class="boat-wrap">
+      <svg viewBox="0 0 130 60" xmlns="http://www.w3.org/2000/svg" width="130" height="60">
+        <!-- Mast -->
+        <line x1="68" y1="8" x2="68" y2="38" stroke="rgba(255,255,255,0.5)" stroke-width="1.5"/>
+        <!-- Sail -->
+        <polygon points="68,10 68,36 88,30" fill="rgba(255,255,255,0.12)" stroke="rgba(255,255,255,0.25)" stroke-width="0.8"/>
+        <!-- Small flag -->
+        <polygon points="68,10 76,14 68,18" fill="rgba(77,217,208,0.6)"/>
+        <!-- Hull -->
+        <path d="M10,38 Q65,48 120,38 L112,50 Q65,58 18,50 Z" fill="#1a2a5e" stroke="rgba(77,217,208,0.3)" stroke-width="1"/>
+        <!-- Cabin -->
+        <rect x="50" y="28" width="30" height="13" rx="3" fill="#0d1b3e" stroke="rgba(255,255,255,0.15)" stroke-width="0.7"/>
+        <!-- Windows -->
+        <rect x="54" y="31" width="6" height="5" rx="1" fill="rgba(255,240,150,0.4)"/>
+        <rect x="66" y="31" width="6" height="5" rx="1" fill="rgba(255,240,150,0.35)"/>
+        <!-- Wake lines -->
+        <path d="M115,46 Q125,44 130,46" fill="none" stroke="rgba(255,255,255,0.15)" stroke-width="1">
+          <animate attributeName="stroke-opacity" values="0.15;0.4;0.15" dur="2s" repeatCount="indefinite"/>
+        </path>
+        <path d="M115,50 Q127,47 132,50" fill="none" stroke="rgba(255,255,255,0.08)" stroke-width="1">
+          <animate attributeName="stroke-opacity" values="0.08;0.25;0.08" dur="2.5s" repeatCount="indefinite"/>
+        </path>
+      </svg>
+    </div>
+  </div>
+
 </section>
 
-<!-- ===== FOOTER ===== -->
-<footer>
-    <div class="footer-grid">
-        <!-- Brand -->
-        <div class="footer-brand">
-            <h2><i class="fas fa-anchor" style="color:var(--accent); margin-right:8px;"></i>Moon Marine</h2>
-            <p>Moon Marine is a marine engineering company specializing in Mercury engines, GPS installation, boat machinery services, and maintenance. Authorized agent for Mercury — supply and assembly of OEM spare parts for ship repair and marine contracts.</p>
-            <p style="color:var(--accent); font-weight:600; font-size:0.82rem;">✓ Authorized Mercury Agent</p>
-            <p style="color:rgba(250,255,255,0.3); font-size:0.72rem; margin-top:8px;">Disclaimer: This website is operated by an independent dealer. All parts and warranties are subject to the terms and conditions of respective manufacturers.</p>
-        </div>
 
-        <!-- Services -->
-        <div class="footer-col">
-            <h4>Services</h4>
-            <a href="#services" onclick="sendToWhatsApp('Engine Repair')">Engine Repair</a>
-            <a href="#services" onclick="sendToWhatsApp('Mercury Service')">Mercury Service</a>
-            <a href="#services" onclick="sendToWhatsApp('GPS Installation')">GPS Installation</a>
-            <a href="#services" onclick="sendToWhatsApp('Fish Finder Setup')">Fish Finder Setup</a>
-            <a href="#services" onclick="sendToWhatsApp('AIS Installation')">AIS Installation</a>
-            <a href="#services" onclick="sendToWhatsApp('Emergency Service')">Emergency Service</a>
-            <a href="#services" onclick="sendToWhatsApp('Electrical Work')">Electrical Work</a>
-        </div>
+<!-- =====================================================================
+     FOOTER
+===================================================================== -->
+<footer class="relative overflow-hidden" style="background:linear-gradient(180deg, #060d22 0%, #0a1128 50%, #111733 100%);">
 
-        <!-- Locations -->
-        <div class="footer-col">
-            <h4>Locations</h4>
-            <p>Nagapattinam</p>
-            <p>Tharangambadi</p>
-            <p>Karaikal</p>
-            <p>Chennai</p>
-            <p>Cuddalore</p>
-            <p>Pondicherry</p>
-        </div>
+  <!-- Top wave transition from contact -->
+  <div class="footer-wave -mt-1 pointer-events-none">
+    <svg viewBox="0 0 1440 60" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none" class="w-full" style="height:60px;">
+      <path d="M0,30 Q360,60 720,30 T1440,30 L1440,0 L0,0 Z" fill="#060d22"/>
+    </svg>
+  </div>
 
-        <!-- Contact -->
-        <div class="footer-col">
-            <h4>Contact</h4>
-            <a href="tel:+917708007222"><i class="fas fa-phone-alt" style="margin-right:6px; color:var(--accent);"></i>+91 7708007222</a>
-            <a href="https://wa.me/917708007222" target="_blank"><i class="fab fa-whatsapp" style="margin-right:6px; color:#25D366;"></i>WhatsApp</a>
-            <a href="mailto:moonmarinenavicationcomunicati@gmail.com"><i class="fas fa-envelope" style="margin-right:6px; color:var(--accent);"></i>Email Us</a>
-            <a href="https://www.facebook.com/moonmarineservice/" target="_blank"><i class="fab fa-facebook-f" style="margin-right:6px; color:#1877F2;"></i>Facebook</a>
-            <a href="https://www.instagram.com/moonmarineservice/" target="_blank"><i class="fab fa-instagram" style="margin-right:6px; color:#e1306c;"></i>Instagram</a>
-            <a href="https://www.youtube.com/@moonmarineservice" target="_blank"><i class="fab fa-youtube" style="margin-right:6px; color:#FF0000;"></i>YouTube</a>
-        </div>
+  <!-- Subtle rain continuation at footer top -->
+  <div class="absolute top-0 left-0 right-0 h-32 pointer-events-none overflow-hidden" style="opacity:0.3; z-index:0;">
+    <div style="position:absolute;inset:0;background:repeating-linear-gradient(
+      100deg,
+      transparent 0px, transparent 3px,
+      rgba(180,220,255,0.06) 3px, rgba(180,220,255,0.06) 4px
+    ); animation: rainFall 1.2s linear infinite;"></div>
+  </div>
+
+  <!-- Decorative dots -->
+  <div class="absolute inset-0 pointer-events-none overflow-hidden" style="z-index:0; opacity:0.35;">
+    <div id="footerStars"></div>
+  </div>
+
+  <!-- Anchor watermark -->
+  <div class="absolute inset-0 flex items-center justify-center pointer-events-none" style="z-index:0; opacity:0.025;">
+    <i class="fas fa-anchor" style="font-size:28rem; color:white; transform:rotate(-15deg);"></i>
+  </div>
+
+  <div class="relative z-10 max-w-7xl mx-auto px-4 pt-8 pb-6">
+
+    <!-- Main Grid -->
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10 lg:gap-12">
+
+      <!-- Brand -->
+      <div>
+        <h2 class="text-2xl font-bold mb-4 flex items-center gap-2" style="font-family:'Cinzel',serif;">
+          <i class="fas fa-anchor" style="color:var(--teal);"></i> Moon Marine
+        </h2>
+        <p class="text-sm leading-relaxed mb-4" style="color:rgba(250,255,255,0.55);">
+          Moon Marine is a marine engineering company specializing in Mercury engines, GPS installation, boat machinery services, and maintenance. Authorized agent for Mercury — supply and assembly of OEM spare parts for ship repair and marine contracts.
+        </p>
+        <p class="text-sm font-semibold mb-3" style="color:var(--teal);">✓ Authorized Mercury Agent</p>
+        <p class="text-xs italic" style="color:rgba(250,255,255,0.25);">
+          Disclaimer: This website is operated by an independent dealer. All parts and warranties are subject to the terms and conditions of respective manufacturers.
+        </p>
+      </div>
+
+      <!-- Services -->
+      <div>
+        <h4 class="text-sm font-bold uppercase tracking-widest mb-5" style="color:var(--teal);">Services</h4>
+        <ul class="space-y-2.5">
+          <li><a href="#services" class="text-sm transition-colors duration-200 flex items-center gap-2 group" style="color:rgba(250,255,255,0.55);"
+                onclick="sendToWhatsApp('Engine Repair')">
+            <span class="w-1 h-1 rounded-full flex-shrink-0 group-hover:bg-teal-300 transition-colors" style="background:rgba(77,217,208,0.4);"></span>
+            Engine Repair</a></li>
+          <li><a href="#services" class="text-sm transition-colors duration-200 flex items-center gap-2 group" style="color:rgba(250,255,255,0.55);"
+                onclick="sendToWhatsApp('Mercury Service')">
+            <span class="w-1 h-1 rounded-full flex-shrink-0" style="background:rgba(77,217,208,0.4);"></span>Mercury Service</a></li>
+          <li><a href="#services" class="text-sm transition-colors duration-200 flex items-center gap-2 group" style="color:rgba(250,255,255,0.55);"
+                onclick="sendToWhatsApp('GPS Installation')">
+            <span class="w-1 h-1 rounded-full flex-shrink-0" style="background:rgba(77,217,208,0.4);"></span>GPS Installation</a></li>
+          <li><a href="#services" class="text-sm transition-colors duration-200 flex items-center gap-2 group" style="color:rgba(250,255,255,0.55);"
+                onclick="sendToWhatsApp('Fish Finder Setup')">
+            <span class="w-1 h-1 rounded-full flex-shrink-0" style="background:rgba(77,217,208,0.4);"></span>Fish Finder Setup</a></li>
+          <li><a href="#services" class="text-sm transition-colors duration-200 flex items-center gap-2 group" style="color:rgba(250,255,255,0.55);"
+                onclick="sendToWhatsApp('AIS Installation')">
+            <span class="w-1 h-1 rounded-full flex-shrink-0" style="background:rgba(77,217,208,0.4);"></span>AIS Installation</a></li>
+          <li><a href="#services" class="text-sm transition-colors duration-200 flex items-center gap-2 group" style="color:rgba(250,255,255,0.55);"
+                onclick="sendToWhatsApp('Emergency Service')">
+            <span class="w-1 h-1 rounded-full flex-shrink-0" style="background:rgba(77,217,208,0.4);"></span>Emergency Service</a></li>
+          <li><a href="#services" class="text-sm transition-colors duration-200 flex items-center gap-2 group" style="color:rgba(250,255,255,0.55);"
+                onclick="sendToWhatsApp('Electrical Work')">
+            <span class="w-1 h-1 rounded-full flex-shrink-0" style="background:rgba(77,217,208,0.4);"></span>Electrical Work</a></li>
+        </ul>
+      </div>
+
+      <!-- Locations -->
+      <div>
+        <h4 class="text-sm font-bold uppercase tracking-widest mb-5" style="color:var(--teal);">Locations</h4>
+        <ul class="space-y-2.5">
+          <li class="text-sm flex items-center gap-2" style="color:rgba(250,255,255,0.55);">
+            <i class="fas fa-map-pin text-white" style="color:rgba(77,217,208,0.5);"></i> Nagapattinam</li>
+          <li class="text-sm flex items-center gap-2" style="color:rgba(250,255,255,0.55);">
+            <i class="fas fa-map-pin text-white" style="color:rgba(77,217,208,0.7);"></i> Tharangambadi <span class="text-xs px-1.5 py-0.5 rounded-full ml-1" style="background:rgba(77,217,208,0.12);color:var(--teal);font-size:0.62rem;">HQ</span></li>
+          <li class="text-sm flex items-center gap-2" style="color:rgba(250,255,255,0.55);">
+            <i class="fas fa-map-pin text-white" style="color:rgba(77,217,208,0.5);"></i> Karaikal</li>
+          <li class="text-sm flex items-center gap-2" style="color:rgba(250,255,255,0.55);">
+            <i class="fas fa-map-pin text-white" style="color:rgba(77,217,208,0.5);"></i> Chennai</li>
+          <li class="text-sm flex items-center gap-2" style="color:rgba(250,255,255,0.55);">
+            <i class="fas fa-map-pin text-white" style="color:rgba(77,217,208,0.5);"></i> Cuddalore</li>
+          <li class="text-sm flex items-center gap-2" style="color:rgba(250,255,255,0.55);">
+            <i class="fas fa-map-pin text-white" style="color:rgba(77,217,208,0.5);"></i> Pondicherry</li>
+        </ul>
+      </div>
+
+      <!-- Contact -->
+      <div>
+        <h4 class="text-sm font-bold uppercase tracking-widest mb-5" style="color:var(--teal);">Contact</h4>
+        <ul class="space-y-3">
+          <li><a href="tel:+917708007222" class="text-sm flex items-center gap-3 transition-colors duration-200" style="color:rgba(250,255,255,0.55);"
+                onmouseover="this.style.color='#fffff'" onmouseout="this.style.color='rgba(250,255,255,0.55)'">
+            <span class="w-8 h-8 rounded-full flex items-center justify-center text-white flex-shrink-0" style="background:rgba(77,217,208,0.1);color:var(--teal);"><i class="fas fa-phone-alt"></i></span>
+            +91 7708007222</a></li>
+          <li><a href="https://wa.me/917708007222" target="_blank" class="text-sm flex items-center gap-3 transition-colors duration-200" style="color:rgba(250,255,255,0.55);"
+                onmouseover="this.style.color='#25D366'" onmouseout="this.style.color='rgba(250,255,255,0.55)'">
+            <span class="w-8 h-8 rounded-full flex items-center justify-center text-white flex-shrink-0" style="background:rgba(37,211,102,0.1);color:#25D366;"><i class="fab fa-whatsapp"></i></span>
+            WhatsApp</a></li>
+          <li><a href="mailto:moonmarinenavicationcomunicati@gmail.com" class="text-sm flex items-center gap-3 transition-colors duration-200" style="color:rgba(250,255,255,0.55);"
+                onmouseover="this.style.color='#fff'" onmouseout="this.style.color='rgba(250,255,255,0.55)'">
+            <span class="w-8 h-8 rounded-full flex items-center justify-center text-white flex-shrink-0" style="background:rgba(77,217,208,0.1);color:var(--teal);"><i class="fas fa-envelope"></i></span>
+            Email Us</a></li>
+          <li><a href="https://www.facebook.com/moonmarineservice/" target="_blank" class="text-sm flex items-center gap-3 transition-colors duration-200" style="color:rgba(250,255,255,0.55);"
+                onmouseover="this.style.color='#1877F2'" onmouseout="this.style.color='rgba(250,255,255,0.55)'">
+            <span class="w-8 h-8 rounded-full flex items-center justify-center text-white flex-shrink-0" style="background:rgba(24,119,242,0.1);color:#1877F2;"><i class="fab fa-facebook-f"></i></span>
+            Facebook</a></li>
+          <li><a href="https://www.instagram.com/moonmarineservice/" target="_blank" class="text-sm flex items-center gap-3 transition-colors duration-200" style="color:rgba(250,255,255,0.55);"
+                onmouseover="this.style.color='#e1306c'" onmouseout="this.style.color='rgba(250,255,255,0.55)'">
+            <span class="w-8 h-8 rounded-full flex items-center justify-center text-white flex-shrink-0" style="background:rgba(225,48,108,0.1);color:#e1306c;"><i class="fab fa-instagram"></i></span>
+            Instagram</a></li>
+          <li><a href="https://www.youtube.com/@moonmarineservice" target="_blank" class="text-sm flex items-center gap-3 transition-colors duration-200" style="color:rgba(250,255,255,0.55);"
+                onmouseover="this.style.color='#FF0000'" onmouseout="this.style.color='rgba(250,255,255,0.55)'">
+            <span class="w-8 h-8 rounded-full flex items-center justify-center text-white flex-shrink-0" style="background:rgba(255,0,0,0.1);color:#FF0000;"><i class="fab fa-youtube"></i></span>
+            YouTube</a></li>
+        </ul>
+      </div>
+
     </div>
 
-    <div class="footer-bottom">
-        <p>© 2026 Moon Marine Services | Tharangambadi, Tamil Nadu, India</p>
-        <div class="footer-socials">
-            <a href="https://wa.me/917708007222" target="_blank" class="soc-btn" style="background:#25D366;"><i class="fab fa-whatsapp"></i></a>
-            <a href="https://www.facebook.com/moonmarineservice/" target="_blank" class="soc-btn" style="background:#1877F2;"><i class="fab fa-facebook-f"></i></a>
-            <a href="https://www.instagram.com/moonmarineservice/" target="_blank" class="soc-btn" style="background:linear-gradient(135deg,#833AB4,#FD1D1D,#FCAF45);"><i class="fab fa-instagram"></i></a>
-            <a href="https://www.youtube.com/@moonmarineservice" target="_blank" class="soc-btn" style="background:#FF0000;"><i class="fab fa-youtube"></i></a>
-        </div>
+    <!-- Bottom bar -->
+    <div class="mt-12 pt-5 flex flex-col md:flex-row justify-between items-center gap-4"
+         style="border-top:1px solid rgba(77,217,208,0.1);">
+      <p class="text-white" style="color:rgba(250,255,255,0.3);">© 2026 Moon Marine Services | Tharangambadi, Tamil Nadu, India</p>
+      <div class="flex gap-3">
+        <a href="https://wa.me/917708007222" target="_blank"
+           class="w-9 h-9 rounded-full flex items-center justify-center text-white text-sm transition-transform hover:scale-110"
+           style="background:#25D366;"><i class="fab fa-whatsapp"></i></a>
+        <a href="https://www.facebook.com/moonmarineservice/" target="_blank"
+           class="w-9 h-9 rounded-full flex items-center justify-center text-white text-sm transition-transform hover:scale-110"
+           style="background:#1877F2;"><i class="fab fa-facebook-f"></i></a>
+        <a href="https://www.instagram.com/moonmarineservice/" target="_blank"
+           class="w-9 h-9 rounded-full flex items-center justify-center text-white text-sm transition-transform hover:scale-110"
+           style="background:linear-gradient(135deg,#833AB4,#FD1D1D,#FCAF45);"><i class="fab fa-instagram"></i></a>
+        <a href="https://www.youtube.com/@moonmarineservice" target="_blank"
+           class="w-9 h-9 rounded-full flex items-center justify-center text-white text-sm transition-transform hover:scale-110"
+           style="background:#FF0000;"><i class="fab fa-youtube"></i></a>
+      </div>
     </div>
+
+  </div>
 </footer>
 
 <!-- Main JavaScript -->
 <script src="assets/js/main.js"></script>
 
+<!-- ===== PAYMENT RECEIPT MODAL ===== -->
+<div id="paymentReceipt">
+  <div id="receiptBox">
+    <h2>✅ Booking Confirmed!</h2>
+    <p class="receipt-id">Payment ID: <strong id="r_payId">—</strong></p>
+    <div class="receipt-row"><span class="r-label">Customer</span><span class="r-value" id="r_name">—</span></div>
+    <div class="receipt-row"><span class="r-label">Phone</span><span class="r-value" id="r_phone">—</span></div>
+    <div class="receipt-row"><span class="r-label">Service</span><span class="r-value" id="r_service">—</span></div>
+    <div class="receipt-row"><span class="r-label">Location</span><span class="r-value" id="r_location">—</span></div>
+    <div class="receipt-row"><span class="r-label">Amount Paid</span><span class="r-value" id="r_amount">—</span></div>
+    <div class="receipt-row"><span class="r-label">Date & Time</span><span class="r-value" id="r_date">—</span></div>
+    <p style="margin-top:16px;font-size:0.8rem;color:rgba(250,255,255,0.5);">We will contact you within 24 hours. Thank you for choosing Moon Marine!</p>
+    <button class="close-btn" onclick="closeReceipt()">Close &amp; Done</button>
+  </div>
+</div>
+
+<!-- Form error banner -->
+<div id="formError" style="display:none;position:fixed;top:80px;left:50%;transform:translateX(-50%);background:#ef4444;color:white;padding:12px 24px;border-radius:50px;font-weight:600;z-index:9998;font-size:0.9rem;box-shadow:0 4px 20px rgba(0,0,0,0.3);"></div>
+
 </body>
 </html>
+
+
+
 
 
