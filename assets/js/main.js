@@ -8,25 +8,23 @@ const mobileMenu = document.getElementById("mobile-menu");
 const closeMenu = document.getElementById("close-menu");
 const overlay = document.getElementById("mobile-overlay");
 
-menuBtn.addEventListener("click", () => {
+menuBtn.addEventListener("click", function(){
 mobileMenu.classList.add("open");
 overlay.classList.add("open");
 document.body.style.overflow="hidden";
 });
 
-closeMenu.addEventListener("click", closeMobileMenu);
-overlay.addEventListener("click", closeMobileMenu);
-
-function closeMobileMenu(){
+function closeMenuFunc(){
 mobileMenu.classList.remove("open");
 overlay.classList.remove("open");
 document.body.style.overflow="";
 }
 
+closeMenu.addEventListener("click", closeMenuFunc);
+overlay.addEventListener("click", closeMenuFunc);
+
 document.querySelectorAll("#mobile-menu a").forEach(link=>{
-link.addEventListener("click", ()=>{
-closeMobileMenu();
-});
+link.addEventListener("click", closeMenuFunc);
 });
 
 });
