@@ -27,6 +27,48 @@
     <!-- Razorpay SDK -->
     <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
    
+
+<style>
+/* ============================================================
+   MOBILE MENU — HARDCODED IN HTML (GitHub Pages cache-proof)
+   These styles override everything. No external CSS dependency.
+============================================================ */
+#mobile-menu {
+    position: fixed !important;
+    top: 0 !important;
+    left: 0 !important;
+    width: 300px !important;
+    height: 100% !important;
+    background: #111733 !important;
+    background-color: #111733 !important;
+    padding: 0 !important;
+    transform: translateX(-100%) !important;
+    transition: transform 0.3s ease !important;
+    z-index: 99999 !important;
+    overflow-y: auto !important;
+    box-shadow: 4px 0 30px rgba(0,0,0,0.6) !important;
+    display: block !important;
+    visibility: visible !important;
+}
+#mobile-menu.open {
+    transform: translateX(0) !important;
+}
+#mobile-overlay {
+    display: none !important;
+    position: fixed !important;
+    top: 0; left: 0; right: 0; bottom: 0 !important;
+    background: rgba(0,0,0,0.6) !important;
+    z-index: 99998 !important;
+    backdrop-filter: blur(3px) !important;
+}
+#mobile-overlay.open {
+    display: block !important;
+}
+@media (min-width: 768px) {
+    #mobile-menu { transform: translateX(-100%) !important; }
+    #mobile-menu.open { transform: translateX(-100%) !important; }
+}
+</style>
 </head>
 <body>
 
@@ -82,54 +124,113 @@
 
     <!-- MOBILE MENU — explicit inline styles, no Tailwind dependency -->
     <div id="mobile-menu">
-        <!-- Header row -->
-        <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:24px;">
-            <span style="font-size:1.2rem; font-weight:700; color:#ffffff; letter-spacing:0.05em;">☰ Menu</span>
-            <button id="close-menu" style="background:none;border:none;color:#ffffff;font-size:1.8rem;cursor:pointer;line-height:1;padding:4px;">
-                <i class="fas fa-times"></i>
-            </button>
-        </div>
-
-        <!-- Nav links -->
-        <nav style="display:flex; flex-direction:column; gap:0;">
-            <a href="index.html"          style="color:#fff;display:flex;align-items:center;gap:10px;padding:14px 0;border-bottom:1px solid rgba(255,255,255,0.12);font-size:1.05rem;font-weight:500;text-decoration:none;">
-                <i class="fas fa-home"          style="color:#4dd9d0;width:20px;text-align:center;"></i> Home</a>
-            <a href="about.html"          style="color:#fff;display:flex;align-items:center;gap:10px;padding:14px 0;border-bottom:1px solid rgba(255,255,255,0.12);font-size:1.05rem;font-weight:500;text-decoration:none;">
-                <i class="fas fa-info-circle"   style="color:#4dd9d0;width:20px;text-align:center;"></i> About</a>
-            <a href="services.html"       style="color:#fff;display:flex;align-items:center;gap:10px;padding:14px 0;border-bottom:1px solid rgba(255,255,255,0.12);font-size:1.05rem;font-weight:500;text-decoration:none;">
-                <i class="fas fa-tools"         style="color:#4dd9d0;width:20px;text-align:center;"></i> Services</a>
-            <a href="projects.html"       style="color:#fff;display:flex;align-items:center;gap:10px;padding:14px 0;border-bottom:1px solid rgba(255,255,255,0.12);font-size:1.05rem;font-weight:500;text-decoration:none;">
-                <i class="fas fa-images"        style="color:#4dd9d0;width:20px;text-align:center;"></i> Projects</a>
-            <a href="mercury-engines.html" style="color:#fff;display:flex;align-items:center;gap:10px;padding:14px 0;border-bottom:1px solid rgba(255,255,255,0.12);font-size:1.05rem;font-weight:500;text-decoration:none;">
-                <i class="fas fa-ship"          style="color:#4dd9d0;width:20px;text-align:center;"></i> Products</a>
-            <a href="#contact"            style="color:#fff;display:flex;align-items:center;gap:10px;padding:14px 0;border-bottom:1px solid rgba(255,255,255,0.12);font-size:1.05rem;font-weight:500;text-decoration:none;">
-                <i class="fas fa-envelope"      style="color:#4dd9d0;width:20px;text-align:center;"></i> Contact</a>
-        </nav>
-
-        <!-- Call to action -->
-        <a href="tel:+917708007222" style="display:flex;align-items:center;gap:10px;margin-top:20px;padding:13px 18px;background:rgba(77,217,208,0.12);border:1px solid rgba(77,217,208,0.3);border-radius:12px;color:#4dd9d0;font-weight:700;font-size:0.95rem;text-decoration:none;">
-            <i class="fas fa-phone-alt"></i> +91 7708007222
-        </a>
-
-        <!-- Social icons -->
-        <div style="margin-top:24px;padding-top:20px;border-top:1px solid rgba(255,255,255,0.12);">
-            <p style="color:rgba(255,255,255,0.5);font-size:0.75rem;text-transform:uppercase;letter-spacing:0.12em;margin-bottom:14px;">Follow Us</p>
-            <div style="display:flex;gap:12px;flex-wrap:wrap;">
-                <a href="https://wa.me/+917708007222" target="_blank"
-                   style="width:44px;height:44px;border-radius:50%;background:#25D366;display:flex;align-items:center;justify-content:center;color:white;font-size:1.2rem;text-decoration:none;">
-                    <i class="fab fa-whatsapp"></i></a>
-                <a href="https://www.facebook.com/moonmarineservice/" target="_blank"
-                   style="width:44px;height:44px;border-radius:50%;background:#1877F2;display:flex;align-items:center;justify-content:center;color:white;font-size:1.1rem;text-decoration:none;">
-                    <i class="fab fa-facebook-f"></i></a>
-                <a href="https://www.instagram.com/moonmarineservice/" target="_blank"
-                   style="width:44px;height:44px;border-radius:50%;background:linear-gradient(135deg,#833AB4,#FD1D1D,#FCAF45);display:flex;align-items:center;justify-content:center;color:white;font-size:1.1rem;text-decoration:none;">
-                    <i class="fab fa-instagram"></i></a>
-                <a href="https://www.youtube.com/@moonmarineservice" target="_blank"
-                   style="width:44px;height:44px;border-radius:50%;background:#FF0000;display:flex;align-items:center;justify-content:center;color:white;font-size:1.1rem;text-decoration:none;">
-                    <i class="fab fa-youtube"></i></a>
+        <div style="background:#111733;min-height:100%;padding:20px 24px;box-sizing:border-box;">
+            
+            <!-- TOP: Logo + Close -->
+            <div style="display:flex;justify-content:space-between;align-items:center;padding-bottom:20px;border-bottom:1px solid rgba(255,255,255,0.1);margin-bottom:8px;">
+                <div style="display:flex;align-items:center;gap:10px;">
+                    <img src="assets/images/logo.jpeg" style="height:36px;width:36px;border-radius:50%;object-fit:cover;" onerror="this.style.display='none'">
+                    <span style="color:#ffffff;font-size:1rem;font-weight:700;letter-spacing:0.05em;">MOON MARINE</span>
+                </div>
+                <button id="close-menu" style="background:rgba(255,255,255,0.08);border:none;color:#ffffff;font-size:1.2rem;cursor:pointer;width:36px;height:36px;border-radius:50%;display:flex;align-items:center;justify-content:center;">
+                    ✕
+                </button>
             </div>
+
+            <!-- NAV LINKS -->
+            <nav style="margin-top:8px;">
+                <a href="index.html" style="display:flex;align-items:center;gap:14px;padding:15px 12px;color:#ffffff;text-decoration:none;font-size:1rem;font-weight:500;border-bottom:1px solid rgba(255,255,255,0.08);border-radius:8px;">
+                    <span style="color:#4dd9d0;font-size:1rem;">🏠</span> Home
+                </a>
+                <a href="about.html" style="display:flex;align-items:center;gap:14px;padding:15px 12px;color:#ffffff;text-decoration:none;font-size:1rem;font-weight:500;border-bottom:1px solid rgba(255,255,255,0.08);border-radius:8px;">
+                    <span style="color:#4dd9d0;font-size:1rem;">ℹ️</span> About
+                </a>
+                <a href="services.html" style="display:flex;align-items:center;gap:14px;padding:15px 12px;color:#ffffff;text-decoration:none;font-size:1rem;font-weight:500;border-bottom:1px solid rgba(255,255,255,0.08);border-radius:8px;">
+                    <span style="color:#4dd9d0;font-size:1rem;">🔧</span> Services
+                </a>
+                <a href="projects.html" style="display:flex;align-items:center;gap:14px;padding:15px 12px;color:#ffffff;text-decoration:none;font-size:1rem;font-weight:500;border-bottom:1px solid rgba(255,255,255,0.08);border-radius:8px;">
+                    <span style="color:#4dd9d0;font-size:1rem;">📸</span> Projects
+                </a>
+                <a href="mercury-engines.html" style="display:flex;align-items:center;gap:14px;padding:15px 12px;color:#ffffff;text-decoration:none;font-size:1rem;font-weight:500;border-bottom:1px solid rgba(255,255,255,0.08);border-radius:8px;">
+                    <span style="color:#4dd9d0;font-size:1rem;">⚓</span> Products
+                </a>
+                <a href="#contact" style="display:flex;align-items:center;gap:14px;padding:15px 12px;color:#ffffff;text-decoration:none;font-size:1rem;font-weight:500;border-radius:8px;">
+                    <span style="color:#4dd9d0;font-size:1rem;">📞</span> Contact
+                </a>
+            </nav>
+
+            <!-- CALL BUTTON -->
+            <a href="tel:+917708007222" style="display:flex;align-items:center;justify-content:center;gap:10px;margin-top:20px;padding:14px;background:#4dd9d0;border-radius:12px;color:#111733;font-weight:700;font-size:0.95rem;text-decoration:none;">
+                📞 Call +91 7708007222
+            </a>
+
+            <!-- WHATSAPP BUTTON -->
+            <a href="https://wa.me/917708007222" target="_blank" style="display:flex;align-items:center;justify-content:center;gap:10px;margin-top:10px;padding:14px;background:#25D366;border-radius:12px;color:#ffffff;font-weight:700;font-size:0.95rem;text-decoration:none;">
+                💬 WhatsApp Us
+            </a>
+
+            <!-- SOCIAL ICONS -->
+            <div style="margin-top:24px;padding-top:20px;border-top:1px solid rgba(255,255,255,0.1);">
+                <p style="color:rgba(255,255,255,0.45);font-size:0.72rem;text-transform:uppercase;letter-spacing:0.14em;margin-bottom:14px;margin-top:0;">Follow Us</p>
+                <div style="display:flex;gap:12px;">
+                    <a href="https://wa.me/+917708007222" target="_blank"
+                       style="width:46px;height:46px;border-radius:50%;background:#25D366;display:flex;align-items:center;justify-content:center;color:white;font-size:1.25rem;text-decoration:none;flex-shrink:0;">
+                        <i class="fab fa-whatsapp"></i></a>
+                    <a href="https://www.facebook.com/moonmarineservice/" target="_blank"
+                       style="width:46px;height:46px;border-radius:50%;background:#1877F2;display:flex;align-items:center;justify-content:center;color:white;font-size:1.1rem;text-decoration:none;flex-shrink:0;">
+                        <i class="fab fa-facebook-f"></i></a>
+                    <a href="https://www.instagram.com/moonmarineservice/" target="_blank"
+                       style="width:46px;height:46px;border-radius:50%;background:linear-gradient(135deg,#833AB4,#FD1D1D,#FCAF45);display:flex;align-items:center;justify-content:center;color:white;font-size:1.1rem;text-decoration:none;flex-shrink:0;">
+                        <i class="fab fa-instagram"></i></a>
+                    <a href="https://www.youtube.com/@moonmarineservice" target="_blank"
+                       style="width:46px;height:46px;border-radius:50%;background:#FF0000;display:flex;align-items:center;justify-content:center;color:white;font-size:1.1rem;text-decoration:none;flex-shrink:0;">
+                        <i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+
         </div>
     </div>
+    </div>
+
+<script>
+/* Mobile menu — inline script, fires before main.js loads */
+(function() {
+    function ready(fn) {
+        if (document.readyState !== 'loading') { fn(); }
+        else { document.addEventListener('DOMContentLoaded', fn); }
+    }
+    ready(function() {
+        var btn     = document.getElementById('menu-btn');
+        var menu    = document.getElementById('mobile-menu');
+        var closeBtn= document.getElementById('close-menu');
+        var overlay = document.getElementById('mobile-overlay');
+
+        if (!btn || !menu) { console.error('Menu elements missing'); return; }
+
+        function openMenu() {
+            menu.classList.add('open');
+            if (overlay) overlay.classList.add('open');
+            document.body.style.overflow = 'hidden';
+        }
+        function closeMenu() {
+            menu.classList.remove('open');
+            if (overlay) overlay.classList.remove('open');
+            document.body.style.overflow = '';
+        }
+
+        btn.addEventListener('click', openMenu);
+        if (closeBtn) closeBtn.addEventListener('click', closeMenu);
+        if (overlay)  overlay.addEventListener('click', closeMenu);
+
+        /* Close on nav link click */
+        menu.querySelectorAll('a').forEach(function(a) {
+            a.addEventListener('click', closeMenu);
+        });
+        
+        console.log('Mobile menu initialized ✓');
+    });
+})();
+</script>
 </header>
 
 <!-- ===== HERO SECTION ===== -->
