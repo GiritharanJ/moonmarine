@@ -27,17 +27,198 @@
     <!-- Razorpay SDK -->
     <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
    
+
+<style>
+/* ============================================================
+   MOBILE MENU — HARDCODED IN HTML (GitHub Pages cache-proof)
+   These styles override everything. No external CSS dependency.
+============================================================ */
+#mobile-menu {
+    position: fixed !important;
+    top: 0 !important;
+    left: 0 !important;
+    width: 300px !important;
+    height: 100% !important;
+    background: #111733 !important;
+    background-color: #111733 !important;
+    padding: 0 !important;
+    transform: translateX(-100%) !important;
+    transition: transform 0.3s ease !important;
+    z-index: 99999 !important;
+    overflow-y: auto !important;
+    box-shadow: 4px 0 30px rgba(0,0,0,0.6) !important;
+    display: block !important;
+    visibility: visible !important;
+}
+#mobile-menu.open {
+    transform: translateX(0) !important;
+}
+/* Force content visible when open */
+#mobile-menu.open * {
+    visibility: visible !important;
+    opacity: 1 !important;
+}
+#mobile-overlay {
+    display: none !important;
+    position: fixed !important;
+    top: 0; left: 0; right: 0; bottom: 0 !important;
+    background: rgba(0,0,0,0.6) !important;
+    z-index: 99998 !important;
+    backdrop-filter: blur(3px) !important;
+}
+#mobile-overlay.open {
+    display: block !important;
+}
+@media (min-width: 768px) {
+    #mobile-menu { transform: translateX(-100%) !important; }
+    #mobile-menu.open { transform: translateX(-100%) !important; }
+}
+</style>
 </head>
 <body>
+
+<!-- ====================================================
+     MOBILE MENU — standalone, outside header
+     100% inline styles, zero external CSS dependency
+==================================================== -->
+<div id="mobile-menu" style="
+    position:fixed;
+    top:0; left:0;
+    width:290px;
+    height:100vh;
+    background-color:#0f1628;
+    background:#0f1628;
+    z-index:999999;
+    overflow-y:auto;
+    transform:translateX(-100%);
+    transition:transform 0.3s cubic-bezier(0.4,0,0.2,1);
+    font-family:'Exo 2',Arial,sans-serif;
+    border-right:1px solid rgba(77,217,208,0.25);
+    box-shadow:8px 0 40px rgba(0,0,0,0.8);
+">
+  <div style="padding:20px;background:#0f1628;min-height:100vh;color:#ffffff;">
+
+    <!-- Header -->
+    <div style="display:flex;justify-content:space-between;align-items:center;padding-bottom:16px;margin-bottom:4px;border-bottom:1px solid rgba(77,217,208,0.2);">
+      <div style="display:flex;align-items:center;gap:10px;">
+        <img src="assets/images/logo.jpeg" 
+             style="width:38px;height:38px;border-radius:50%;object-fit:cover;border:2px solid #4dd9d0;"
+             onerror="this.style.display='none'">
+        <div>
+          <div style="color:#ffffff;font-weight:700;font-size:0.95rem;line-height:1.1;">MOON MARINE</div>
+          <div style="color:#4dd9d0;font-size:0.62rem;letter-spacing:0.08em;">Mercury Authorized Dealer</div>
+        </div>
+      </div>
+      <button id="close-menu" onclick="document.getElementById('mobile-menu').classList.remove('open');document.getElementById('mobile-overlay').classList.remove('open');document.body.style.overflow='';"
+              style="background:#1a2545;border:1px solid rgba(255,255,255,0.15);color:#ffffff;width:36px;height:36px;border-radius:50%;cursor:pointer;font-size:1.1rem;display:flex;align-items:center;justify-content:center;line-height:1;flex-shrink:0;">
+        ✕
+      </button>
+    </div>
+
+    <!-- Nav Links -->
+    <nav style="margin-top:8px;">
+      <a href="index.html"
+         onclick="document.getElementById('mobile-menu').classList.remove('open');document.getElementById('mobile-overlay').classList.remove('open');document.body.style.overflow='';"
+         style="display:flex;align-items:center;gap:14px;padding:13px 10px;color:#ffffff;text-decoration:none;font-size:0.98rem;font-weight:500;border-bottom:1px solid rgba(255,255,255,0.07);">
+        <span style="width:26px;height:26px;background:rgba(77,217,208,0.12);border-radius:6px;display:flex;align-items:center;justify-content:center;font-size:0.85rem;flex-shrink:0;">🏠</span>
+        <span style="color:#ffffff;">Home</span>
+      </a>
+      <a href="about.html"
+         onclick="document.getElementById('mobile-menu').classList.remove('open');document.getElementById('mobile-overlay').classList.remove('open');document.body.style.overflow='';"
+         style="display:flex;align-items:center;gap:14px;padding:13px 10px;color:#ffffff;text-decoration:none;font-size:0.98rem;font-weight:500;border-bottom:1px solid rgba(255,255,255,0.07);">
+        <span style="width:26px;height:26px;background:rgba(77,217,208,0.12);border-radius:6px;display:flex;align-items:center;justify-content:center;font-size:0.85rem;flex-shrink:0;">ℹ️</span>
+        <span style="color:#ffffff;">About</span>
+      </a>
+      <a href="services.html"
+         onclick="document.getElementById('mobile-menu').classList.remove('open');document.getElementById('mobile-overlay').classList.remove('open');document.body.style.overflow='';"
+         style="display:flex;align-items:center;gap:14px;padding:13px 10px;color:#ffffff;text-decoration:none;font-size:0.98rem;font-weight:500;border-bottom:1px solid rgba(255,255,255,0.07);">
+        <span style="width:26px;height:26px;background:rgba(77,217,208,0.12);border-radius:6px;display:flex;align-items:center;justify-content:center;font-size:0.85rem;flex-shrink:0;">🔧</span>
+        <span style="color:#ffffff;">Services</span>
+      </a>
+      <a href="projects.html"
+         onclick="document.getElementById('mobile-menu').classList.remove('open');document.getElementById('mobile-overlay').classList.remove('open');document.body.style.overflow='';"
+         style="display:flex;align-items:center;gap:14px;padding:13px 10px;color:#ffffff;text-decoration:none;font-size:0.98rem;font-weight:500;border-bottom:1px solid rgba(255,255,255,0.07);">
+        <span style="width:26px;height:26px;background:rgba(77,217,208,0.12);border-radius:6px;display:flex;align-items:center;justify-content:center;font-size:0.85rem;flex-shrink:0;">📸</span>
+        <span style="color:#ffffff;">Projects</span>
+      </a>
+      <a href="mercury-engines.html"
+         onclick="document.getElementById('mobile-menu').classList.remove('open');document.getElementById('mobile-overlay').classList.remove('open');document.body.style.overflow='';"
+         style="display:flex;align-items:center;gap:14px;padding:13px 10px;color:#ffffff;text-decoration:none;font-size:0.98rem;font-weight:500;border-bottom:1px solid rgba(255,255,255,0.07);">
+        <span style="width:26px;height:26px;background:rgba(77,217,208,0.12);border-radius:6px;display:flex;align-items:center;justify-content:center;font-size:0.85rem;flex-shrink:0;">⚓</span>
+        <span style="color:#ffffff;">Products</span>
+      </a>
+      <a href="#contact"
+         onclick="document.getElementById('mobile-menu').classList.remove('open');document.getElementById('mobile-overlay').classList.remove('open');document.body.style.overflow='';"
+         style="display:flex;align-items:center;gap:14px;padding:13px 10px;color:#ffffff;text-decoration:none;font-size:0.98rem;font-weight:500;">
+        <span style="width:26px;height:26px;background:rgba(77,217,208,0.12);border-radius:6px;display:flex;align-items:center;justify-content:center;font-size:0.85rem;flex-shrink:0;">📞</span>
+        <span style="color:#ffffff;">Contact</span>
+      </a>
+    </nav>
+
+    <!-- Action buttons -->
+    <div style="margin-top:20px;display:flex;flex-direction:column;gap:10px;">
+      <a href="tel:+917708007222"
+         style="display:flex;align-items:center;justify-content:center;gap:8px;padding:13px;background:#4dd9d0;border-radius:10px;color:#0f1628;font-weight:700;font-size:0.92rem;text-decoration:none;">
+        📞 Call +91 7708007222
+      </a>
+      <a href="https://wa.me/917708007222" target="_blank"
+         style="display:flex;align-items:center;justify-content:center;gap:8px;padding:13px;background:#25D366;border-radius:10px;color:#ffffff;font-weight:700;font-size:0.92rem;text-decoration:none;">
+        💬 WhatsApp Now
+      </a>
+    </div>
+
+    <!-- Social Icons -->
+    <div style="margin-top:22px;padding-top:18px;border-top:1px solid rgba(77,217,208,0.15);">
+      <p style="color:rgba(255,255,255,0.4);font-size:0.68rem;text-transform:uppercase;letter-spacing:0.14em;margin:0 0 12px 0;">Follow Us</p>
+      <div style="display:flex;gap:10px;flex-wrap:wrap;">
+        <a href="https://wa.me/+917708007222" target="_blank"
+           style="width:44px;height:44px;border-radius:50%;background:#25D366;display:flex;align-items:center;justify-content:center;color:white;font-size:1.15rem;text-decoration:none;flex-shrink:0;">
+          <i class="fab fa-whatsapp"></i></a>
+        <a href="https://www.facebook.com/moonmarineservice/" target="_blank"
+           style="width:44px;height:44px;border-radius:50%;background:#1877F2;display:flex;align-items:center;justify-content:center;color:white;font-size:1rem;text-decoration:none;flex-shrink:0;">
+          <i class="fab fa-facebook-f"></i></a>
+        <a href="https://www.instagram.com/moonmarineservice/" target="_blank"
+           style="width:44px;height:44px;border-radius:50%;background:linear-gradient(135deg,#833AB4,#FD1D1D,#FCAF45);display:flex;align-items:center;justify-content:center;color:white;font-size:1rem;text-decoration:none;flex-shrink:0;">
+          <i class="fab fa-instagram"></i></a>
+        <a href="https://www.youtube.com/@moonmarineservice" target="_blank"
+           style="width:44px;height:44px;border-radius:50%;background:#FF0000;display:flex;align-items:center;justify-content:center;color:white;font-size:1rem;text-decoration:none;flex-shrink:0;">
+          <i class="fab fa-youtube"></i></a>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- Overlay -->
+<div id="mobile-overlay"
+     onclick="document.getElementById('mobile-menu').classList.remove('open');this.classList.remove('open');document.body.style.overflow='';"
+     style="display:none;position:fixed;inset:0;background:rgba(0,0,0,0.65);z-index:999998;backdrop-filter:blur(2px);"></div>
+
+<script>
+/* ── Mobile menu toggle ── */
+(function(){
+  function init(){
+    var btn  = document.getElementById('menu-btn');
+    var menu = document.getElementById('mobile-menu');
+    var over = document.getElementById('mobile-overlay');
+    if(!btn||!menu) return;
+    btn.addEventListener('click', function(){
+      menu.classList.add('open');
+      if(over){ over.style.display='block'; }
+      document.body.style.overflow='hidden';
+    });
+  }
+  if(document.readyState==='loading'){ document.addEventListener('DOMContentLoaded',init); }
+  else { init(); }
+})();
+</script>
+
 
 <!-- BUBBLES BACKGROUND -->
 <div id="bubbles"></div>
 
 <!-- FLOATING WHATSAPP -->
 <a href="https://wa.me/+917708007222" class="wa-float" target="_blank"><i class="fab fa-whatsapp"></i></a>
-
-<!-- MOBILE OVERLAY -->
-<div id="mobile-overlay" class="mobile-overlay"></div>
 
 <!-- ===== HEADER ===== -->
 <!-- ===== HEADER ===== -->
@@ -80,30 +261,46 @@
         </div>
     </div>
 
-    <!-- MOBILE MENU -->
-    <div id="mobile-menu">
-        <div class="flex justify-between items-center mb-8">
-            <span class="text-xl font-bold text-accent">Menu</span>
-            <button id="close-menu" class="text-3xl text-accent"><i class="fas fa-times"></i></button>
-        </div>
-        <div class="space-y-4">
-            <a href="index.html" class="block text-lg border-b border-accent/20 pb-2 hover:text-accent">Home</a>
-            <a href="about.html" class="block text-lg border-b border-accent/20 pb-2 hover:text-accent">About</a>
-            <a href="services.html" class="block text-lg border-b border-accent/20 pb-2 hover:text-accent">Services</a>
-            <a href="projects.html" class="block text-lg border-b border-accent/20 pb-2 hover:text-accent">Projects</a>
-            <a href="mercury-engines.html" class="block text-lg border-b border-accent/20 pb-2 hover:text-accent">Products</a>
-            <a href="#contact" class="block text-lg border-b border-accent/20 pb-2 hover:text-accent">Contact</a>
-        </div>
-        <div class="mt-8 pt-4 border-t border-accent/20">
-            <p class="text-sm text-accent mb-4">Connect with us</p>
-            <div class="flex gap-4">
-                <a href="https://wa.me/+917708007222" target="_blank" class="social-icon bg-[#25D366] text-white"><i class="fab fa-whatsapp"></i></a>
-                <a href="https://www.facebook.com/moonmarineservice/" target="_blank" class="social-icon bg-[#1877F2] text-white"><i class="fab fa-facebook-f"></i></a>
-                <a href="https://www.instagram.com/moonmarineservice/" target="_blank" class="social-icon bg-gradient-to-br from-[#833AB4] via-[#FD1D1D] to-[#FCAF45] text-white"><i class="fab fa-instagram"></i></a>
-                <a href="https://www.youtube.com/@moonmarineservice" target="_blank" class="social-icon bg-[#FF0000] text-white"><i class="fab fa-youtube"></i></a>
-            </div>
-        </div>
-    </div>
+    <!-- MOBILE MENU — explicit inline styles, no Tailwind dependency -->
+<script>
+/* Mobile menu — inline script, fires before main.js loads */
+(function() {
+    function ready(fn) {
+        if (document.readyState !== 'loading') { fn(); }
+        else { document.addEventListener('DOMContentLoaded', fn); }
+    }
+    ready(function() {
+        var btn     = document.getElementById('menu-btn');
+        var menu    = document.getElementById('mobile-menu');
+        var closeBtn= document.getElementById('close-menu');
+        var overlay = document.getElementById('mobile-overlay');
+
+        if (!btn || !menu) { console.error('Menu elements missing'); return; }
+
+        function openMenu() {
+            menu.classList.add('open');
+            if (overlay) overlay.classList.add('open');
+            document.body.style.overflow = 'hidden';
+        }
+        function closeMenu() {
+            menu.classList.remove('open');
+            if (overlay) overlay.classList.remove('open');
+            document.body.style.overflow = '';
+        }
+
+        btn.addEventListener('click', openMenu);
+        if (closeBtn) closeBtn.addEventListener('click', closeMenu);
+        if (overlay)  overlay.addEventListener('click', closeMenu);
+
+        /* Close on nav link click */
+        menu.querySelectorAll('a').forEach(function(a) {
+            a.addEventListener('click', closeMenu);
+        });
+        
+        console.log('Mobile menu initialized ✓');
+    });
+})();
+</script>
 </header>
 
 <!-- ==================== 8. PROJECTS PAGE (projects.html) ==================== -->
@@ -564,6 +761,7 @@ allowfullscreen></iframe>
 
 </body>
 </html>
+
 
 
 
