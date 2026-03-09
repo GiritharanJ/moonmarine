@@ -70,39 +70,23 @@ function submitForm() {
         return;
     }
 
-    // Validate phone number (10 digits)
     if (!/^\d{10}$/.test(phone)) {
         alert("Please enter a valid 10-digit mobile number.");
         return;
     }
 
-    // Razorpay options (₹500 = 50000 paise)
     var options = {
-        key: "rzp_live_SOFjRPAj8NXqRQ", // Your Razorpay live key
-        amount: 1000,                   // ₹500 in paise
+        key: "rzp_live_SOFjRPAj8NXqRQ", // your live key
+        amount: 1000,                   // ✅ ₹10 = 1000 paise
         currency: "INR",
         name: "Moon Marine Services",
         description: "Advance Service Booking",
-        prefill: {
-            name: name,
-            contact: phone
-        },
+        prefill: { name: name, contact: phone },
         handler: function (response) {
             alert("Payment Successful! Payment ID: " + response.razorpay_payment_id);
-            sendBookingEmail(
-                name,
-                phone,
-                service,
-                location,
-                message,
-                response.razorpay_payment_id
-            );
+            sendBookingEmail(name, phone, service, location, message, response.razorpay_payment_id);
         },
-        modal: {
-            ondismiss: function () {
-                alert("Payment cancelled. You can still contact us via WhatsApp.");
-            }
-        }
+        modal: { ondismiss: function () { alert("Payment cancelled."); } }
     };
 
     var rzp = new Razorpay(options);
