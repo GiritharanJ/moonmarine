@@ -33,7 +33,6 @@ link.addEventListener("click", closeMenuFunc);
 });
 
 });
-
     // Initialize gallery and bubbles
     loadGallery();
     createBubbles();
