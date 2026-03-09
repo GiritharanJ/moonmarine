@@ -8,6 +8,11 @@ const mobileMenu = document.getElementById("mobile-menu");
 const closeMenu = document.getElementById("close-menu");
 const overlay = document.getElementById("mobile-overlay");
 
+if(!menuBtn || !mobileMenu || !closeMenu || !overlay){
+console.error("Mobile menu elements missing");
+return;
+}
+
 menuBtn.addEventListener("click", function(){
 mobileMenu.classList.add("open");
 overlay.classList.add("open");
@@ -28,7 +33,6 @@ link.addEventListener("click", closeMenuFunc);
 });
 
 });
-
 
     // Initialize gallery and bubbles
     loadGallery();
