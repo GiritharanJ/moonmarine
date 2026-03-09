@@ -708,6 +708,26 @@
 
 <!-- Main JavaScript -->
 <script src="assets/js/main.js"></script>
+
+<!-- ===== PAYMENT RECEIPT MODAL ===== -->
+<div id="paymentReceipt">
+  <div id="receiptBox">
+    <h2>✅ Booking Confirmed!</h2>
+    <p class="receipt-id">Payment ID: <strong id="r_payId">—</strong></p>
+    <div class="receipt-row"><span class="r-label">Customer</span><span class="r-value" id="r_name">—</span></div>
+    <div class="receipt-row"><span class="r-label">Phone</span><span class="r-value" id="r_phone">—</span></div>
+    <div class="receipt-row"><span class="r-label">Service</span><span class="r-value" id="r_service">—</span></div>
+    <div class="receipt-row"><span class="r-label">Location</span><span class="r-value" id="r_location">—</span></div>
+    <div class="receipt-row"><span class="r-label">Amount Paid</span><span class="r-value" id="r_amount">—</span></div>
+    <div class="receipt-row"><span class="r-label">Date & Time</span><span class="r-value" id="r_date">—</span></div>
+    <p style="margin-top:16px;font-size:0.8rem;color:rgba(250,255,255,0.5);">We will contact you within 24 hours. Thank you for choosing Moon Marine!</p>
+    <button class="close-btn" onclick="closeReceipt()">Close &amp; Done</button>
+  </div>
+</div>
+
+<!-- Form error banner -->
+<div id="formError" style="display:none;position:fixed;top:80px;left:50%;transform:translateX(-50%);background:#ef4444;color:white;padding:12px 24px;border-radius:50px;font-weight:600;z-index:9998;font-size:0.9rem;box-shadow:0 4px 20px rgba(0,0,0,0.3);"></div>
+
 </body>
 </html>
 
