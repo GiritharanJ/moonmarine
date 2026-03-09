@@ -2,40 +2,35 @@
 
 // ===== MOBILE MENU =====
 document.addEventListener("DOMContentLoaded", function () {
-    const menuBtn = document.getElementById("menu-btn");
-    const mobileMenu = document.getElementById("mobile-menu");
-    const closeMenu = document.getElementById("close-menu");
-    const overlay = document.getElementById("mobile-overlay");
 
-    if (menuBtn && mobileMenu && closeMenu && overlay) {
-        menuBtn.onclick = function () {
-            mobileMenu.classList.add("open");
-            overlay.classList.add("open");
-            document.body.style.overflow = "hidden";
-        };
+const menuBtn = document.getElementById("menu-btn");
+const mobileMenu = document.getElementById("mobile-menu");
+const closeMenu = document.getElementById("close-menu");
+const overlay = document.getElementById("mobile-overlay");
 
-        closeMenu.onclick = function () {
-            mobileMenu.classList.remove("open");
-            overlay.classList.remove("open");
-            document.body.style.overflow = "";
-        };
+menuBtn.addEventListener("click", () => {
+mobileMenu.classList.add("open");
+overlay.classList.add("open");
+document.body.style.overflow="hidden";
+});
 
-        overlay.onclick = function () {
-            mobileMenu.classList.remove("open");
-            overlay.classList.remove("open");
-            document.body.style.overflow = "";
-        };
-    }
+closeMenu.addEventListener("click", closeMobileMenu);
+overlay.addEventListener("click", closeMobileMenu);
 
-    // close menu when clicking menu links
-    const menuLinks = document.querySelectorAll("#mobile-menu a");
-    menuLinks.forEach(link => {
-        link.addEventListener("click", function () {
-            mobileMenu.classList.remove("open");
-            overlay.classList.remove("open");
-            document.body.style.overflow = "";
-        });
-    });
+function closeMobileMenu(){
+mobileMenu.classList.remove("open");
+overlay.classList.remove("open");
+document.body.style.overflow="";
+}
+
+document.querySelectorAll("#mobile-menu a").forEach(link=>{
+link.addEventListener("click", ()=>{
+closeMobileMenu();
+});
+});
+
+});
+
 
     // Initialize gallery and bubbles
     loadGallery();
