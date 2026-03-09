@@ -208,26 +208,7 @@ function createBubbles() {
 }
 
 // =====================================================================JAVASCRIPT: Canvas rain + lightning + stars===================================================================== 
-// ── Helpers ──────────────────────────────────────────────────────────────
-function sendToWhatsApp(service) {
-  const msg = encodeURIComponent(`Hi Moon Marine! I need: *${service}*\nPlease contact me.`);
-  window.open(`https://wa.me/917708007222?text=${msg}`, '_blank');
-}
-function submitForm() {
-  const n = document.getElementById('fname').value;
-  const p = document.getElementById('fphone').value;
-  if (!n || !p) { alert('Please enter your name and phone number.'); return; }
-  alert('Thank you! We will contact you shortly at ' + p);
-}
-function submitWhatsApp() {
-  const n = document.getElementById('fname').value || 'Customer';
-  const p = document.getElementById('fphone').value || '';
-  const s = document.getElementById('fservice').value || 'General Enquiry';
-  const l = document.getElementById('flocation').value || '';
-  const m = document.getElementById('fmessage').value || '';
-  const msg = encodeURIComponent(`Hello Moon Marine!\n\n*Name:* ${n}\n*Phone:* ${p}\n*Service:* ${s}\n*Location:* ${l}\n*Message:* ${m}`);
-  window.open(`https://wa.me/917708007222?text=${msg}`, '_blank');
-}
+
 
 // ── Canvas Rain ──────────────────────────────────────────────────────────
 const canvas = document.getElementById('rain-canvas');
